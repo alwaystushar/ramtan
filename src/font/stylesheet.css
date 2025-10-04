@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Graphik Arabic';
+    src: url('GraphikArabic-Light.woff2') format('woff2'),
+        url('GraphikArabic-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Arabic';
+    src: url('GraphikArabic-Medium.woff2') format('woff2'),
+        url('GraphikArabic-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Arabic';
+    src: url('GraphikArabic-Regular.woff2') format('woff2'),
+        url('GraphikArabic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik Arabic';
+    src: url('GraphikArabic-Semibold.woff2') format('woff2'),
+        url('GraphikArabic-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
