@@ -31,6 +31,7 @@ export const Home = () => {
       </div>
     </>
   );
-};
+};git commit -m "Initial commit"
+
 
 export default Home;
