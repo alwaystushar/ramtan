@@ -1,7 +1,9 @@
+// src/components/Header.jsx
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Dot } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Menu, Dot } from "lucide-react";
+import "./css/header.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,191 +12,255 @@ export default function Header() {
 
   const headerRef = useRef(null);
   const navRef = useRef(null);
-  const menuRef = useRef(null);
   const indicatorRef = useRef(null);
   const menuItemsRef = useRef([]);
-
   const location = useLocation();
+  const navigate = useNavigate();
 
   const menuItems = [
-    { label: "Home", path: "/", id: "home" },
+    { label: "Home", path: "/#home", id: "home" },
     { label: "About Us", path: "/#about", id: "about" },
     { label: "Events & Exhibitions", path: "/events", id: "events--exhibitions" },
     { label: "Parents & Media", path: "/parents-media", id: "parents--media" },
     { label: "Contact Us", path: "/contact", id: "contactus" },
   ];
 
-  menuItemsRef.current = [];
-
-  // ----------------------------------------
-  // Underline animation
-  // ----------------------------------------
+  // ---------- GSAP underline animation ----------
   useLayoutEffect(() => {
-    const activeEl = menuItemsRef.current.find(
-      (el) => el?.dataset?.id === activeItem
-    );
-    if (!activeEl || !indicatorRef.current || !navRef.current) return;
-
-    const rect = activeEl.getBoundingClientRect();
+    const el = menuItemsRef.current.find((e) => e?.dataset?.id === activeItem);
+    if (!el || !indicatorRef.current || !navRef.current) return;
+    const rect = el.getBoundingClientRect();
     const parentRect = navRef.current.getBoundingClientRect();
-
     const x = rect.left - parentRect.left;
-    const widthVW = (rect.width / window.innerWidth) * 100;
-    const xVW = (x / window.innerWidth) * 100;
-
+    const width = rect.width;
     gsap.to(indicatorRef.current, {
-      x: `${xVW}vw`,
-      width: `${widthVW}vw`,
-      duration: 0.4,
+      x,
+      width,
+      duration: 0.35,
       ease: "power3.out",
     });
   }, [activeItem]);
 
-  // ----------------------------------------
-  // Detect dark background for logo/text
-  // ----------------------------------------
+  // ---------- helper: wait for element to appear (used after navigation) ----------
+  const waitForElement = (id, timeout = 2000) =>
+    new Promise((resolve) => {
+      const existing = document.getElementById(id);
+      if (existing) return resolve(existing);
+      const start = performance.now();
+      const tick = () => {
+        const el = document.getElementById(id);
+        if (el) return resolve(el);
+        if (performance.now() - start > timeout) return resolve(null);
+        requestAnimationFrame(tick);
+      };
+      tick();
+    });
+
+  // ---------- continuous (each-frame) detection of element just below the header ----------
+  // keeps header color exact while scrolling / during GSAP animations
   useEffect(() => {
-    let rafId = null;
-    const checkOverlap = () => {
-      rafId = null;
-      const headerEl = headerRef.current;
-      if (!headerEl) return;
+    let raf = 0;
+    const header = headerRef.current;
+    if (!header) return;
 
-      const headerHeight = headerEl.offsetHeight || 0;
-      const darkEls = document.querySelectorAll(".header-dark");
-      let anyOverlap = false;
-
-      for (const el of darkEls) {
-        const r = el.getBoundingClientRect();
-        if (r.top < headerHeight && r.bottom > 0) {
-          anyOverlap = true;
-          break;
-        }
-      }
-      setIsDarkBg((prev) => (prev === anyOverlap ? prev : anyOverlap));
+    const detect = () => {
+      const rect = header.getBoundingClientRect();
+      const x = window.innerWidth / 2;
+      // 1px below header bottom — this is the point we sample
+      const y = Math.min(window.innerHeight - 1, Math.round(rect.bottom + 1));
+      const el = document.elementFromPoint(x, y);
+      const dark = !!el?.closest?.(".header-dark");
+      setIsDarkBg(dark);
+      raf = requestAnimationFrame(detect);
     };
 
-    const handler = () => {
-      if (rafId == null) rafId = requestAnimationFrame(checkOverlap);
-    };
-    handler();
+    raf = requestAnimationFrame(detect);
 
-    window.addEventListener("scroll", handler, { passive: true });
-    window.addEventListener("resize", handler);
+    const onResize = () => {
+      // run at least once when resize happens
+      const rect = header.getBoundingClientRect();
+      const x = window.innerWidth / 2;
+      const y = Math.min(window.innerHeight - 1, Math.round(rect.bottom + 1));
+      const el = document.elementFromPoint(x, y);
+      setIsDarkBg(!!el?.closest?.(".header-dark"));
+    };
+
+    window.addEventListener("resize", onResize, { passive: true });
+    window.addEventListener("orientationchange", onResize);
+
     return () => {
-      window.removeEventListener("scroll", handler);
-      window.removeEventListener("resize", handler);
-      if (rafId) cancelAnimationFrame(rafId);
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("orientationchange", onResize);
     };
-  }, []);
+  }, [location.pathname]); // re-run when path changes (DOM sections likely changed)
 
-  // ----------------------------------------
-  // Handle Active Section (Scroll-Based)
-  // ----------------------------------------
+  // ---------- IntersectionObserver to pick the most-visible section (active menu) ----------
   useEffect(() => {
-    const { pathname } = location;
+    if (location.pathname !== "/") return;
 
-    // For other pages (like /contact)
-    if (pathname !== "/") {
-      const found = menuItems.find((m) => m.path === pathname);
-      if (found) setActiveItem(found.id);
+    const sections = Array.from(document.querySelectorAll("section[id], div[id]"));
+    if (!sections.length) return;
+
+    // thresholds array for more precise intersectionRatio values
+    const thresholds = Array.from({ length: 21 }, (_, i) => i / 20);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // among all entries find the one with highest intersectionRatio
+        let best = { ratio: 0, id: null };
+        entries.forEach((e) => {
+          if (e.intersectionRatio > best.ratio) {
+            best = { ratio: e.intersectionRatio, id: e.target.id };
+          }
+        });
+        if (best.id) {
+          setActiveItem(best.id);
+          return;
+        }
+        // fallback: if near top of page -> home
+        if (window.scrollY < window.innerHeight / 3) setActiveItem("home");
+      },
+      { threshold: thresholds }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+
+    // initial heuristic: pick element at center if any
+    requestAnimationFrame(() => {
+      const el = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
+      const id = el?.closest?.("[id]")?.id;
+      if (id) setActiveItem((prev) => (prev === id ? prev : id));
+    });
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  // ---------- keep activeItem consistent on route/hash changes (refresh handling) ----------
+  useEffect(() => {
+    const path = location.pathname;
+    const hash = location.hash || "";
+    const exact = menuItems.find((m) => m.path === `${path}${hash}` || m.path === path);
+    if (exact) {
+      setActiveItem(exact.id);
+      return;
+    }
+    if (path === "/" && hash) {
+      setActiveItem(hash.replace("#", ""));
+      return;
+    }
+    setActiveItem(path === "/" ? "home" : (() => {
+      const found = menuItems.find((m) => m.path === path);
+      return found ? found.id : "home";
+    })());
+  }, [location.pathname, location.hash]);
+
+  // ---------- navigation click handler (single-click to navigate & active) ----------
+  const handleNavClick = async (item) => {
+    const [p, h] = item.path.split("#");
+    const targetPath = p || "/";
+    const targetHash = h || null;
+
+    // if we are already on the target route
+    if (location.pathname === targetPath) {
+      // immediate active set so UI responds on first click
+      setActiveItem(item.id);
+
+      if (targetHash) {
+        // try scroll now; if section doesn't exist yet (rare), wait for it
+        const elNow = document.getElementById(targetHash);
+        if (elNow) {
+          elNow.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          const el = await waitForElement(targetHash, 2000);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } else {
+        // home click on home: smooth scroll to top
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
       return;
     }
 
-    // Home Page Scroll Tracking
-    const sections = document.querySelectorAll("div[id]");
-    if (!sections.length) return;
+    // Not on target route: navigate and then scroll to hash (if any)
+    setActiveItem(item.id);
+    navigate(targetPath);
 
-    const onScroll = () => {
-      let current = "home";
-      const scrollY = window.scrollY;
-      const viewportHeight = window.innerHeight;
+    // wait a short moment for route to mount DOM then try to scroll to hash
+    if (targetHash) {
+      const el = await waitForElement(targetHash, 2000);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      // if navigating to home, attempt a scroll-to-top after mount
+      if (targetPath === "/") {
+        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+      }
+    }
+  };
 
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        const sectionTop = rect.top + scrollY - viewportHeight / 3; // trigger earlier
-        const sectionBottom = sectionTop + section.offsetHeight;
-        if (scrollY >= sectionTop && scrollY < sectionBottom) {
-          current = section.id;
-        }
-      });
-
-      setActiveItem(current);
-    };
-
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [location.pathname]);
-
-  // ----------------------------------------
-  // Render
-  // ----------------------------------------
+  // ---------- Render ----------
   return (
-    <header ref={headerRef} className="fixed top-0 left-0 w-full z-[999] bg-transparent">
-      <div className="flex items-start justify-between px-[2vw] py-[2vw]">
-        {/* Logo */}
-        <div className="flex items-center cursor-pointer">
+    <header
+      ref={headerRef}
+      className={`header fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
+        isDarkBg ? "text-white" : "text-blue-900"
+      }`}
+    >
+      <div className="header-inner container-box flex justify-between items-center py-[1vw]">
+        <div className="logo-block">
           <img
             src={isDarkBg ? "logo-white.svg" : "logo-blue.svg"}
             alt="Logo"
-            className="lg:w-[5vw] lg:h-[5vw] w-[12vw] h-[12vw] transition-all duration-300"
+            className="logo transition-all duration-300"
           />
         </div>
 
-        {/* Desktop Nav */}
-        <nav ref={navRef} className="hidden lg:flex gap-[2vw] items-center relative">
+        <nav ref={navRef} className="nav hidden lg:flex items-center gap-[2vw] relative">
           {menuItems.map((item, i) => (
-            <Link
+            <button
               key={item.id}
-              to={item.path}
               ref={(el) => (menuItemsRef.current[i] = el)}
               data-id={item.id}
-              onClick={() => setActiveItem(item.id)}
-              className={`nav-text ${
+              onClick={() => handleNavClick(item)}
+              className={`nav-text relative transition-colors ${
                 activeItem === item.id
                   ? isDarkBg
                     ? "text-white"
                     : "text-blue-900"
                   : isDarkBg
-                  ? "text-gray-200 hover:text-white"
+                  ? "text-gray-300 hover:text-white"
                   : "text-gray-800 hover:text-blue-900"
               }`}
             >
               {item.label}
-            </Link>
+            </button>
           ))}
 
-          {/* Underline */}
           <span
             ref={indicatorRef}
-            style={{ left: 0, width: "0vw" }}
-            className={`absolute -bottom-[0.1vw] h-[0.1vw] rounded transition-colors duration-300 ${
+            style={{ transform: "translateX(0px)", width: 0 }}
+            className={`absolute bottom-[-0.3vw] h-[0.15vw] rounded-full transition-all duration-300 ${
               isDarkBg ? "bg-white" : "bg-blue-900"
             }`}
           />
 
-          {/* CTA */}
           <button
-            className={`ml-[1vw] text-[0.9vw] px-[1.3vw] pl-[.7vw] py-[0.5vw] flex items-center gap-[0.6vw] rounded-full font-medium transition-colors transform duration-300 ${
+            className={`ml-[2vw] flex items-center gap-[0.3vw] px-[1.5vw] py-[0.6vw] rounded-full text-[0.9vw] transition-all duration-300 headerBtn ${
               isDarkBg
-                ? "bg-white border border-white text-blue-900 hover:bg-blue-900 hover:text-white"
-                : "bg-blue-900 border border-blue-900 text-white hover:bg-white hover:text-blue-900"
+                ? "bg-white text-blue-900 border border-white hover:bg-blue-900 hover:text-white"
+                : "bg-blue-900 text-white border border-blue-900 hover:bg-white hover:text-blue-900"
             }`}
           >
-            <Dot className="w-[1.6vw] h-[1.6vw]" /> Let's Talk
+            <Dot className="w-[1.6vw] h-[1.6vw]" /> Let’s Talk
           </button>
         </nav>
 
-        {/* Mobile Button */}
         <button
           className="lg:hidden transition-colors"
-          onClick={() => setMenuOpen(true)}
-          aria-label="Open menu"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
+          onClick={() => setMenuOpen((s) => !s)}
+          aria-label="Toggle menu"
         >
-          <Menu className={`w-[7.5vw] h-[7.5vw] ${isDarkBg ? "text-white" : "text-blue-900"}`} />
+          <Menu className={`w-[7vw] h-[7vw] ${isDarkBg ? "text-white" : "text-blue-900"}`} />
         </button>
       </div>
     </header>

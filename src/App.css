@@ -29,6 +29,8 @@ html, body {
 
   -ms-overflow-style: none;
   scrollbar-width: none;
+    height: 100%;
+
 }
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
@@ -48,10 +50,9 @@ body {
 }
 
 
-
-
-
-.nav-text{
-    @apply
-    text-[1vw] cursor-pointer relative transition-colors font-light
+.container-box{
+  @apply
+  px-[2vw] py-[2vw]
 }
+
+
