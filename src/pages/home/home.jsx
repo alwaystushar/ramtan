@@ -48,7 +48,7 @@ export const Home = () => {
   </div>
 
   {/* Right Social Icons */}
-  <div className="flex gap-3 items-center">
+  <div className="flex gap-[.85vw] items-center">
     <GsapFadeUp duration={1} delay={0.9} offsetStart="100%">
       <a
         href="https://facebook.com"

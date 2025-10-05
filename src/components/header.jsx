@@ -25,21 +25,25 @@ export default function Header() {
     { label: "Contact Us", path: "/contact", id: "contactus" },
   ];
 
-  // ---------- GSAP underline animation ----------
-  useLayoutEffect(() => {
-    const el = menuItemsRef.current.find((e) => e?.dataset?.id === activeItem);
-    if (!el || !indicatorRef.current || !navRef.current) return;
-    const rect = el.getBoundingClientRect();
-    const parentRect = navRef.current.getBoundingClientRect();
-    const x = rect.left - parentRect.left;
-    const width = rect.width;
-    gsap.to(indicatorRef.current, {
-      x,
-      width,
-      duration: 0.35,
-      ease: "power3.out",
-    });
-  }, [activeItem]);
+// ---------- GSAP underline animation (now in vw) ----------
+useLayoutEffect(() => {
+  const el = menuItemsRef.current.find((e) => e?.dataset?.id === activeItem);
+  if (!el || !indicatorRef.current || !navRef.current) return;
+
+  const rect = el.getBoundingClientRect();
+  const parentRect = navRef.current.getBoundingClientRect();
+
+  // convert to vw for consistent scaling
+  const xVW = ((rect.left - parentRect.left) / window.innerWidth) * 100;
+  const widthVW = (rect.width / window.innerWidth) * 100;
+
+  gsap.to(indicatorRef.current, {
+    x: `${xVW}vw`,
+    width: `${widthVW}vw`,
+    duration: 0.35,
+    ease: "power3.out",
+  });
+}, [activeItem]);
 
   // ---------- helper: wait for element to appear (used after navigation) ----------
   const waitForElement = (id, timeout = 2000) =>
@@ -236,13 +240,14 @@ export default function Header() {
             </button>
           ))}
 
-          <span
-            ref={indicatorRef}
-            style={{ transform: "translateX(0px)", width: 0 }}
-            className={`absolute bottom-[-0.3vw] h-[0.15vw] rounded-full transition-all duration-300 ${
-              isDarkBg ? "bg-white" : "bg-blue-900"
-            }`}
-          />
+<span
+  ref={indicatorRef}
+  style={{ left: 0, width: "0vw", transform: "translateX(0vw)" }}
+  className={`absolute bottom-[-0.3vw] h-[0.15vw] rounded-full transition-all duration-300 ${
+    isDarkBg ? "bg-white" : "bg-blue-900"
+  }`}
+/>
+
 
           <button
             className={`ml-[2vw] flex items-center gap-[0.3vw] px-[1.5vw] py-[0.6vw] rounded-full text-[0.9vw] transition-all duration-300 headerBtn ${
