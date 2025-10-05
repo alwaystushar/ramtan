@@ -136,7 +136,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center cursor-pointer">
           <img
-            src={isDarkBg ? "/logo-white.svg" : "/logo-blue.svg"}
+            src={isDarkBg ? "logo-white.svg" : "logo-blue.svg"}
             alt="Logo"
             className="lg:w-[5vw] lg:h-[5vw] w-[12vw] h-[12vw] transition-all duration-300"
           />
