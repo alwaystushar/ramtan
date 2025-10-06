@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Menu, Dot } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import "./css/header.css";
 
 export default function Header() {
@@ -14,6 +14,8 @@ export default function Header() {
   const navRef = useRef(null);
   const indicatorRef = useRef(null);
   const menuItemsRef = useRef([]);
+  const mobileMenuRef = useRef(null);
+  const mobileLinksRef = useRef([]);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -25,27 +27,28 @@ export default function Header() {
     { label: "Contact Us", path: "/contact", id: "contactus" },
   ];
 
-// ---------- GSAP underline animation (now in vw) ----------
-useLayoutEffect(() => {
-  const el = menuItemsRef.current.find((e) => e?.dataset?.id === activeItem);
-  if (!el || !indicatorRef.current || !navRef.current) return;
+  // ---------- GSAP underline animation ----------
+  useLayoutEffect(() => {
+    if (!indicatorRef.current || !navRef.current) return;
 
-  const rect = el.getBoundingClientRect();
-  const parentRect = navRef.current.getBoundingClientRect();
+    const el = menuItemsRef.current.find((e) => e?.dataset?.id === activeItem);
+    if (!el) return;
 
-  // convert to vw for consistent scaling
-  const xVW = ((rect.left - parentRect.left) / window.innerWidth) * 100;
-  const widthVW = (rect.width / window.innerWidth) * 100;
+    const rect = el.getBoundingClientRect();
+    const parentRect = navRef.current.getBoundingClientRect();
 
-  gsap.to(indicatorRef.current, {
-    x: `${xVW}vw`,
-    width: `${widthVW}vw`,
-    duration: 0.35,
-    ease: "power3.out",
-  });
-}, [activeItem]);
+    const xVW = ((rect.left - parentRect.left) / window.innerWidth) * 100;
+    const widthVW = (rect.width / window.innerWidth) * 100;
 
-  // ---------- helper: wait for element to appear (used after navigation) ----------
+    gsap.to(indicatorRef.current, {
+      x: `${xVW}vw`,
+      width: `${widthVW}vw`,
+      duration: 0.35,
+      ease: "power3.out",
+    });
+  }, [activeItem]);
+
+  // ---------- helper: wait for element ----------
   const waitForElement = (id, timeout = 2000) =>
     new Promise((resolve) => {
       const existing = document.getElementById(id);
@@ -60,8 +63,7 @@ useLayoutEffect(() => {
       tick();
     });
 
-  // ---------- continuous (each-frame) detection of element just below the header ----------
-  // keeps header color exact while scrolling / during GSAP animations
+  // ---------- detect background color ----------
   useEffect(() => {
     let raf = 0;
     const header = headerRef.current;
@@ -70,7 +72,6 @@ useLayoutEffect(() => {
     const detect = () => {
       const rect = header.getBoundingClientRect();
       const x = window.innerWidth / 2;
-      // 1px below header bottom — this is the point we sample
       const y = Math.min(window.innerHeight - 1, Math.round(rect.bottom + 1));
       const el = document.elementFromPoint(x, y);
       const dark = !!el?.closest?.(".header-dark");
@@ -79,130 +80,97 @@ useLayoutEffect(() => {
     };
 
     raf = requestAnimationFrame(detect);
+    return () => cancelAnimationFrame(raf);
+  }, [location.pathname]);
 
-    const onResize = () => {
-      // run at least once when resize happens
-      const rect = header.getBoundingClientRect();
-      const x = window.innerWidth / 2;
-      const y = Math.min(window.innerHeight - 1, Math.round(rect.bottom + 1));
-      const el = document.elementFromPoint(x, y);
-      setIsDarkBg(!!el?.closest?.(".header-dark"));
-    };
-
-    window.addEventListener("resize", onResize, { passive: true });
-    window.addEventListener("orientationchange", onResize);
-
-    return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener("resize", onResize);
-      window.removeEventListener("orientationchange", onResize);
-    };
-  }, [location.pathname]); // re-run when path changes (DOM sections likely changed)
-
-  // ---------- IntersectionObserver to pick the most-visible section (active menu) ----------
+  // ---------- section tracking ----------
   useEffect(() => {
     if (location.pathname !== "/") return;
 
     const sections = Array.from(document.querySelectorAll("section[id], div[id]"));
     if (!sections.length) return;
 
-    // thresholds array for more precise intersectionRatio values
     const thresholds = Array.from({ length: 21 }, (_, i) => i / 20);
-
     const observer = new IntersectionObserver(
       (entries) => {
-        // among all entries find the one with highest intersectionRatio
         let best = { ratio: 0, id: null };
         entries.forEach((e) => {
-          if (e.intersectionRatio > best.ratio) {
-            best = { ratio: e.intersectionRatio, id: e.target.id };
-          }
+          if (e.intersectionRatio > best.ratio) best = { ratio: e.intersectionRatio, id: e.target.id };
         });
-        if (best.id) {
-          setActiveItem(best.id);
-          return;
-        }
-        // fallback: if near top of page -> home
-        if (window.scrollY < window.innerHeight / 3) setActiveItem("home");
+        if (best.id) setActiveItem(best.id);
+        else if (window.scrollY < window.innerHeight / 3) setActiveItem("home");
       },
       { threshold: thresholds }
     );
 
     sections.forEach((s) => observer.observe(s));
-
-    // initial heuristic: pick element at center if any
-    requestAnimationFrame(() => {
-      const el = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
-      const id = el?.closest?.("[id]")?.id;
-      if (id) setActiveItem((prev) => (prev === id ? prev : id));
-    });
-
     return () => observer.disconnect();
   }, [location.pathname]);
 
-  // ---------- keep activeItem consistent on route/hash changes (refresh handling) ----------
+  // ---------- handle hash route change ----------
   useEffect(() => {
     const path = location.pathname;
     const hash = location.hash || "";
     const exact = menuItems.find((m) => m.path === `${path}${hash}` || m.path === path);
-    if (exact) {
-      setActiveItem(exact.id);
-      return;
-    }
-    if (path === "/" && hash) {
-      setActiveItem(hash.replace("#", ""));
-      return;
-    }
-    setActiveItem(path === "/" ? "home" : (() => {
-      const found = menuItems.find((m) => m.path === path);
-      return found ? found.id : "home";
-    })());
+    if (exact) return setActiveItem(exact.id);
+    if (path === "/" && hash) return setActiveItem(hash.replace("#", ""));
+    setActiveItem(path === "/" ? "home" : "home");
   }, [location.pathname, location.hash]);
 
-  // ---------- navigation click handler (single-click to navigate & active) ----------
+  // ---------- navigation click ----------
   const handleNavClick = async (item) => {
     const [p, h] = item.path.split("#");
     const targetPath = p || "/";
     const targetHash = h || null;
+    setActiveItem(item.id);
 
-    // if we are already on the target route
     if (location.pathname === targetPath) {
-      // immediate active set so UI responds on first click
-      setActiveItem(item.id);
-
       if (targetHash) {
-        // try scroll now; if section doesn't exist yet (rare), wait for it
-        const elNow = document.getElementById(targetHash);
-        if (elNow) {
-          elNow.scrollIntoView({ behavior: "smooth", block: "start" });
-        } else {
-          const el = await waitForElement(targetHash, 2000);
-          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+        const el = document.getElementById(targetHash) || (await waitForElement(targetHash, 2000));
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
-        // home click on home: smooth scroll to top
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
+      setMenuOpen(false);
       return;
     }
 
-    // Not on target route: navigate and then scroll to hash (if any)
-    setActiveItem(item.id);
     navigate(targetPath);
+    setMenuOpen(false);
 
-    // wait a short moment for route to mount DOM then try to scroll to hash
     if (targetHash) {
       const el = await waitForElement(targetHash, 2000);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      // if navigating to home, attempt a scroll-to-top after mount
-      if (targetPath === "/") {
-        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
-      }
+    } else if (targetPath === "/") {
+      setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
     }
   };
 
-  // ---------- Render ----------
+  // ---------- mobile menu animation ----------
+  useEffect(() => {
+    if (!mobileMenuRef.current) return;
+
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    if (menuOpen) {
+      tl.to(mobileMenuRef.current, {
+        x: 0,
+        opacity: 1,
+        duration: 0.6,
+      })
+        .fromTo(
+          mobileLinksRef.current,
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, stagger: 0.1, duration: 0.6 },
+          "-=0.3"
+        );
+    } else {
+      tl.to(mobileMenuRef.current, { x: "100%", opacity: 0, duration: 0.6 });
+    }
+
+    return () => tl.kill();
+  }, [menuOpen]);
+
+  // ---------- render ----------
   return (
     <header
       ref={headerRef}
@@ -210,16 +178,18 @@ useLayoutEffect(() => {
         isDarkBg ? "text-white" : "text-blue-900"
       }`}
     >
-      <div className="header-inner container-box flex justify-between items-center py-[1vw]">
+      <div className="header-inner container-box flex justify-between items-center py-[1vw] px-[3vw]">
+        {/* Logo */}
         <div className="logo-block">
           <img
             src={isDarkBg ? "logo-white.svg" : "logo-blue.svg"}
             alt="Logo"
-            className="logo transition-all duration-300"
+            className="logo w-[8vw] transition-all duration-300"
           />
         </div>
 
-        <nav ref={navRef} className="nav hidden lg:flex items-center gap-[2vw] relative">
+        {/* Desktop Nav */}
+        <nav ref={navRef} className="hidden lg:flex items-center gap-[2vw] relative">
           {menuItems.map((item, i) => (
             <button
               key={item.id}
@@ -240,32 +210,76 @@ useLayoutEffect(() => {
             </button>
           ))}
 
-<span
-  ref={indicatorRef}
-  style={{ left: 0, width: "0vw", transform: "translateX(0vw)" }}
-  className={`absolute bottom-[-0.3vw] h-[0.15vw] rounded-full transition-all duration-300 ${
-    isDarkBg ? "bg-white" : "bg-blue-900"
-  }`}
-/>
+          {/* Underline */}
+          <span
+            ref={indicatorRef}
+            style={{ left: 0, width: "0vw", transform: "translateX(0vw)" }}
+            className={`absolute bottom-[-0.3vw] h-[0.15vw] rounded-full ${
+              isDarkBg ? "bg-white" : "bg-blue-900"
+            }`}
+          ></span>
 
-
+          {/* Let’s Talk Button */}
           <button
-            className={`ml-[2vw] flex items-center gap-[0.3vw] px-[1.5vw] py-[0.6vw] rounded-full text-[0.9vw] transition-all duration-300 headerBtn ${
+            className={`group ml-[2vw] flex items-center gap-[0.5vw] px-[1.8vw] py-[0.8vw] rounded-full text-[0.9vw] font-medium border transition-all duration-300 ${
               isDarkBg
-                ? "bg-white text-blue-900 border border-white hover:bg-blue-900 hover:text-white"
-                : "bg-blue-900 text-white border border-blue-900 hover:bg-white hover:text-blue-900"
+                ? "bg-transparent border-white/40 text-white hover:bg-white hover:text-[#001F4D]"
+                : "bg-transparent border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
             }`}
           >
-            <Dot className="w-[1.6vw] h-[1.6vw]" /> Let’s Talk
+            <span
+              className={`w-[0.5vw] h-[0.5vw] rounded-full animate-pulse transition-colors duration-300 ${
+                isDarkBg ? "bg-white group-hover:bg-[#001F4D]" : "bg-blue-900 group-hover:bg-white"
+              }`}
+            ></span>
+            Let’s Talk
           </button>
         </nav>
 
+        {/* Mobile Menu Button */}
         <button
-          className="lg:hidden transition-colors"
+          className="lg:hidden transition-colors z-50"
           onClick={() => setMenuOpen((s) => !s)}
           aria-label="Toggle menu"
         >
-          <Menu className={`w-[7vw] h-[7vw] ${isDarkBg ? "text-white" : "text-blue-900"}`} />
+          {menuOpen ? (
+            <X className={`w-[8vw] h-[8vw] ${isDarkBg ? "text-white" : "text-blue-900/0"}`} />
+          ) : (
+            <Menu className={`w-[8vw] h-[8vw] ${isDarkBg ? "text-white" : "text-blue-900"}`} />
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        ref={mobileMenuRef}
+        className="fixed top-0 right-0 w-full h-screen bg-[#001F4D] text-white flex flex-col items-center justify-center gap-[8vw] transform translate-x-full opacity-0 z-40 lg:hidden"
+      >
+        {menuItems.map((item, i) => (
+          <button
+            key={item.id}
+            ref={(el) => (mobileLinksRef.current[i] = el)}
+            onClick={() => handleNavClick(item)}
+            className={`text-[6vw] font-light ${
+              activeItem === item.id ? "text-white" : "text-white/70 hover:text-white"
+            }`}
+          >
+            {item.label}
+          </button>
+        ))}
+
+        {/* Mobile Let’s Talk Button */}
+        <button className="group flex items-center gap-[1.5vw] px-[5vw] py-[2vw] rounded-full border border-white text-white text-[5vw] transition-all duration-300 hover:bg-white hover:text-[#001F4D]">
+          <span className="w-[1vw] h-[1vw] bg-white rounded-full animate-pulse group-hover:bg-[#001F4D] transition-colors duration-300"></span>
+          Let’s Talk
+        </button>
+
+        {/* Close Button inside menu */}
+        <button
+          onClick={() => setMenuOpen(false)}
+          className="absolute top-[5vw] right-[6vw] text-white hover:scale-110 transition-transform"
+        >
+          <X className="w-[8vw] h-[8vw]" />
         </button>
       </div>
     </header>
