@@ -57,12 +57,7 @@ export default function GsapCarousel({
         { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
         "-=0.8"
       )
-      .fromTo(
-        next.querySelector(".slide-subtitle"),
-        { y: "2vw", opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
-        "-=0.7"
-      )
+
       .set(current, { zIndex: 1, x: 0, opacity: 1 });
   };
 
@@ -146,11 +141,7 @@ export default function GsapCarousel({
               <h1 className="slide-title text-[3.8vw] font-semibold leading-[110%] mb-[1vw] drop-shadow-lg">
                 {slide.title}
               </h1>
-              {slide.subtitle && (
-                <p className="slide-subtitle text-[1vw] font-light text-white/85 leading-[140%]">
-                  {slide.subtitle}
-                </p>
-              )}
+              
             </div>
           </div>
         ))}

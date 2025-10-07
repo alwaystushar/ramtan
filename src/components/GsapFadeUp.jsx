@@ -2,16 +2,22 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// ✅ Safe plugin registration
-if (typeof window !== "undefined" && !gsap.core.globals().ScrollTrigger) {
+// ✅ Register plugin safely (SSR-safe)
+if (typeof window !== "undefined" && gsap && !gsap.core.globals().ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 /**
- * Fade up elements when they enter the viewport (once)
- * - Starts fully invisible (opacity: 0)
- * - Slides up by `y` distance
- * - Plays smoothly once when visible
+ * GsapFadeUp
+ * Smooth fade-up animation for elements when entering the viewport.
+ *
+ * Props:
+ * - children: ReactNode
+ * - duration: number (default: 1)
+ * - delay: number (default: 0)
+ * - y: number (slide distance, default: 60)
+ * - offsetStart: string ("100%" = play immediately, default "90%")
+ * - className: string
  */
 const GsapFadeUp = ({
   children,
@@ -24,15 +30,18 @@ const GsapFadeUp = ({
   const elRef = useRef(null);
 
   useEffect(() => {
+    // Prevent execution during SSR
+    if (typeof window === "undefined") return;
+
     const el = elRef.current;
     if (!el) return;
 
-    // Ensure element starts invisible before scroll trigger runs
+    // Set initial state
     gsap.set(el, { opacity: 0, y });
 
     const ctx = gsap.context(() => {
-      // 🔹 Case 1: Play immediately (e.g. hero section)
       if (offsetStart === "100%") {
+        // Play immediately (for hero sections)
         gsap.to(el, {
           y: 0,
           opacity: 1,
@@ -40,39 +49,35 @@ const GsapFadeUp = ({
           delay,
           ease: "power3.out",
         });
-        return;
+      } else {
+        // Scroll-triggered animation
+        const tween = gsap.to(el, {
+          y: 0,
+          opacity: 1,
+          duration,
+          delay,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: `top ${offsetStart}`,
+            toggleActions: "play none none none",
+            once: true,
+          },
+        });
+
+        // Refresh ScrollTrigger after layout changes
+        setTimeout(() => {
+          if (ScrollTrigger?.refresh) ScrollTrigger.refresh();
+        }, 100);
+
+        // Cleanup scroll trigger
+        return () => {
+          if (tween.scrollTrigger) tween.scrollTrigger.kill();
+        };
       }
-
-      // 🔹 Case 2: Play on scroll
-      const tween = gsap.to(el, {
-        y: 0,
-        opacity: 1,
-        duration,
-        delay,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: el,
-          start: `top ${offsetStart}`,
-          toggleActions: "play none none none",
-          once: true, // play only once
-        },
-      });
-
-      // Slight delay to refresh ScrollTrigger after layout
-      setTimeout(() => {
-        try {
-          ScrollTrigger.refresh();
-        } catch {}
-      }, 100);
-
-      return () => {
-        try {
-          tween.scrollTrigger && tween.scrollTrigger.kill();
-        } catch {}
-      };
     }, el);
 
-    // Cleanup on unmount
+    // Revert GSAP context on unmount
     return () => ctx.revert();
   }, [duration, delay, y, offsetStart]);
 

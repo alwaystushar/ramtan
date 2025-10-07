@@ -6,14 +6,17 @@ export default function Hero() {
     {
       image: "/img/home-hero1.jpg",
       title: "Crafting Unforgettable Event Experiences",
+      
     },
     {
       image: "/img/home-hero2.jpg",
       title: "Empower Your Brand’s Vision With Us",
+      
     },
     {
       image: "/img/home-hero3.jpg",
       title: "Crafting Unforgettable Event Experiences",
+      
     },
   ];
 
