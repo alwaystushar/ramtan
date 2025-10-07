@@ -4,7 +4,7 @@ import GsapFadeUp from "../../../components/GsapFadeUp.jsx";
 import RippleButton from "../../../components/RippleButton";
 
 
-import ScrollReveal from "../../../components/scrollReveal.jsx";
+import ScrollReveal from "../../../components/ScrollReveal.jsx";
 
 export default function AboutUsSection() {
   return (
