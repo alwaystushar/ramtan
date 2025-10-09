@@ -9,7 +9,7 @@ export default function FoundationLeft() {
         flex flex-col justify-between
         bg-[#06178b] text-white
         px-[8vw] py-[6vw]
-        h-full   /* ← fills height of its grid cell */
+        h-full   
       "
     >
       {/* === Top Content === */}
