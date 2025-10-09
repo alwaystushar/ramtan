@@ -10,7 +10,7 @@ export default function AboutUsSection() {
   return (
     <section
       id="about"
-      className="relative w-full min-h-screen bg-white flex flex-col justify-center items-center overflow-hidden text-[#001F4D]"
+      className="relative w-full  bg-white flex flex-col justify-center items-center overflow-hidden text-[#001F4D]"
     >
 
       {/* === Content Container === */}

@@ -8,7 +8,7 @@ export default defineConfig({
   base: './', // ✅ Add this line
   server: {
     host: true,
-    port: 5173,
+    port: 3328,
     historyApiFallback: true,
   },
 })

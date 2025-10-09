@@ -174,29 +174,29 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className={`header fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
+      className={`header ${
         isDarkBg ? "text-white" : "text-blue-900"
       }`}
     >
-      <div className="header-inner container-box flex justify-between items-center py-[1vw] px-[3vw]">
+      <div className="header-inner container-box">
         {/* Logo */}
         <div className="logo-block">
           <img
             src={isDarkBg ? "logo-white.svg" : "logo-blue.svg"}
             alt="Logo"
-            className="logo w-[8vw] transition-all duration-300"
+            className="logo"
           />
         </div>
 
         {/* Desktop Nav */}
-        <nav ref={navRef} className="hidden lg:flex items-center gap-[2vw] relative">
+        <nav ref={navRef} className="nav">
           {menuItems.map((item, i) => (
             <button
               key={item.id}
               ref={(el) => (menuItemsRef.current[i] = el)}
               data-id={item.id}
               onClick={() => handleNavClick(item)}
-              className={`nav-text relative transition-colors ${
+              className={`nav-text  ${
                 activeItem === item.id
                   ? isDarkBg
                     ? "text-white"
@@ -214,14 +214,14 @@ export default function Header() {
           <span
             ref={indicatorRef}
             style={{ left: 0, width: "0vw", transform: "translateX(0vw)" }}
-            className={`absolute bottom-[-0.3vw] h-[0.15vw] rounded-full ${
+            className={`active-underline ${
               isDarkBg ? "bg-white" : "bg-blue-900"
             }`}
           ></span>
 
           {/* Let’s Talk Button */}
           <button
-            className={`group ml-[2vw] flex items-center gap-[0.5vw] px-[1.8vw] py-[0.8vw] rounded-full text-[0.9vw] font-medium border transition-all duration-300 ${
+            className={`group headerBtn ${
               isDarkBg
                 ? "bg-transparent border-white/40 text-white hover:bg-white hover:text-[#001F4D]"
                 : "bg-transparent border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"

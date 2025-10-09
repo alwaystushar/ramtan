@@ -2,7 +2,7 @@
 
 
 .header {
-    @apply fixed top-0 left-0 w-full z-[999] bg-transparent
+    @apply fixed top-0 left-0 w-full z-[999] bg-transparent transition-colors duration-300
 }
 
 .header-inner {
@@ -32,5 +32,5 @@
 
 
 .headerBtn {
-    @apply ml-[1vw] text-[0.9vw] px-[1.3vw] pl-[.7vw] py-[0.5vw] flex items-center gap-[0.6vw] rounded-full font-medium transition-colors transform duration-300
+    @apply ml-[2vw] flex items-center gap-[0.5vw] px-[1.8vw] py-[0.8vw] rounded-full text-[0.9vw] font-medium border transition-all duration-300
 }
