@@ -68,9 +68,7 @@ export default function AboutUsSection() {
             </h2>
 
 <ScrollReveal
-  baseOpacity={0.1}
-  enableBlur={true}
-  blurStrength={6}
+  baseOpacity={0.25}
   fontSize="2vw"
   fontWeight="300"
   lineHeight="130%"
@@ -78,10 +76,12 @@ export default function AboutUsSection() {
   letterSpacing="0.02vw"
 >
   Established in Riyadh in 1996 by founder
-  <strong> Hussein Al-Faraj </strong> (may God have mercy on him),
+  <strong> Hussein Al-Faraj </strong>(may God have mercy on him),
   Ramtan has emerged as a prominent force in the exhibitions and
   conferences industry, both in Saudi Arabia and internationally.
 </ScrollReveal>
+
+
 
           </div>
      

@@ -4,48 +4,66 @@ import { gsap } from "gsap";
 const ScrollReveal = ({
   children,
   scrollContainerRef,
-  enableBlur = true,
-  baseOpacity = 0.1,
-  baseRotation = 0,
-  blurStrength = 4,
+  baseOpacity = 0.25,
   containerClassName = "",
   textClassName = "",
 
-  // Typography props
-  fontSize = "4vw",
-  fontWeight = "500",
-  lineHeight = "1.5",
-  color = "inherit",
-  letterSpacing = "normal",
+  // Typography (responsive)
+  fontSize = "2vw",
+  fontWeight = "300",
+  lineHeight = "130%",
+  color = "#05178B",
+  letterSpacing = "0.02vw",
 
-  rotationEnd = "bottom bottom",
-  wordAnimationEnd = "bottom bottom",
+  // Scroll behavior
+  startTrigger = "top 90%", // starts slightly later
+  endTrigger = "top 30%", // ends earlier for faster animation
 }) => {
   const containerRef = useRef(null);
   const scrollTriggers = useRef([]);
 
-  const splitText = useMemo(() => {
-    if (typeof children !== "string") return children;
-    return children.split("").map((char, index) =>
-      char === " " ? (
-        <span key={index}>&nbsp;</span>
-      ) : (
-        <span className="inline-block letter" key={index}>
-          {char}
-        </span>
-      )
-    );
-  }, [children]);
+  // 🔠 Split into words → then split each word into letters
+  const renderText = (node) => {
+    if (typeof node === "string") {
+      return node.split(/(\s+)/).map((word, wi) => {
+        if (word.trim() === "") return <span key={wi}>&nbsp;</span>;
+        return (
+          <span key={wi} className="inline-block word whitespace-nowrap">
+            {word.split("").map((char, ci) => (
+              <span key={ci} className="inline-block letter">
+                {char}
+              </span>
+            ))}
+          </span>
+        );
+      });
+    }
+
+    if (React.isValidElement(node)) {
+      return React.cloneElement(node, {
+        children: React.Children.map(node.props.children, renderText),
+      });
+    }
+
+    return node;
+  };
+
+  const splitText = useMemo(
+    () => React.Children.map(children, renderText),
+    [children]
+  );
 
   useEffect(() => {
-    // ✅ Run only in browser
     if (typeof window === "undefined") return;
 
-    // ✅ Dynamic import of ScrollTrigger (guarded)
     (async () => {
       try {
         const mod = await import("gsap/ScrollTrigger");
-        const ScrollTrigger = mod?.ScrollTrigger || gsap.core?.globals?.().ScrollTrigger || mod?.default;
+        const ScrollTrigger =
+          mod?.ScrollTrigger ||
+          gsap.core?.globals?.().ScrollTrigger ||
+          mod?.default;
+
         if (ScrollTrigger && !gsap.core.globals().ScrollTrigger) {
           gsap.registerPlugin(ScrollTrigger);
         }
@@ -53,96 +71,53 @@ const ScrollReveal = ({
         const el = containerRef.current;
         if (!el) return;
 
-        // Clear old triggers
-        scrollTriggers.current.forEach((trigger) => trigger && trigger.kill && trigger.kill());
+        // Clean old triggers
+        scrollTriggers.current.forEach((t) => t.kill());
         scrollTriggers.current = [];
 
-        const scroller = scrollContainerRef?.current && scrollContainerRef.current ? scrollContainerRef.current : window;
+        const scroller =
+          scrollContainerRef?.current && scrollContainerRef.current
+            ? scrollContainerRef.current
+            : window;
 
-        // 1️⃣ Fade in + rotation of the entire text
-        let mainTween = null;
-        try {
-          mainTween = gsap.fromTo(
-            el,
-            { opacity: baseOpacity, rotate: baseRotation, transformOrigin: "0% 50%" },
+        // 🎬 Letter-by-letter opacity reveal inside each word
+        const letters = el.querySelectorAll(".letter");
+
+        if (letters.length) {
+          const tween = gsap.fromTo(
+            letters,
+            { opacity: baseOpacity },
             {
               opacity: 1,
-              rotate: 0,
+              stagger: 0.025, // faster animation
               ease: "none",
               scrollTrigger: {
                 trigger: el,
                 scroller,
-                start: "top bottom",
-                end: rotationEnd,
+                start: startTrigger,
+                end: endTrigger,
                 scrub: true,
               },
             }
           );
-        } catch (err) {
-          // If GSAP complains about null targets, avoid crashing and skip this tween
-          // console.warn("ScrollReveal: mainTween failed", err);
-        }
-        if (mainTween && mainTween.scrollTrigger) scrollTriggers.current.push(mainTween.scrollTrigger);
 
-        // 2️⃣ Letter-by-letter reveal
-        const nodeList = el.querySelectorAll(".letter");
-        const letterElements = Array.from(nodeList).filter((n) => n instanceof Element);
-        if (letterElements.length) {
-          let letterTween = null;
-          try {
-            letterTween = gsap.fromTo(
-              letterElements,
-              {
-                opacity: 0,
-                filter: enableBlur ? `blur(${blurStrength}px)` : "none",
-                y: "0.5vw",
-                willChange: "opacity, filter, transform",
-              },
-              {
-                opacity: 1,
-                filter: "blur(0px)",
-                y: "0vw",
-                stagger: 0.03,
-                ease: "none",
-                scrollTrigger: {
-                  trigger: el,
-                  scroller,
-                  start: "top bottom-=20%",
-                  end: wordAnimationEnd,
-                  scrub: true,
-                },
-              }
-            );
-          } catch (err) {
-            // console.warn("ScrollReveal: letterTween failed", err);
-          }
-          if (letterTween && letterTween.scrollTrigger) scrollTriggers.current.push(letterTween.scrollTrigger);
+          scrollTriggers.current.push(tween.scrollTrigger);
         }
-      } catch (importErr) {
-        // If dynamic import fails, don't break the app — GSAP animations will be skipped
-        // console.error("ScrollReveal: failed to load ScrollTrigger", importErr);
+      } catch (err) {
+        console.warn("ScrollReveal init failed:", err);
       }
     })();
 
-    // ✅ Cleanup
     return () => {
-      scrollTriggers.current.forEach((trigger) => trigger.kill());
+      scrollTriggers.current.forEach((t) => t.kill());
       scrollTriggers.current = [];
     };
-  }, [
-    scrollContainerRef,
-    enableBlur,
-    baseRotation,
-    baseOpacity,
-    rotationEnd,
-    wordAnimationEnd,
-    blurStrength,
-  ]);
+  }, [scrollContainerRef, baseOpacity, startTrigger, endTrigger]);
 
   return (
-    <div ref={containerRef} className={`my-5 ${containerClassName}`}>
+    <div ref={containerRef} className={`my-[2vw] ${containerClassName}`}>
       <p
-        className={`font-semibold ${textClassName}`}
+        className={`font-light ${textClassName}`}
         style={{
           fontSize,
           fontWeight,
