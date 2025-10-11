@@ -1,5 +1,5 @@
-import LeftSection from './utils/FoundationLeft';
-import RightSection from './utils/FoundationRight';
+import LeftSection from "./utils/FoundationLeft";
+import RightSection from "./utils/FoundationRight";
 
 export default function Foundation() {
   return (

@@ -1,22 +1,16 @@
 import React from "react";
 import AboutVideoSection from "./comp/AboutVideoSection.jsx";
 import AboutUsSection from "./comp/AboutUsSection.jsx";
-import Foundation from "./comp/Foundation.jsx"
-
+import Foundation from "./comp/Foundation.jsx";
 
 import GsapFadeUp from "../../components/GsapFadeUp.jsx"; // ✅ Reusable animation component
 
 export const About = () => {
   return (
     <>
-
-
-
-
-<AboutVideoSection />
-<AboutUsSection />
-<Foundation />
-
+      <AboutVideoSection />
+      <AboutUsSection />
+      <Foundation />
 
       {/* ---------------- Section 3 - Dark ---------------- */}
       <div className="h-[100vh] flex justify-center items-center bg-blue-900 header-dark ">

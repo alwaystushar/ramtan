@@ -29,7 +29,9 @@ export default function FoundationLeft() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-white">Operational Excellence.</h4>
+            <h4 className="font-semibold text-white">
+              Operational Excellence.
+            </h4>
             <p className="text-white/70">
               Efficient project management and seamless execution.
             </p>
@@ -38,8 +40,8 @@ export default function FoundationLeft() {
           <div>
             <h4 className="font-semibold text-white">Global Reach.</h4>
             <p className="text-white/70">
-              A strong network and a diverse portfolio of events across the Middle
-              East and beyond.
+              A strong network and a diverse portfolio of events across the
+              Middle East and beyond.
             </p>
           </div>
         </div>
@@ -54,7 +56,7 @@ export default function FoundationLeft() {
         <RippleButton
           bg="rgba(255,255,255,0.1)"
           hoverBg="rgba(255,255,255,0.3)"
-          onClick={() => console.log('Scroll to next section')}
+          onClick={() => console.log("Scroll to next section")}
         >
           <ArrowDown className="w-[1.2vw] h-[1.2vw]" />
         </RippleButton>

@@ -1,6 +1,11 @@
 // src/App.jsx
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Header from "./components/header.jsx";

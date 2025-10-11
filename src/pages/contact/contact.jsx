@@ -1,14 +1,11 @@
-import React from 'react'
+import React from "react";
 
 export const Contact = () => {
   return (
     <>
-    <div className='h-screen bg-black text-white header-dark'>
-        contact
-    </div>
+      <div className="h-screen text-white bg-black header-dark">contact</div>
     </>
-  )
-}
+  );
+};
 
-
-export default Contact 
+export default Contact;

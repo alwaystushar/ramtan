@@ -22,7 +22,11 @@ export default function Header() {
   const menuItems = [
     { label: "Home", path: "/#home", id: "home" },
     { label: "About Us", path: "/#about", id: "about" },
-    { label: "Events & Exhibitions", path: "/events", id: "events--exhibitions" },
+    {
+      label: "Events & Exhibitions",
+      path: "/events",
+      id: "events--exhibitions",
+    },
     { label: "Parents & Media", path: "/parents-media", id: "parents--media" },
     { label: "Contact Us", path: "/contact", id: "contactus" },
   ];
@@ -87,7 +91,9 @@ export default function Header() {
   useEffect(() => {
     if (location.pathname !== "/") return;
 
-    const sections = Array.from(document.querySelectorAll("section[id], div[id]"));
+    const sections = Array.from(
+      document.querySelectorAll("section[id], div[id]")
+    );
     if (!sections.length) return;
 
     const thresholds = Array.from({ length: 21 }, (_, i) => i / 20);
@@ -95,7 +101,8 @@ export default function Header() {
       (entries) => {
         let best = { ratio: 0, id: null };
         entries.forEach((e) => {
-          if (e.intersectionRatio > best.ratio) best = { ratio: e.intersectionRatio, id: e.target.id };
+          if (e.intersectionRatio > best.ratio)
+            best = { ratio: e.intersectionRatio, id: e.target.id };
         });
         if (best.id) setActiveItem(best.id);
         else if (window.scrollY < window.innerHeight / 3) setActiveItem("home");
@@ -111,7 +118,9 @@ export default function Header() {
   useEffect(() => {
     const path = location.pathname;
     const hash = location.hash || "";
-    const exact = menuItems.find((m) => m.path === `${path}${hash}` || m.path === path);
+    const exact = menuItems.find(
+      (m) => m.path === `${path}${hash}` || m.path === path
+    );
     if (exact) return setActiveItem(exact.id);
     if (path === "/" && hash) return setActiveItem(hash.replace("#", ""));
     setActiveItem(path === "/" ? "home" : "home");
@@ -126,7 +135,9 @@ export default function Header() {
 
     if (location.pathname === targetPath) {
       if (targetHash) {
-        const el = document.getElementById(targetHash) || (await waitForElement(targetHash, 2000));
+        const el =
+          document.getElementById(targetHash) ||
+          (await waitForElement(targetHash, 2000));
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -156,13 +167,12 @@ export default function Header() {
         x: 0,
         opacity: 1,
         duration: 0.6,
-      })
-        .fromTo(
-          mobileLinksRef.current,
-          { y: 40, opacity: 0 },
-          { y: 0, opacity: 1, stagger: 0.1, duration: 0.6 },
-          "-=0.3"
-        );
+      }).fromTo(
+        mobileLinksRef.current,
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, stagger: 0.1, duration: 0.6 },
+        "-=0.3"
+      );
     } else {
       tl.to(mobileMenuRef.current, { x: "100%", opacity: 0, duration: 0.6 });
     }
@@ -174,9 +184,7 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className={`header ${
-        isDarkBg ? "text-white" : "text-blue-900"
-      }`}
+      className={`header ${isDarkBg ? "text-white" : "text-blue-900"}`}
     >
       <div className="header-inner container-box">
         {/* Logo */}
@@ -229,7 +237,9 @@ export default function Header() {
           >
             <span
               className={`w-[0.5vw] h-[0.5vw] rounded-full animate-pulse transition-colors duration-300 ${
-                isDarkBg ? "bg-white group-hover:bg-[#001F4D]" : "bg-blue-900 group-hover:bg-white"
+                isDarkBg
+                  ? "bg-white group-hover:bg-[#001F4D]"
+                  : "bg-blue-900 group-hover:bg-white"
               }`}
             ></span>
             Let’s Talk
@@ -238,14 +248,22 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden transition-colors z-50"
+          className="z-50 transition-colors lg:hidden"
           onClick={() => setMenuOpen((s) => !s)}
           aria-label="Toggle menu"
         >
           {menuOpen ? (
-            <X className={`w-[8vw] h-[8vw] ${isDarkBg ? "text-white" : "text-blue-900/0"}`} />
+            <X
+              className={`w-[8vw] h-[8vw] ${
+                isDarkBg ? "text-white" : "text-blue-900/0"
+              }`}
+            />
           ) : (
-            <Menu className={`w-[8vw] h-[8vw] ${isDarkBg ? "text-white" : "text-blue-900"}`} />
+            <Menu
+              className={`w-[8vw] h-[8vw] ${
+                isDarkBg ? "text-white" : "text-blue-900"
+              }`}
+            />
           )}
         </button>
       </div>
@@ -261,7 +279,9 @@ export default function Header() {
             ref={(el) => (mobileLinksRef.current[i] = el)}
             onClick={() => handleNavClick(item)}
             className={`text-[6vw] font-light ${
-              activeItem === item.id ? "text-white" : "text-white/70 hover:text-white"
+              activeItem === item.id
+                ? "text-white"
+                : "text-white/70 hover:text-white"
             }`}
           >
             {item.label}

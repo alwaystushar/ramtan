@@ -1,6 +1,6 @@
-import { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
-import useMousePosition from './useMousePosition';
+import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import useMousePosition from "./useMousePosition";
 
 export default function FoundationRight() {
   const [isHovered, setIsHovered] = useState(false);
@@ -13,14 +13,7 @@ export default function FoundationRight() {
       ref={sectionRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="
-        relative
-        bg-black
-        overflow-hidden
-        flex
-        items-center
-        justify-center
-      "
+      className="relative flex items-center justify-center overflow-hidden bg-black "
     >
       {/* Container for text (auto height) */}
       <div className="relative w-full flex justify-center py-[1vw] bg-[#06178b]">
@@ -40,15 +33,15 @@ export default function FoundationRight() {
           style={{
             WebkitMaskImage: 'url("/svg/mask.svg")',
             maskImage: 'url("/svg/mask.svg")',
-            WebkitMaskRepeat: 'no-repeat',
-            maskRepeat: 'no-repeat',
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
           }}
           // ✅ Add initial numeric mask size
           initial={{
-            WebkitMaskSize: '2vw',
-            maskSize: '2vw',
-            WebkitMaskPosition: '0vw 0vw',
-            maskPosition: '0vw 0vw',
+            WebkitMaskSize: "2vw",
+            maskSize: "2vw",
+            WebkitMaskPosition: "0vw 0vw",
+            maskPosition: "0vw 0vw",
           }}
           animate={{
             WebkitMaskPosition: `${x - size / 2}vw ${y - size / 2}vw`,
@@ -56,7 +49,7 @@ export default function FoundationRight() {
             WebkitMaskSize: `${size}vw`,
             maskSize: `${size}vw`,
           }}
-          transition={{ type: 'tween', ease: 'backOut', duration: 0.5 }}
+          transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
         >
           <p>
             We are recognized as a leading organizer of specialized exhibitions,

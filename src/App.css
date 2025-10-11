@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
-:root{
-    --darkBlue: #0A2540;
+:root {
+  --darkBlue: #0A2540;
 }
 
 
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -25,13 +26,15 @@ html, body {
 
 
 /* Custom scrollbar hiding must come after Tailwind */
-html, body {
+html,
+body {
 
   -ms-overflow-style: none;
   scrollbar-width: none;
-    height: 100%;
+  height: 100%;
 
 }
+
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
@@ -45,14 +48,13 @@ body::-webkit-scrollbar {
 
 /* Hide scrollbar for IE, Edge, and Firefox */
 body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 
-.container-box{
-  @apply
-  px-[2vw] py-[2vw]
+.container-box {
+  @apply px-[2vw] py-[2vw]
 }
-
-

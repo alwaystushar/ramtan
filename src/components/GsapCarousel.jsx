@@ -141,7 +141,6 @@ export default function GsapCarousel({
               <h1 className="slide-title text-[3.8vw] font-semibold leading-[110%] mb-[1vw] drop-shadow-lg">
                 {slide.title}
               </h1>
-              
             </div>
           </div>
         ))}
@@ -173,7 +172,10 @@ export default function GsapCarousel({
       {/* ==== Bottom Text (Left Side) ==== */}
 
       <div className="absolute bottom-[2vw] left-[3vw] flex flex-row gap-[1.2vw] z-30 text-[1vw] f">
-        <p className="opacity-90">Discover how we can <br />elevate your business</p>
+        <p className="opacity-90">
+          Discover how we can <br />
+          elevate your business
+        </p>
         <RippleButton
           bg="rgba(0,0,0,0.4)"
           hoverBg="rgba(255,255,255,0.8)"
@@ -181,11 +183,10 @@ export default function GsapCarousel({
           hoverColor="#000"
           onClick={nextSlide}
         >
-         <div className=" ">
-         <ArrowDown className="w-[1.2vw] h-[1.2vw] " />   
-        </div>   
+          <div className="">
+            <ArrowDown className="w-[1.2vw] h-[1.2vw] " />
+          </div>
         </RippleButton>
-        
       </div>
     </section>
   );
