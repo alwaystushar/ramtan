@@ -13,14 +13,14 @@ export default function FoundationLeft() {
       "
     >
       {/* === Top Content === */}
-      <div className="flex flex-col gap-[2vw] max-w-[24vw] mt-[8vw]">
+      <div className="flex flex-col gap-[1vw] max-w-[24vw] mt-[8vw]">
         <div>
-          <h3 className="uppercase tracking-[0.15em] text-[0.9vw] leading-[1.5] text-white/70">
-            Our reputation is built upon a foundation of
+          <h3 className="uppercase text-[0.9vw] leading-[1.5] text-white/70">
+            Our reputation is built upon <br />a foundation of
           </h3>
         </div>
 
-        <div className="space-y-[1.8vw] text-[0.95vw] leading-[1.6]">
+        <div className="space-y-[.75vw] text-[0.95vw] leading-[1.6]">
           <div>
             <h4 className="font-semibold text-white">Deep Expertise.</h4>
             <p className="text-white/70">

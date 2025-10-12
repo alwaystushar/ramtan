@@ -2,8 +2,12 @@ import React from "react";
 import AboutVideoSection from "./comp/AboutVideoSection.jsx";
 import AboutUsSection from "./comp/AboutUsSection.jsx";
 import Foundation from "./comp/Foundation.jsx";
+import CardHoverEffect from "./comp/utils/CardHoverEffect.jsx";
+import HistoryTimeline from "./comp/HistoryTimeline.jsx";
 
 import GsapFadeUp from "../../components/GsapFadeUp.jsx"; // ✅ Reusable animation component
+
+
 
 export const About = () => {
   return (
@@ -11,7 +15,8 @@ export const About = () => {
       <AboutVideoSection />
       <AboutUsSection />
       <Foundation />
-
+      <CardHoverEffect />
+      <HistoryTimeline />
       {/* ---------------- Section 3 - Dark ---------------- */}
       <div className="h-[100vh] flex justify-center items-center bg-blue-900 header-dark ">
         <GsapFadeUp duration={1.2} delay={0.2}>

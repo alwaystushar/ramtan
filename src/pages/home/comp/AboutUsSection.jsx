@@ -49,14 +49,14 @@ export default function AboutUsSection() {
             <img
               src="/img/Al-Faraj.png" // ✅ replace with your image path
               alt="Founder Hussein Al-Faraj"
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
             />
           </div>
         </GsapFadeUp>
 
         {/* === Right: Text === */}
 
-        <div className="max-w-[45vw] text-left">
+        <div className="max-w-[44.5vw] text-left">
           <h2 className="text-[3.5vw] font-semibold mb-[1vw]  leading-none">
             About us
           </h2>
@@ -91,7 +91,7 @@ export default function AboutUsSection() {
           borderColor="border-blue-900"
           rippleColor="rgba(0,31,77,0.5)"
         >
-          <div className=" ">
+          <div className="">
             <ArrowDown className="w-[1.2vw] h-[1.2vw] " />
           </div>
         </RippleButton>
