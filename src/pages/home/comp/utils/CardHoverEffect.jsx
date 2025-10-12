@@ -1,7 +1,7 @@
 import React from "react";
 import { HoverEffect } from "../../../../components/CardHover";
 import  RippleButton  from "../../../../components/RippleButton"; // ✅ ensure correct import path
-import BlogSlide from "../../../../components/blogslide";
+import BlogSlide from "../../../../components/BlogSlide.jsx";
 import { ArrowDown } from "lucide-react"; // ✅ using lucide-react icon set
 
 // ✅ Example project data (replace with your real data)
