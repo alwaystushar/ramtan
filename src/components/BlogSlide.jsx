@@ -108,22 +108,20 @@ export default function BlogSlide() {
           z-[50] pointer-events-auto
         "
       >
-        <RippleButton>
-          <button
+        <RippleButton
             onClick={prevSlide}
             className="text-white"
           >
             <ArrowLeft className="w-[1.2vw] h-[1.2vw]" />
-          </button>
+          
         </RippleButton>
 
-        <RippleButton>
-          <button
+        <RippleButton
             onClick={nextSlide}
             className="text-white"
           >
             <ArrowRight className="w-[1.2vw] h-[1.2vw]" />
-          </button>
+          
         </RippleButton>
       </div>
     </section>

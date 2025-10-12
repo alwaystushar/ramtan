@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import ScrollReveal from "../../../components/ScrollReveal";
 
 const historyData = [
   {
@@ -145,6 +146,8 @@ export default function HistoryTimeline() {
         >
           <ArrowLeft className="w-[1.1vw] h-[1.1vw]" />
         </button>
+
+
         <button
           onClick={next}
           className="w-[2.8vw] h-[2.8vw] flex items-center justify-center border border-white/60 rounded-full hover:bg-white/15 transition"
