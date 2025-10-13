@@ -36,7 +36,7 @@ export default function HistoryTimeline() {
   return (
     <section 
     id="about"
-    className="relative w-full h-[60vw] bg-[#001F73] text-white overflow-hidden flex flex-col justify-center items-start header-dark">
+    className="relative w-full h-[60vw] bg-[var(--blue)] text-white overflow-hidden flex flex-col justify-center items-start header-dark">
       {/* === Title === */}
       <h2 className="text-[5.5vw] font-medium leading-[100%] mb-[4vw] self-start px-[8vw]">
         Our <br /> History

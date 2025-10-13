@@ -7,7 +7,7 @@ export default function FoundationLeft() {
       className="
         relative
         flex flex-col justify-between
-        bg-[#06178b] text-white
+        bg-[var(--blue)] text-white
         px-[8vw] py-[6vw]
         h-full   
       "
