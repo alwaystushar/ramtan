@@ -24,7 +24,7 @@ export default function Header() {
     { label: "About Us", path: "/#about", id: "about" },
     {
       label: "Events & Exhibitions",
-      path: "/events",
+      path: "/events-exhibitions",
       id: "events--exhibitions",
     },
     { label: "Parents & Media", path: "/parents-media", id: "parents--media" },
@@ -231,15 +231,15 @@ export default function Header() {
           <button
             className={`group headerBtn ${
               isDarkBg
-                ? "bg-transparent border-white/40 text-white hover:bg-white hover:text-[#001F4D]"
-                : "bg-transparent border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
+                ? "hover:bg-blue-900 border-white/40 text-blue-900 bg-white hover:text-white hover:border-blue-900"
+                : "bg-blue-900 border-blue-900 hover:text-blue-900 hover:bg-transparent  text-white"
             }`}
           >
             <span
               className={`w-[0.5vw] h-[0.5vw] rounded-full animate-pulse transition-colors duration-300 ${
                 isDarkBg
-                  ? "bg-white group-hover:bg-[#001F4D]"
-                  : "bg-blue-900 group-hover:bg-white"
+                  ? "bg-blue-900 group-hover:bg-white"
+                  : "group-hover:bg-blue-900 bg-white"
               }`}
             ></span>
             Let’s Talk

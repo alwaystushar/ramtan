@@ -21,14 +21,6 @@ export const About = () => {
       <HistoryTimeline />
       <YearsExp />
       <ImpressiveMilestone />
-      {/* ---------------- Section 3 - Dark ---------------- */}
-      <div className="h-[100vh] flex justify-center items-center bg-blue-900 header-dark ">
-        <GsapFadeUp duration={1.2} delay={0.2}>
-          <h1 className="text-white text-[5vw] font-semibold text-center">
-            Another dark section
-          </h1>
-        </GsapFadeUp>
-      </div>
     </>
   );
 };

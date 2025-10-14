@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { ArrowDown } from "lucide-react";
-import RippleButton from "../../../components/RippleButton.jsx";
+import BottomLeftBtn from "../../../components/BottomLeftBtn";
 
 export default function AboutVideoSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -29,7 +29,7 @@ export default function AboutVideoSection() {
         iframe.allow =
           "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
         iframe.className =
-          "absolute inset-0 w-full h-full object-cover will-change-transform";
+          "absolute inset-0 object-cover w-full h-full will-change-transform";
         iframeRef.current.appendChild(iframe);
 
         // Fade the iframe in after it mounts
@@ -44,28 +44,28 @@ export default function AboutVideoSection() {
   return (
     <section
       id="about"
-      className="relative w-full h-screen overflow-hidden bg-black text-white header-dark"
+      className="relative w-full h-screen overflow-hidden text-white bg-black header-dark"
     >
       {/* === Thumbnail === */}
       <img
         ref={thumbnailRef}
         src="/img/export.png"
         alt="Video thumbnail"
-        className="absolute inset-0 w-full h-full object-cover will-change-transform"
+        className="absolute inset-0 object-cover w-full h-full will-change-transform"
       />
 
       {/* === YouTube container (empty until clicked) === */}
       <div ref={iframeRef} className="absolute inset-0"></div>
 
       {/* === Overlay === */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/80 pointer-events-none"></div>
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/10 via-black/40 to-black/80"></div>
 
       {/* === Play Button === */}
       {!isPlaying && (
         <div
           ref={playButtonRef}
           onClick={handlePlay}
-          className="absolute inset-0 flex items-center justify-center cursor-pointer z-20"
+          className="absolute inset-0 z-20 flex items-center justify-center cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -79,19 +79,10 @@ export default function AboutVideoSection() {
       )}
 
       {/* === Bottom Left Text + Ripple Button === */}
-      <div className="absolute bottom-[2vw] left-[3vw] flex flex-row gap-[1.2vw] z-30 text-[1vw] font-light items-center">
-        <p className="opacity-90 leading-[1.2vw]">
-          Discover how we can <br /> elevate your business
-        </p>
-
-        <RippleButton
-          bg="rgba(255,255,255,0.1)"
-          hoverBg="rgba(255,255,255,0.3)"
-          onClick={() => console.log("Scroll to next section")}
-        >
-          <ArrowDown className="w-[1.2vw] h-[1.2vw]" />
-        </RippleButton>
-      </div>
+      <BottomLeftBtn
+        borderColor="border-white" 
+  rippleColor="#ffffff50" 
+   />
 
       {/* === Bottom Right Learn More Button === */}
       <div className="absolute bottom-[2vw] right-[3vw] z-30">

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ChevronLeft, ChevronRight, ArrowDown } from "lucide-react";
+import BottomLeftBtn from "./BottomLeftBtn";
 import RippleButton from "./RippleButton"; // ✅ Ripple button
 
 export default function GsapCarousel({
@@ -147,27 +148,10 @@ export default function GsapCarousel({
       </div>
 
       {/* ==== Navigation Buttons ==== */}
-      <div className="absolute bottom-[2vw] right-[3vw] flex items-center gap-[1vw] z-30">
-        <RippleButton
-          bg="rgba(0,0,0,0.4)"
-          hoverBg="rgba(255,255,255,0.8)"
-          color="#fff"
-          hoverColor="#000"
-          onClick={prevSlide}
-        >
-          <ChevronLeft className="w-[1.5vw] h-[1.5vw]" />
-        </RippleButton>
-
-        <RippleButton
-          bg="rgba(0,0,0,0.4)"
-          hoverBg="rgba(255,255,255,0.8)"
-          color="#fff"
-          hoverColor="#000"
-          onClick={nextSlide}
-        >
-          <ChevronRight className="w-[1.5vw] h-[1.5vw]" />
-        </RippleButton>
-      </div>
+<BottomLeftBtn
+        borderColor="border-white" 
+  rippleColor="#ffffff80" 
+   />
 
       {/* ==== Bottom Text (Left Side) ==== */}
 

@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowDown } from "lucide-react";
 import GsapFadeUp from "../../../components/GsapFadeUp.jsx";
 import RippleButton from "../../../components/RippleButton";
+import BottomLeftBtn from "../../../components/BottomLeftBtn.jsx";
 
 import ScrollReveal from "../../../components/ScrollReveal.jsx";
 
@@ -56,7 +57,7 @@ export default function AboutUsSection() {
 
         {/* === Right: Text === */}
 
-        <div className="max-w-[44.5vw] text-left">
+        <div className="max-w-[37.5vw] text-left">
           <h2 className="text-[3.5vw] font-semibold mb-[1vw]  leading-none">
             About us
           </h2>
@@ -69,33 +70,13 @@ export default function AboutUsSection() {
             color="#05178B"
             letterSpacing="0.02vw"
           >
-            Established in Riyadh in 1996 by founder
-            <strong> Hussein Al-Faraj </strong>(may God have mercy on him),
-            Ramtan has emerged as a prominent force in the exhibitions and
-            conferences industry, both in Saudi Arabia and internationally.
+            Established in Riyadh in 1996 by founder Hussein Al-Faraj (may God have mercy on him), Ramtan has emerged as a prominent force in the exhibitions and conferences industry, both in Saudi Arabia and internationally.
           </ScrollReveal>
         </div>
       </div>
 
       {/* === Bottom Left: Call to Action === */}
-      <div className="absolute bottom-[2vw] left-[3vw] flex flex-row gap-[1.2vw] z-30 text-[1vw] f">
-        <p className="opacity-90">
-          Discover how we can <br />
-          elevate your business
-        </p>
-        <RippleButton
-          bg="rgba(0,0,0,0.4)"
-          hoverBg="rgba(255,255,255,0.8)"
-          color="#000"
-          hoverColor="#000"
-          borderColor="border-blue-900"
-          rippleColor="rgba(0,31,77,0.5)"
-        >
-          <div className="">
-            <ArrowDown className="w-[1.2vw] h-[1.2vw] " />
-          </div>
-        </RippleButton>
-      </div>
+      <BottomLeftBtn />
     </section>
   );
 }

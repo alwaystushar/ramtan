@@ -1,6 +1,7 @@
 import React from "react";
 import MotionFadeUp from "../../../components/MotionFadeUp"; // adjust path if needed
-import RippleButton from "../../../components/RippleButton";
+import BottomLeftBtn from "../../../components/BottomLeftBtn";
+
 
 
 import { ArrowDown } from "lucide-react";
@@ -15,7 +16,7 @@ const YearsExp = () => {
         {/* Shapes top */}
 
           <div
-            className="absolute top-[0vw] left-[0vw] w-[48vw] h-[22vw] bg-[#F4F6FB10]"
+            className="absolute top-[0vw] left-[0vw] w-[48vw] h-[26vw] bg-[#F4F6FB10]"
             style={{
               clipPath: "polygon(50% 0%, 100% 100%, 0 100%, 0 0)",
             }}
@@ -24,14 +25,14 @@ const YearsExp = () => {
         {/* Shapes bottom */}
 
           <div
-            className="absolute bottom-[0vw] right-0 w-[52vw] h-[23.2vw] bg-[#F4F6FB10]"
+            className="absolute bottom-[0vw] right-0 w-[52vw] h-[25.2vw] bg-[#F4F6FB10]"
             style={{
               clipPath: "polygon(81% 0px, 100% 35%, 100% 100%, 48% 100%, 0px 0px)",
             }}
           ></div>
 
       {/* Hero Content */}
-      <div className="flex flex-col justify-between h-full container-box pt-[6vw] relative z-10">
+      <div className="flex flex-col justify-between h-full container-box pt-[6vw] relative z-10 gap-[6vw]">
         {/* Heading */}
         <MotionFadeUp delay={0.3}>
             <div className="flex justify-end w-full ">
@@ -51,19 +52,10 @@ const YearsExp = () => {
             </MotionFadeUp>
 
       {/* === Bottom Left Text + Ripple Button === */}
-      <div className="absolute bottom-[2vw] left-[3vw] flex flex-row gap-[1.2vw] z-30 text-[1vw] font-light items-center">
-        <p className="opacity-90 leading-[1.2vw]">
-          Discover how we can <br /> elevate your business
-        </p>
-
-        <RippleButton
-          bg="rgba(255,255,255,0.1)"
-          hoverBg="rgba(255,255,255,0.3)"
-          onClick={() => console.log("Scroll to next section")}
-        >
-          <ArrowDown className="w-[1.2vw] h-[1.2vw]" />
-        </RippleButton>
-      </div>
+<BottomLeftBtn
+        borderColor="border-white" 
+  rippleColor="#ffffff80" 
+   />
 
       {/* === Bottom Right Learn More Button === */}
       <div className="absolute bottom-[2vw] right-[3vw] z-30">

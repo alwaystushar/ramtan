@@ -73,7 +73,7 @@ export default function HistoryTimeline() {
           ></div>
         
         {/* === Full-Width Line === */}
-        <div className="absolute top-[17.75vw] left-0 right-0 h-[0.15vw] bg-white/20 -translate-y-1/2" />
+        <div className="absolute top-[17.75vw] left-0 right-0 h-[0.15vw] bg-[#0053af] -translate-y-1/2 z-[1]" />
 
         {/* === Dots + Years (Centered Group) === */}
         <div className="relative flex justify-center items-center gap-[3vw] h-full z-[5]">
@@ -86,21 +86,21 @@ export default function HistoryTimeline() {
                 key={item.year}
                 animate={{
                   x: `${offset}vw`,
-                  opacity: isActive ? 1 : 0.6,
-                  width: isActive ? "20vw" : "5vw", // ✅ dynamic width for active item
+                  opacity: isActive ? 1 : 1,
+                  width: isActive ? "22vw" : "5vw", // ✅ dynamic width for active item
                 }}
                 transition={{ duration: 0.7, ease: "easeInOut" }}
-                className="relative flex flex-col items-center justify-center h-full"
+                className="relative flex flex-col items-start justify-center h-full"
               >
                 {/* Year Text */}
                 <motion.span
                   animate={{
-                    fontSize: isActive ? "10vw" : "1vw",
+                    fontSize: isActive ? "13vw" : "1vw",
                     y: isActive ? "-6vw" : "-2vw",
                     color: isActive ? "#ffffff" : "rgba(255,255,255,0.6)",
                   }}
                   transition={{ duration: 0.7, ease: "easeInOut" }}
-                  className="font-semibold leading-none absolute bottom-[3vw]"
+                  className="font leading-none absolute bottom-[0vw]"
                 >
                   {item.year}
                 </motion.span>
@@ -110,7 +110,7 @@ export default function HistoryTimeline() {
                   animate={{
                     width: "0.5vw",
                     height: "0.5vw",
-                    backgroundColor:"#38b6ff",
+                    backgroundColor:"#0053af",
                   }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
                   className="rounded-full absolute bottom-[0vw]"
@@ -138,20 +138,19 @@ export default function HistoryTimeline() {
       </div>
 
       {/* === Navigation Buttons === */}
-      <div className="absolute right-[8vw] bottom-[8vw] flex gap-[1vw] z-[20]">
-        <button
-          onClick={prev}
-          className="w-[2.8vw] h-[2.8vw] flex items-center justify-center border border-white/60 rounded-full hover:bg-white/15 transition"
-        >
-          <ArrowLeft className="w-[1.1vw] h-[1.1vw]" />
-        </button>
-
-
+      <div className="absolute right-[8vw] top-[19vw] flex gap-[1vw] z-[20]">
         <button
           onClick={next}
           className="w-[2.8vw] h-[2.8vw] flex items-center justify-center border border-white/60 rounded-full hover:bg-white/15 transition"
         >
           <ArrowRight className="w-[1.1vw] h-[1.1vw]" />
+        </button>
+        
+        <button
+          onClick={prev}
+          className="w-[2.8vw] h-[2.8vw] flex items-center justify-center border border-white/60 rounded-full hover:bg-white/15 transition"
+        >
+          <ArrowLeft className="w-[1.1vw] h-[1.1vw]" />
         </button>
       </div>
     </section>

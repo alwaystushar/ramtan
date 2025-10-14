@@ -1,11 +1,12 @@
 import { ArrowDown } from "lucide-react";
-import RippleButton from "../../../../components/RippleButton.jsx";
+import BottomLeftBtn from "../../../../components/BottomLeftBtn";
+
 
 export default function FoundationLeft() {
   return (
     <section
       className="
-        relative
+        relative 
         flex flex-col justify-between
         bg-[var(--blue)] text-white
         px-[8vw] py-[6vw]
@@ -13,33 +14,33 @@ export default function FoundationLeft() {
       "
     >
       {/* === Top Content === */}
-      <div className="flex flex-col gap-[1vw] max-w-[24vw] mt-[8vw]">
+      <div className="flex flex-col gap-[1vw] max-w-[16vw] mt-[8vw]">
         <div>
-          <h3 className="uppercase text-[0.9vw] leading-[1.5] text-white/70">
+          <h3 className="uppercase text-[1vw] leading-[1.5] text-white/70">
             Our reputation is built upon <br />a foundation of
           </h3>
         </div>
 
         <div className="space-y-[.75vw] text-[0.95vw] leading-[1.6]">
           <div>
-            <h4 className="font-semibold text-white">Deep Expertise.</h4>
-            <p className="text-white/70">
+            <h4 className="text-white">Deep Expertise:</h4>
+            <p className="font-light text-white/70">
               Extensive industry knowledge and a proven track record of success.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold text-white">
-              Operational Excellence.
+            <h4 className="text-white">
+              Operational Excellence:
             </h4>
-            <p className="text-white/70">
+            <p className="font-light text-white/70">
               Efficient project management and seamless execution.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold text-white">Global Reach.</h4>
-            <p className="text-white/70">
+            <h4 className="text-white">Global Reach:</h4>
+            <p className="font-light text-white/70">
               A strong network and a diverse portfolio of events across the
               Middle East and beyond.
             </p>
@@ -48,19 +49,10 @@ export default function FoundationLeft() {
       </div>
 
       {/* === Bottom Left Text + Ripple Button === */}
-      <div className="absolute bottom-[2vw] left-[3vw] flex flex-row gap-[1.2vw] z-30 text-[1vw] font-light items-center">
-        <p className="opacity-90 leading-[1.2vw]">
-          Discover how we can <br /> elevate your business
-        </p>
-
-        <RippleButton
-          bg="rgba(255,255,255,0.1)"
-          hoverBg="rgba(255,255,255,0.3)"
-          onClick={() => console.log("Scroll to next section")}
-        >
-          <ArrowDown className="w-[1.2vw] h-[1.2vw]" />
-        </RippleButton>
-      </div>
+      <BottomLeftBtn
+        borderColor="border-white" 
+  rippleColor="#ffffff80" 
+   />
     </section>
   );
 }
