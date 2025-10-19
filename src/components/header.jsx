@@ -27,7 +27,7 @@ export default function Header() {
       path: "/events-exhibitions",
       id: "events--exhibitions",
     },
-    { label: "Parents & Media", path: "/parents-media", id: "parents--media" },
+    { label: "Partners & Media", path: "/partners-media", id: "partners-media" },
     { label: "Contact Us", path: "/contact", id: "contactus" },
   ];
 

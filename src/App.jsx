@@ -11,6 +11,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Header from "./components/header.jsx";
 import Home from "./pages/home/home.jsx";
 import EventsExhibitions from "./pages/events-exhibitions/EventsExhibitions.jsx"
+import PartnersMedia  from "./pages/PartnersMedia/PartnersMedia.jsx";
 import Contact from "./pages/contact/contact.jsx";
 import ScrollToHash from "./components/ScrollToHash.jsx";
 
@@ -46,6 +47,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events-exhibitions" element={<EventsExhibitions />}/>
+        <Route path="/partners-media" element={<PartnersMedia />} />
         <Route path="/contact" element={<Contact />} />
         {/* Add more routes as needed */}
       </Routes>
