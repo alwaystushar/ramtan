@@ -13,7 +13,7 @@ export default function OurServices() {
     >
 
 
-        <div className=" left-[2vw] text-[7vw] font-semibold leading-[90%]">
+        <div className=" left-[2vw] text-[7vw] font-semibold leading-[90%] px-[2vw]">
             <h1>
                 Empower
                 <br /> Your Business
