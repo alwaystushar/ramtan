@@ -1,9 +1,12 @@
 import React from "react";
+import ContactFirst from "./comp/ContactFirst"
+import ContactLast from "./comp/ContactLast"
 
 export const Contact = () => {
   return (
     <>
-      <div className="h-screen text-white bg-black header-dark">contact</div>
+      <ContactFirst />
+      <ContactLast />
     </>
   );
 };

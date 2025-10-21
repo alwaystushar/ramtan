@@ -32,7 +32,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="w-full bg-white py-[6vw] px-[6vw] pb-0 flex flex-wrap items-center justify-between ">
+    <section className="w-full bg-white py-[6vw] px-[2vw] pb-0 flex flex-wrap items-center justify-between ">
       {/* === Left Side (Image + Text) === */}
       <div className="w-full lg:w-[50%] flex items-start justify-center">
         <h2 className="text-[2.8vw] w-[46vw] font-semibold text-[#001489] leading-tight mb-[2vw]">

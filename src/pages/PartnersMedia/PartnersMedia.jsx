@@ -7,6 +7,9 @@ import PartnersFifth from './comp/PartnersFifth'
 import PartnersSixth from './comp/PartnersSixth'
 import PartenrsSeventh from './comp/PartenrsSeventh'
 import FAQSection from './comp/FAQSection'
+import PartnersEight from './comp/PartnersEight'
+import PartnersNinth from './comp/PartnersNinth'
+import PartnersTenth from './comp/PartnersTenth'
 
 export default function PartnersMedia() {
   return (
@@ -19,6 +22,9 @@ export default function PartnersMedia() {
       <PartnersSixth />
       <PartenrsSeventh />
       <FAQSection />
+      <PartnersEight />
+      <PartnersNinth />
+      <PartnersTenth />
     </>
   )
 }
