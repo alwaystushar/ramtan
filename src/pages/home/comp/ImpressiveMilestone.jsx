@@ -63,7 +63,7 @@ const ImpressiveMilestone = () => {
                   className="absolute inset-0 opacity-30"
                   style={{
                     backgroundImage:
-                      "repeating-linear-gradient(325deg, #6aa5ff 0, #6aa5ff 1px, transparent 1px, transparent 13px)",
+                      "repeating-linear-gradient(325deg, rgb(106, 165, 255) 0px, rgb(106, 165, 255) 1px, transparent .1vw, transparent .5vw)",
                   }}
                 ></div>
 

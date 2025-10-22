@@ -98,14 +98,15 @@ export const Card = ({ className, children }) => {
 // ==========================
 export const CardTitle = ({ className, children }) => {
   return (
-    <h4
-      className={cn(
-        "text-[1.4vw] sm:text-[1.2vw] md:text-[1vw] lg:text-[0.8vw] p-[0.1vw] px-[0.6vw] max-w-[6.6vw] border border-black/75 group-hover:border-white rounded-full text-black/85 mt-[0.8vw] transition-colors duration-300 group-hover:text-white",
-        className
-      )}
-    >
-      {children}
-    </h4>
+<h4
+  className={cn(
+    "w-fit text-[1.4vw] whitespace-nowrap sm:text-[1.2vw] md:text-[1vw] lg:text-[0.8vw] p-[0.1vw] px-[0.6vw] border border-black/75 group-hover:border-white rounded-full text-black/85 mt-[0.8vw] transition-colors duration-300 group-hover:text-white",
+    className
+  )}
+>
+  {children}
+</h4>
+
   );
 };
 

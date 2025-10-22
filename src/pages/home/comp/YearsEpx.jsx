@@ -48,7 +48,7 @@ const YearsExp = () => {
           {/* Left Side */}
           <div className="flex flex-col gap-3">
             <MotionFadeUp delay={0.4}>
-              <h2 className="text-[14vw] font-semibold leading-none">+40</h2>
+              <h2 className="text-[14vw]  leading-none">+40</h2>
             </MotionFadeUp>
 
       {/* === Bottom Left Text + Ripple Button === */}

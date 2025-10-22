@@ -6,7 +6,7 @@ export default function EventsFourth() {
     <div
       className="relative h-screen text-white header-dark"
       style={{
-        backgroundImage: "url('./img/ourServicesSixth.jpg')",
+        backgroundImage: "url('./img/technology.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

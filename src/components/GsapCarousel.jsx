@@ -135,7 +135,7 @@ export default function GsapCarousel({
               backgroundPosition: "center",
             }}
           >
-            <div className="absolute inset-0 bg-black/45"></div>
+            
 
             {/* ==== Title (Bottom Right) ==== */}
             <div className="relative z-10 text-start ml-auto max-w-[40vw]">
@@ -148,6 +148,32 @@ export default function GsapCarousel({
       </div>
 
       {/* ==== Navigation Buttons ==== */}
+
+
+            <div className="absolute bottom-[2vw] right-[3vw] flex items-center gap-[1vw] z-30">
+        <RippleButton
+          bg="rgba(0,0,0,0.4)"
+          hoverBg="rgba(255,255,255,0.8)"
+          color="#fff"
+          hoverColor="#000"
+          onClick={prevSlide}
+        >
+          <ChevronLeft className="w-[1.5vw] h-[1.5vw]" />
+        </RippleButton>
+
+        <RippleButton
+          bg="rgba(0,0,0,0.4)"
+          hoverBg="rgba(255,255,255,0.8)"
+          color="#fff"
+          hoverColor="#000"
+          onClick={nextSlide}
+        >
+          <ChevronRight className="w-[1.5vw] h-[1.5vw]" />
+        </RippleButton>
+      </div>
+
+
+      
 <BottomLeftBtn
         borderColor="border-white" 
   rippleColor="#ffffff80" 

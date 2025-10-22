@@ -10,54 +10,58 @@ export default function PartnersFourth() {
   const numbersRef = useRef([]);
   const descRef = useRef([]);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      fillsRef.current.forEach((fill, i) => {
-        const finalHeight = parseInt(fill.dataset.height);
-        const num = numbersRef.current[i];
-        const desc = descRef.current[i];
-        const counter = { val: 0 };
+  
+useEffect(() => {
+  const ctx = gsap.context(() => {
+    fillsRef.current.forEach((fill, i) => {
+      const finalHeight = parseFloat(fill.dataset.height) || 0;
+      const finalNumber = parseFloat(fill.dataset.number) || finalHeight;
+      const suffix = fill.dataset.suffix || "";
+      const num = numbersRef.current[i];
+      const desc = descRef.current[i];
+      const counter = { val: 0 };
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        });
-
-        // Animate bar growing
-        tl.fromTo(
-          fill,
-          { height: "0%" },
-          {
-            height: `${finalHeight}%`,
-            duration: 1.5,
-            ease: "power3.out",
-            delay: i * 0.2,
-          }
-        );
-
-        // Animate number counting and moving up
-        tl.to(
-          counter,
-          {
-            val: finalHeight,
-            duration: 1.5,
-            ease: "power3.out",
-            onUpdate: () => {
-              num.innerText = Math.round(counter.val) + "%";
-              num.style.bottom = `${counter.val - 20}%`; // slightly above bar top
-              desc.style.bottom = `${counter.val - 22}%`; // follows lower part of bar
-            },
-          },
-          "<" // runs in sync with bar animation
-        );
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
       });
-    }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+      // Animate bar growing
+      tl.fromTo(
+        fill,
+        { height: "0%" },
+        {
+          height: `${finalHeight}%`,
+          duration: 1.5,
+          ease: "power3.out",
+          delay: i * 0.2,
+        }
+      );
+
+      // Animate number counting and moving up
+      tl.to(
+        counter,
+        {
+          val: finalNumber,
+          duration: 1.5,
+          ease: "power3.out",
+          onUpdate: () => {
+            num.innerText = Math.round(counter.val) + suffix;
+            num.style.bottom = `${finalHeight - 20}%`;
+            desc.style.bottom = `${finalHeight - 22}%`;
+          },
+        },
+        "<" // sync with bar animation
+      );
+    });
+  }, sectionRef);
+
+  return () => ctx.revert();
+}, []);
+
 
   return (
     <section
@@ -87,7 +91,7 @@ export default function PartnersFourth() {
           <div className="relative w-full h-full overflow-hidden rounded-t-md">
             <div
               ref={(el) => (fillsRef.current[3] = el)}
-              data-height="95"
+              data-height="100" data-number="200" 
               className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
             />
           </div>
@@ -117,7 +121,7 @@ export default function PartnersFourth() {
           <div className="relative w-full h-full overflow-hidden rounded-t-md">
             <div
               ref={(el) => (fillsRef.current[1] = el)}
-              data-height="55"
+              data-height="65"  data-number="13" data-suffix="%"
               className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
             />
           </div>
@@ -147,7 +151,7 @@ export default function PartnersFourth() {
           <div className="relative w-full h-full overflow-hidden rounded-t-md">
             <div
               ref={(el) => (fillsRef.current[0] = el)}
-              data-height="40"
+              data-height="40" data-number="13" data-suffix="%"
               className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
             />
           </div>
@@ -178,7 +182,7 @@ export default function PartnersFourth() {
           <div className="relative w-full h-full overflow-hidden rounded-t-md">
             <div
               ref={(el) => (fillsRef.current[2] = el)}
-              data-height="75"
+              data-height="75" data-number="95" data-suffix="%"
               className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
             />
           </div>

@@ -8,7 +8,7 @@ export default function OurServicesSecond() {
 
                       {/* Bottom Right Polygon */}
           <div
-            className="absolute bottom-[-1vw] right-[-3vw] w-[65vw] h-[26.2vw] bg-[#F4F6FB]"
+            className="absolute bottom-[-1vw] right-[-3vw] w-[65vw] h-[55vh] bg-[#F4F6FB]"
             style={{
               clipPath: "polygon(0 0, 100% 0, 100% 100%, 48% 100%)",
             }}

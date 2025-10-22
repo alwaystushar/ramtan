@@ -6,7 +6,7 @@ export default function PartnersFirst() {
     <div
       className="relative h-screen text-white header-dark"
       style={{
-        backgroundImage: "url('./img/home-hero2.jpg')",
+        backgroundImage: "url('./img/partnersFirst.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

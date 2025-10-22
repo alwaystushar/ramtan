@@ -1,7 +1,7 @@
 // src/App.jsx
 import React, { useEffect } from "react";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
   useLocation,
@@ -10,21 +10,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Header from "./components/header.jsx";
 import Home from "./pages/home/home.jsx";
-import EventsExhibitions from "./pages/events-exhibitions/EventsExhibitions.jsx"
-import PartnersMedia  from "./pages/PartnersMedia/PartnersMedia.jsx";
+import EventsExhibitions from "./pages/events-exhibitions/EventsExhibitions.jsx";
+import PartnersMedia from "./pages/PartnersMedia/PartnersMedia.jsx";
 import Contact from "./pages/contact/contact.jsx";
 import ScrollToHash from "./components/ScrollToHash.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
-// ✅ This component forces GSAP & header to update after route change
+// ✅ Re-runs GSAP refresh after route change
 const ScrollManager = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Delay a bit to let new DOM elements render
     const timer = setTimeout(() => {
       try {
-        ScrollTrigger.refresh(); // re-scan GSAP triggers
-        window.dispatchEvent(new Event("recheckHeaderOverlap")); // recheck header color if needed
+        ScrollTrigger.refresh();
+        window.dispatchEvent(new Event("recheckHeaderOverlap"));
       } catch (e) {
         console.warn("GSAP refresh skipped:", e);
       }
@@ -38,20 +38,19 @@ const ScrollManager = () => {
 
 export const App = () => {
   return (
-    <Router>
-      <Header />
-      <ScrollToHash />
-      {/* 🔁 ensures GSAP + header update on route change */}
-      <ScrollManager />
+<BrowserRouter>
+  <Header />
+  <ScrollToTop />     {/* ✅ here */}
+  <ScrollToHash />
+  <ScrollManager />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/events-exhibitions" element={<EventsExhibitions />}/>
-        <Route path="/partners-media" element={<PartnersMedia />} />
-        <Route path="/contact" element={<Contact />} />
-        {/* Add more routes as needed */}
-      </Routes>
-    </Router>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/events-exhibitions" element={<EventsExhibitions />} />
+    <Route path="/partners-media" element={<PartnersMedia />} />
+    <Route path="/contact" element={<Contact />} />
+  </Routes>
+</BrowserRouter>
   );
 };
 

@@ -11,8 +11,6 @@ export default function OurServicesThird() {
         backgroundPosition: "center",
       }}
     >
-      {/* Blue Overlay */}
-      <div className="absolute inset-0 bg-[#001A4D]/60 z-10"></div>
       {/* ↑ adjust opacity (/40 to /80) or color as needed */}
 
       {/* Text */}
