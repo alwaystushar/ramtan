@@ -19,7 +19,7 @@ const projects = [
   },
   {
     title: "Vision",
-    description: "eveloping innovative event oncepts and creative direction",
+    description: "Eveloping innovative event oncepts and creative direction",
     date: "15 March 2023",
   },
 ];

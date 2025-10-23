@@ -6,22 +6,32 @@ const historyData = [
   {
     year: 1996,
     text: "Since its founding in 1996, Ramtan has delivered exceptional exhibition and conference solutions with precision, creativity, and uncompromising quality.",
+    keywordFirst: "Exhibitors: 25",
+    keywordSecond: "Attendance: 10,000",
   },
   {
     year: 1997,
     text: "Ramtan began expanding regionally, introducing advanced exhibition technology and forging strategic partnerships with key institutions.",
+    keywordFirst: "Exhibitors: 25",
+    keywordSecond: "Attendance: 10,000",
   },
   {
     year: 1998,
     text: "With a growing reputation, Ramtan became a leading event organizer across Saudi Arabia, hosting conferences for global brands.",
+    keywordFirst: "Exhibitors: 25",
+    keywordSecond: "Attendance: 10,000",
   },
   {
     year: 1999,
     text: "Ramtan focused on international collaborations, elevating Saudi Arabia’s presence in the global exhibitions industry.",
+    keywordFirst: "Exhibitors: 25",
+    keywordSecond: "Attendance: 10,000",
   },
   {
     year: 2000,
     text: "By 2000, Ramtan had transformed into a trusted industry leader, delivering large-scale conferences aligned with the Kingdom’s vision.",
+    keywordFirst: "Exhibitors: 25",
+    keywordSecond: "Attendance: 10,000",
   },
 ];
 
@@ -103,6 +113,17 @@ export default function HistoryTimeline() {
                   className="font leading-none absolute bottom-[0vw]"
                 >
                   {item.year}
+                </motion.span>
+                <motion.span
+                className=" flex justify-center items-center gap-[0.4vw] absolute bottom-[2vw] "
+                animate={{
+                  fontSize: isActive ? "1vw" : "0.1vw",
+                  opacity: isActive ? 0.45 : 0,
+                }}
+                 transition={{ duration: 0.6, ease: "easeOut" }}>
+
+                  <div className="whitespace-nowrap">{item.keywordFirst}</div> <div className="w-[0.12vw] h-[1.6vw] bg-white/70"></div> <div className="whitespace-nowrap">{item.keywordSecond}</div>
+
                 </motion.span>
 
                 {/* Dot (Anchored on line) */}

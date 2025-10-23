@@ -42,55 +42,71 @@ export default function AboutVideoSection() {
   };
 
   return (
-    <section
-      id="about"
-      className="relative w-full h-screen overflow-hidden text-white bg-black header-dark"
-    >
-      {/* === Thumbnail === */}
-      <img
-        ref={thumbnailRef}
-        src="/img/export.png"
-        alt="Video thumbnail"
-        className="absolute inset-0 object-cover w-full h-full will-change-transform"
-      />
-
-      {/* === YouTube container (empty until clicked) === */}
-      <div ref={iframeRef} className="absolute inset-0"></div>
-
-      {/* === Overlay === */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/10 via-black/40 to-black/80"></div>
-
-      {/* === Play Button === */}
-      {!isPlaying && (
-        <div
-          ref={playButtonRef}
-          onClick={handlePlay}
-          className="absolute inset-0 z-20 flex items-center justify-center cursor-pointer"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="white"
-            viewBox="0 0 24 24"
-            className="w-[12vw] h-[12vw] transition-transform duration-300 hover:scale-110"
+    <>
+      <section className=" header-dark" id="about">
+        <div>
+          <div
+            className="grid grid-cols-12 "
+            style={{
+              backgroundColor: "#001690", // same blue
+            }}
           >
-            <path d="M8 5v14l11-7z" />
-          </svg>
+            <h1
+              className="flex items-center col-span-6 col-start-7 font-bold text-white pt-[15vw] pb-[5vw]"
+              style={{
+                fontSize: "6vw", // responsive text size
+                letterSpacing: "0.05vw",
+              }}
+            >
+              About Us
+            </h1>
+          </div>
         </div>
-      )}
+        <div className="relative w-full h-screen overflow-hidden text-white bg-black">
+          {/* === Thumbnail === */}
+          <img
+            ref={thumbnailRef}
+            src="/img/export.png"
+            alt="Video thumbnail"
+            className="absolute inset-0 object-cover w-full h-full will-change-transform"
+          />
 
-      {/* === Bottom Left Text + Ripple Button === */}
-      <BottomLeftBtn
-        borderColor="border-white" 
-  rippleColor="#ffffff50" 
-   />
+          {/* === YouTube container (empty until clicked) === */}
+          <div ref={iframeRef} className="absolute inset-0"></div>
 
-      {/* === Bottom Right Learn More Button === */}
-      <div className="absolute bottom-[2vw] right-[3vw] z-30">
-        <button className="group px-[2vw] py-[0.8vw] bg-transparent border border-white/40 rounded-full flex items-center gap-[0.5vw] text-[0.9vw] hover:bg-white hover:text-[#001F4D] transition-all duration-300">
-          <span className="w-[0.5vw] h-[0.5vw] bg-white rounded-full animate-pulse transition-colors duration-300 group-hover:bg-[#001F4D]"></span>
-          Learn more
-        </button>
-      </div>
-    </section>
+          {/* === Overlay === */}
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/10 via-black/40 to-black/80"></div>
+
+          {/* === Play Button === */}
+          {!isPlaying && (
+            <div
+              ref={playButtonRef}
+              onClick={handlePlay}
+              className="absolute inset-0 z-20 flex items-center justify-center cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 24 24"
+                className="w-[12vw] h-[12vw] transition-transform duration-300 hover:scale-110"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          )}
+
+          {/* === Bottom Left Text + Ripple Button === */}
+          <BottomLeftBtn borderColor="border-white" rippleColor="#ffffff50" />
+
+          {/* === Bottom Right Learn More Button === */}
+          <div className="absolute bottom-[2vw] right-[3vw] z-30">
+            <button className="group px-[2vw] py-[0.8vw] bg-transparent border border-white/40 rounded-full flex items-center gap-[0.5vw] text-[0.9vw] hover:bg-white hover:text-[#001F4D] transition-all duration-300">
+              <span className="w-[0.5vw] h-[0.5vw] bg-white rounded-full animate-pulse transition-colors duration-300 group-hover:bg-[#001F4D]"></span>
+              Learn more
+            </button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
