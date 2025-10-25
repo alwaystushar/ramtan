@@ -77,7 +77,7 @@ export default function PartnersSixth() {
 
       {/* === Footer Button === */}
       <div className="flex justify-center mt-[4vw]">
-        <button className="flex items-center gap-[0.5vw] border border-[#001489] text-[#001489] rounded-full px-[1.6vw] py-[0.6vw] text-[0.9vw] hover:bg-[#001489] hover:text-white transition">
+        <button className="flex items-center gap-[0.5vw] border border-gray-900 text-black rounded-full px-[1.6vw] py-[0.6vw] text-[0.9vw] hover:bg-[#001489] hover:text-white transition">
           <span className="w-[0.5vw] h-[0.5vw] bg-[#001489] rounded-full transition-all group-hover:bg-white"></span>
           see all insights
         </button>

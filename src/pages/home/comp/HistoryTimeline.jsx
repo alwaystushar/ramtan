@@ -23,7 +23,7 @@ const historyData = [
   },
   {
     year: 1999,
-    text: "Ramtan focused on international collaborations, elevating Saudi Arabia’s presence in the global exhibitions industry.",
+    text: "Ramtan focused on international collaborations, elevating Saudi Arabia's presence in the global exhibitions industry.",
     keywordFirst: "Exhibitors: 25",
     keywordSecond: "Attendance: 10,000",
   },
@@ -48,12 +48,12 @@ export default function HistoryTimeline() {
     id="about"
     className="relative w-full h-[60vw] bg-[var(--blue)] text-white overflow-hidden flex flex-col justify-center items-start header-dark">
       {/* === Title === */}
-      <h2 className="text-[5.5vw] font-medium leading-[100%] mb-[4vw] self-start px-[8vw]">
+      <h2 className="text-[5.5vw] font-medium leading-[100%] mb-[4vw] self-start px-[12vw]">
         Our <br /> History
       </h2>
 
       {/* === Timeline Area (Fixed Height) === */}
-      <div className="relative w-full flex justify-start items-center h-[18vw] mb-[4vw] px-[8vw]">
+      <div className="relative w-full flex justify-start items-center h-[18vw] mb-[4vw] px-[12vw]">
 
         {/* Shapes left */}
 

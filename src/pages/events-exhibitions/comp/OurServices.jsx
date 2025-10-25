@@ -13,7 +13,7 @@ export default function OurServices() {
     >
 
 
-        <div className="absolute bottom-[3vw] right-[26vw] text-[7vw] font-semibold leading-[90%]">
+        <div className="absolute bottom-[3vw] right-[23vw] text-[7vw] font-semibold leading-[90%]">
             <h1>
                 Our <br />Services
             </h1>

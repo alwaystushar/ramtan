@@ -14,9 +14,9 @@ export default function OurServicesSixth() {
 
               {/*left Polygon background */}
       <div
-        className="absolute bottom-0 left-0 w-[26vw] h-[45vw] bg-[#204fd750] z-0"
+        className="absolute bottom-0 left-0 w-[40vw] h-[45vw] bg-[#01023360] z-0"
         style={{
-          clipPath: "polygon(0px 0px, 100% 60%, 100% 100%, 0% 100%)",
+          clipPath: "polygon(0px 0px, 100% 80%, 100% 100%, 0% 100%)",
         }}
       ></div>
 

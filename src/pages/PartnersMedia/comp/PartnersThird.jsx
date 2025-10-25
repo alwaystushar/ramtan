@@ -36,7 +36,7 @@ const PartnersThird = () => {
             <div className="flex justify-between items-end w-full mb-[14vw]">
                 <div>
                     <div>
-                        <h3 className="text-[2vw] font-semibold leading-[110%]">Increased Event <br />Engagement</h3>
+                        <h3 className="text-[3vw] font-semibold leading-[110%]">Increased Event <br />Engagement</h3>
                     </div>
                     <div>
                         <p className="text-[1vw] text-white/80 mt-[0.5vw] max-w-[30vw] opacity-40">

@@ -14,11 +14,11 @@ export default function PartnersNinth() {
       ></div>
 
       {/* === Text Content === */}
-      <div className="relative z-10 max-w-[40vw] text-[#001489] ml-auto">
-        <h2 className="text-[3.5vw] font-semibold leading-[110%] mb-[1.5vw]">
+      <div className="absolute right-[12vw] z-10 max-w-[40vw] text-[#001489] ml-auto">
+        <h2 className="text-[4.5vw] font-semibold leading-[110%] mb-[3vw]">
           We're here to <br />
           collaborate.{" "}
-          <span className="text-[#2C4FFF]">Reach <br />out—we welcome <br />your call
+          <span className="text-[#204fd5]">Reach <br />out—we welcome <br />your call
           or email.</span>
         </h2>
 

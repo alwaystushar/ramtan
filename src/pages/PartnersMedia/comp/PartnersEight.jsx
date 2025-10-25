@@ -29,7 +29,7 @@ export default function PartnersEight() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-[#001489] text-white flex justify-between overflow-hidden px-[8vw] py-[6vw] header-dark">
+    <section className="relative min-h-screen bg-[#0021a9] text-white flex justify-between overflow-hidden px-[8vw] py-[6vw] header-dark">
       {/* === Left Menu === */}
       <div className="flex flex-col justify-start space-y-[1vw] absolute left-[8vw] top-[4vw]">
         {sections.map((item, i) => (
@@ -51,7 +51,7 @@ export default function PartnersEight() {
       </div>
 
       {/* === Right Content === */}
-      <div className="max-w-[36vw]  absolute right-[8vw] top-[10vw]">
+      <div className="max-w-[39vw]  absolute right-[10vw] top-[10vw]">
         <AnimatePresence mode="wait">
           <motion.div
             key={active}

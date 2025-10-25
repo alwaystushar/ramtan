@@ -11,7 +11,7 @@ export default function OurServicesFourth() {
     >
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-end justify-end py-[8vw] px-[4vw] h-[100vh]">
-        <div className="bg-white text-gray-900 max-w-[30vw] pt-[2.5vw] pb-[1.5vw]">
+        <div className="bg-white text-gray-900 max-w-[30vw] pt-[2.5vw] pb-[1.5vw] mr-[15vw]">
 
           <div className="px-[1vw]">
           {/* Small heading */}

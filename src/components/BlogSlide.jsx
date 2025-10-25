@@ -79,7 +79,7 @@ export default function BlogSlide() {
       {/* === Overlay Text Content === */}
       <div
         ref={textRef}
-        className="absolute bottom-[2vw] left-[6vw] text-white z-[10]"
+        className="absolute bottom-[2vw] left-[2vw] text-white z-[10]"
       >
         <div className="flex flex-col gap-[4vw] w-fit">
           {/* === Tag + Title === */}

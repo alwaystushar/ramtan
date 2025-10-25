@@ -6,7 +6,7 @@ export default function EventsSixth() {
     <div
       className="relative h-screen text-white header-dark"
       style={{
-        backgroundImage: "url('./img/ManandEtherealWhale.png')",
+        backgroundImage: "url('./img/womenBg.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -16,14 +16,14 @@ export default function EventsSixth() {
       <div
         className="absolute bottom-0 right-0 w-[80vw] h-[100vh] bg-[#081c93] z-0"
         style={{
-          clipPath: "polygon(85% 0, 100% 0, 100% 100%, 0% 100%)",
+          clipPath: "polygon(70% 0px, 100% 0px, 100% 100%, 0% 100%)",
         }}
       ></div>
                     {/*front Polygon background */}
       <div
         className="absolute bottom-0 right-0 w-[60vw] h-[100vh] bg-[#06178b] z-0"
         style={{
-          clipPath: "polygon(100% 0, 100% 100%, 0 100%, 43% 65%, 43% 50%)",
+          clipPath: "polygon(100% 0px, 100% 100%, 0px 125%, 43% 80%, 43% 64%)",
         }}
       ></div>
 

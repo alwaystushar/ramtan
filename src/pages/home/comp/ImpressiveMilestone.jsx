@@ -70,6 +70,7 @@ const ImpressiveMilestone = () => {
                 {/* Top highlight border */}
                 <div className="absolute top-0 left-0 w-full h-[0.3vw] bg-[#89b7ff]"></div>
               </div>  
+              
         </div>
 
                

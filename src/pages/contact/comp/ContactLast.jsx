@@ -11,6 +11,9 @@ const ContactLast = () => {
           backgroundColor: "#002D9C",
           backgroundImage:
             "url('/svg/contact-bg.svg')",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
         }}
       >
         <h1 className="text-[25vw] font-bold leading-[80%] whitespace-nowrap">

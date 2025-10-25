@@ -20,7 +20,7 @@ export default function EventsFirst() {
       ></div>
 
       {/* Main Content */}
-      <div className="relative z-10  flex flex-col justify-between h-full px-[2vw] py-[4vw] pt-[8vw]">
+      <div className="relative z-10  flex flex-col justify-between h-full px-[2vw] py-[4vw] pt-[8vw] pb-[10vw]">
         {/* Subheading */}
         <div className="mb-[1vw]">
           <p className="text-[0.9vw] text-gray-500 mb-[0.3vw] tracking-wide">
@@ -34,10 +34,10 @@ export default function EventsFirst() {
         <div>
                     {/* Tags */}
         <div className="flex flex-wrap gap-[1vw] mb-[1.5vw]">
-          <span className="border border-[#001489] text-[#001489] rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium">
+          <span className="border border-gray-900 text-black rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium">
             Strategic Planning
           </span>
-          <span className="border border-[#001489] text-[#001489] rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium">
+          <span className="border border-gray-900 text-black rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium">
             Brand Activation
           </span>
         </div>

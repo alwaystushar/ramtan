@@ -1,9 +1,7 @@
 import React from "react";
 import { HoverEffect } from "../../../../components/CardHover";
-import  RippleButton  from "../../../../components/RippleButton"; // ✅ ensure correct import path
 import BlogSlide from "../../../../components/BlogSlide.jsx";
 import BottomLeftBtn from "../../../../components/BottomLeftBtn.jsx";
-import { ArrowDown } from "lucide-react"; // ✅ using lucide-react icon set
 
 // ✅ Example project data (replace with your real data)
 const projects = [

@@ -30,7 +30,7 @@ const PartnersSeventh = () => {
           ></div>
 
       {/* Hero Content */}
-      <div className="flex flex-col justify-between h-full container-box pt-[6vw] relative z-10 gap-[6vw]">
+      <div className="flex flex-col justify-between h-full py-[2vw] px-[12vw]  relative z-10 gap-[6vw]">
         {/* Heading */}
         <MotionFadeUp delay={0.3}>
             <div className="flex justify-between items-end w-full mb-[14vw]">

@@ -16,7 +16,7 @@ export default function FoundationLeft() {
       {/* === Top Content === */}
       <div className="flex flex-col gap-[1vw] max-w-[16vw] mt-[8vw]">
         <div>
-          <h3 className="uppercase text-[1vw] leading-[1.5] text-white/70">
+          <h3 className="uppercase text-[1vw] font-semibold leading-[1.5] text-white/80">
             Our reputation is built upon <br />a foundation of
           </h3>
         </div>

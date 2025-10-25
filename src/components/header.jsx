@@ -1,15 +1,17 @@
 // src/components/Header.jsx
-import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
+import React, {  useState, useRef, useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap";
-import { useLocation, useNavigate } from "react-router-dom";
+import {Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import "./css/header.css";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState("home");
-  const [isDarkBg, setIsDarkBg] = useState(false);
+  // ---------- STATE ----------
+  const [menuOpen, setMenuOpen] = useState(false);     // For mobile menu toggle
+  const [activeItem, setActiveItem] = useState("home"); // Tracks current active nav item
+  const [isDarkBg, setIsDarkBg] = useState(false);     // Switches header color based on background
 
+  // ---------- REFS ----------
   const headerRef = useRef(null);
   const navRef = useRef(null);
   const indicatorRef = useRef(null);
@@ -19,31 +21,30 @@ export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // ---------- NAV MENU ITEMS ----------
   const menuItems = [
     { label: "Home", path: "/#home", id: "home" },
     { label: "About Us", path: "/#about", id: "about" },
-    {
-      label: "Events & Exhibitions",
-      path: "/events-exhibitions",
-      id: "events--exhibitions",
-    },
+    { label: "Events & Exhibitions", path: "/events-exhibitions", id: "events--exhibitions" },
     { label: "Partners & Media", path: "/partners-media", id: "partners-media" },
     { label: "Contact Us", path: "/contact", id: "contactus" },
   ];
 
-  // ---------- GSAP underline animation ----------
+  // ---------- UNDERLINE ANIMATION (GSAP) ----------
   useLayoutEffect(() => {
     if (!indicatorRef.current || !navRef.current) return;
 
+    // Get the active menu item’s position
     const el = menuItemsRef.current.find((e) => e?.dataset?.id === activeItem);
     if (!el) return;
 
+    // Calculate X and width in vw (for responsiveness)
     const rect = el.getBoundingClientRect();
     const parentRect = navRef.current.getBoundingClientRect();
-
     const xVW = ((rect.left - parentRect.left) / window.innerWidth) * 100;
     const widthVW = (rect.width / window.innerWidth) * 100;
 
+    // Animate underline position and width
     gsap.to(indicatorRef.current, {
       x: `${xVW}vw`,
       width: `${widthVW}vw`,
@@ -52,7 +53,7 @@ export default function Header() {
     });
   }, [activeItem]);
 
-  // ---------- helper: wait for element ----------
+  // ---------- HELPER: Wait for section to exist ----------
   const waitForElement = (id, timeout = 2000) =>
     new Promise((resolve) => {
       const existing = document.getElementById(id);
@@ -67,7 +68,8 @@ export default function Header() {
       tick();
     });
 
-  // ---------- detect background color ----------
+  // ---------- BACKGROUND COLOR DETECTION ----------
+  // Continuously checks what’s behind the header to toggle light/dark mode
   useEffect(() => {
     let raf = 0;
     const header = headerRef.current;
@@ -78,7 +80,7 @@ export default function Header() {
       const x = window.innerWidth / 2;
       const y = Math.min(window.innerHeight - 1, Math.round(rect.bottom + 1));
       const el = document.elementFromPoint(x, y);
-      const dark = !!el?.closest?.(".header-dark");
+      const dark = !!el?.closest?.(".header-dark"); // looks for dark section class
       setIsDarkBg(dark);
       raf = requestAnimationFrame(detect);
     };
@@ -87,13 +89,12 @@ export default function Header() {
     return () => cancelAnimationFrame(raf);
   }, [location.pathname]);
 
-  // ---------- section tracking ----------
+  // ---------- SECTION TRACKING ----------
+  // Highlights current menu item based on scroll position (on home page only)
   useEffect(() => {
     if (location.pathname !== "/") return;
 
-    const sections = Array.from(
-      document.querySelectorAll("section[id], div[id]")
-    );
+    const sections = Array.from(document.querySelectorAll("section[id], div[id]"));
     if (!sections.length) return;
 
     const thresholds = Array.from({ length: 21 }, (_, i) => i / 20);
@@ -114,41 +115,42 @@ export default function Header() {
     return () => observer.disconnect();
   }, [location.pathname]);
 
-  // ---------- handle hash route change ----------
+  // ---------- SYNC ACTIVE MENU ON ROUTE CHANGE ----------
   useEffect(() => {
     const path = location.pathname;
     const hash = location.hash || "";
-    const exact = menuItems.find(
-      (m) => m.path === `${path}${hash}` || m.path === path
-    );
+    const exact = menuItems.find((m) => m.path === `${path}${hash}` || m.path === path);
     if (exact) return setActiveItem(exact.id);
     if (path === "/" && hash) return setActiveItem(hash.replace("#", ""));
     setActiveItem(path === "/" ? "home" : "home");
   }, [location.pathname, location.hash]);
 
-  // ---------- navigation click ----------
+  // ---------- NAVIGATION CLICK HANDLER ----------
   const handleNavClick = async (item) => {
     const [p, h] = item.path.split("#");
     const targetPath = p || "/";
     const targetHash = h || null;
     setActiveItem(item.id);
 
+    // If already on same page
     if (location.pathname === targetPath) {
       if (targetHash) {
-        const el =
-          document.getElementById(targetHash) ||
-          (await waitForElement(targetHash, 2000));
+        // Scroll to target section smoothly
+        const el = document.getElementById(targetHash) || (await waitForElement(targetHash, 2000));
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
+        // Scroll to top if no hash
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
       setMenuOpen(false);
       return;
     }
 
+    // Navigate to new page
     navigate(targetPath);
     setMenuOpen(false);
 
+    // Scroll to section after route change
     if (targetHash) {
       const el = await waitForElement(targetHash, 2000);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -157,12 +159,13 @@ export default function Header() {
     }
   };
 
-  // ---------- mobile menu animation ----------
+  // ---------- MOBILE MENU ANIMATION ----------
   useEffect(() => {
     if (!mobileMenuRef.current) return;
 
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
     if (menuOpen) {
+      // Open menu animation
       tl.to(mobileMenuRef.current, {
         x: 0,
         opacity: 1,
@@ -174,29 +177,30 @@ export default function Header() {
         "-=0.3"
       );
     } else {
+      // Close menu animation
       tl.to(mobileMenuRef.current, { x: "100%", opacity: 0, duration: 0.6 });
     }
 
     return () => tl.kill();
   }, [menuOpen]);
 
-  // ---------- render ----------
+  // ---------- RENDER ----------
   return (
-    <header
-      ref={headerRef}
-      className={`header ${isDarkBg ? "text-white" : "text-blue-900"}`}
-    >
+    <header ref={headerRef} className={`header ${isDarkBg ? "text-white" : "text-blue-900"}`}>
       <div className="header-inner container-box">
-        {/* Logo */}
-        <div className="logo-block">
+        
+        {/* === LOGO === */}
+     <Link to="/#home">
+     <div className="logo-block">
           <img
             src={isDarkBg ? "logo-white.svg" : "logo-blue.svg"}
             alt="Logo"
             className="logo"
           />
         </div>
-
-        {/* Desktop Nav */}
+     </Link>
+        
+        {/* === DESKTOP NAVIGATION === */}
         <nav ref={navRef} className="nav">
           {menuItems.map((item, i) => (
             <button
@@ -204,7 +208,7 @@ export default function Header() {
               ref={(el) => (menuItemsRef.current[i] = el)}
               data-id={item.id}
               onClick={() => handleNavClick(item)}
-              className={`nav-text  ${
+              className={`nav-text ${
                 activeItem === item.id
                   ? isDarkBg
                     ? "text-white"
@@ -218,16 +222,14 @@ export default function Header() {
             </button>
           ))}
 
-          {/* Underline */}
+          {/* Underline for active link */}
           <span
             ref={indicatorRef}
             style={{ left: 0, width: "0vw", transform: "translateX(0vw)" }}
-            className={`active-underline ${
-              isDarkBg ? "bg-white" : "bg-blue-900"
-            }`}
+            className={`active-underline ${isDarkBg ? "bg-white" : "bg-blue-900"}`}
           ></span>
 
-          {/* Let’s Talk Button */}
+          {/* === Let’s Talk Button (Desktop) === */}
           <button
             className={`group headerBtn ${
               isDarkBg
@@ -246,42 +248,33 @@ export default function Header() {
           </button>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* === MOBILE MENU TOGGLE ICON === */}
         <button
           className="z-50 transition-colors lg:hidden"
           onClick={() => setMenuOpen((s) => !s)}
           aria-label="Toggle menu"
         >
           {menuOpen ? (
-            <X
-              className={`w-[8vw] h-[8vw] ${
-                isDarkBg ? "text-white" : "text-blue-900/0"
-              }`}
-            />
+            <X className={`w-[8vw] h-[8vw] ${isDarkBg ? "text-white" : "text-blue-900/0"}`} />
           ) : (
-            <Menu
-              className={`w-[8vw] h-[8vw] ${
-                isDarkBg ? "text-white" : "text-blue-900"
-              }`}
-            />
+            <Menu className={`w-[8vw] h-[8vw] ${isDarkBg ? "text-white" : "text-blue-900"}`} />
           )}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* === MOBILE MENU PANEL === */}
       <div
         ref={mobileMenuRef}
         className="fixed top-0 right-0 w-full h-screen bg-[#001F4D] text-white flex flex-col items-center justify-center gap-[8vw] transform translate-x-full opacity-0 z-40 lg:hidden"
       >
+        {/* Mobile Nav Items */}
         {menuItems.map((item, i) => (
           <button
             key={item.id}
             ref={(el) => (mobileLinksRef.current[i] = el)}
             onClick={() => handleNavClick(item)}
             className={`text-[6vw] font-light ${
-              activeItem === item.id
-                ? "text-white"
-                : "text-white/70 hover:text-white"
+              activeItem === item.id ? "text-white" : "text-white/70 hover:text-white"
             }`}
           >
             {item.label}

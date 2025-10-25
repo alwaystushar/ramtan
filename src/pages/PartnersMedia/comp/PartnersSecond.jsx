@@ -57,11 +57,11 @@ export default function PartnersSecond() {
       {/* Header */}
       <div className="flex justify-between items-end border-b border-gray-300 pb-[1vw] px-[2vw]">
         <div>
-          <h1 className="text-[5vw] font-semibold leading-none">Partners</h1>
+          <h1 className="text-[5vw] font-semibold leading-none text-[#204FD5]">Partners</h1>
           <h1 className="text-[5vw] font-semibold leading-none">Success</h1>
         </div>
 
-        <div className="flex items-end gap-[1.5vw]">
+        <div className="flex items-end justify-between gap-[1.5vw] w-[48vw]">
           <h1 ref={numRef} className="text-[5vw] font-semibold">
             {String(current.id).padStart(2, "0")}
           </h1>
@@ -93,14 +93,14 @@ export default function PartnersSecond() {
           <p className="text-[0.9vw] text-gray-500 mb-[1vw]">
             {current.subtitle}
           </p>
-          <h2 className="text-[3vw] font-semibold leading-[120%] mb-[1vw] w-[35vw]">
+          <h2 className="text-[3vw] font-semibold leading-[120%] mb-[5vw] w-[35vw] text-[#204FD5]">
             {current.title}
           </h2>
           <div className="flex gap-[1vw] flex-wrap">
             {current.tags.map((tag, i) => (
               <span
                 key={i}
-                className="border border-[#001489] text-[#001489] rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium"
+                className="border border-gray-900 text-black rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium"
               >
                 {tag}
               </span>
@@ -114,14 +114,14 @@ export default function PartnersSecond() {
         {/* Right (next slide) */}
         <div className="flex flex-col w-[45%]">
           <p className="text-[0.9vw] text-gray-500 mb-[1vw]">{next.subtitle}</p>
-          <h2 className="text-[3vw] font-semibold leading-[120%] mb-[1vw] w-[35vw]">
+          <h2 className="text-[3vw] font-semibold leading-[120%] mb-[5vw] w-[35vw] text-[#204FD5]">
             {next.title}
           </h2>
           <div className="flex gap-[1vw] flex-wrap">
             {next.tags.map((tag, i) => (
               <span
                 key={i}
-                className="border border-[#001489] text-[#001489] rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium"
+                className="border border-gray-900 text-black rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium"
               >
                 {tag}
               </span>

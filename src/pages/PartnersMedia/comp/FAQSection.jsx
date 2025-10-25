@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import BottomLeftBtn from "../../../components/BottomLeftBtn.jsx";
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0); // Default: first open
@@ -32,10 +33,12 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="w-full bg-white py-[6vw] px-[2vw] pb-0 flex flex-wrap items-center justify-between ">
+    <section className="w-full relative bg-white py-[6vw] px-[2vw] pb-0 flex flex-wrap items-center justify-between ">
+
+
       {/* === Left Side (Image + Text) === */}
       <div className="w-full lg:w-[50%] flex items-start justify-center">
-        <h2 className="text-[2.8vw] w-[46vw] font-semibold text-[#001489] leading-tight mb-[2vw]">
+        <h2 className="text-[2.8vw] w-[46vw] font-semibold text-[#0021a9] leading-tight mb-[2vw] whitespace-nowrap">
           A few things you <br /> may want to ask us
         </h2>
 
@@ -44,9 +47,11 @@ export default function FAQSection() {
           <img
             src="/img/Saudi_women.png" // replace with your image path
             alt="Ramtan Representative"
-            className="w-[35vw] object-cover"
+            className="w-[55vw] object-cover"
           />
         </div>
+
+        
       </div>
 
       {/* === Right Side (FAQ) === */}
@@ -84,11 +89,16 @@ export default function FAQSection() {
           </div>
         ))}
 
-        
-        
+
+      
 
 
         
+      </div>
+
+                          {/* Bottom Left Button */}
+      <div className="text-blue-900">
+       <BottomLeftBtn /> 
       </div>
     </section>
   );

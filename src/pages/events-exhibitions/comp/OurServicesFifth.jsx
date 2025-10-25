@@ -34,10 +34,10 @@ export default function OurServicesFifth() {
         <div>
                   {/* Tags */}
         <div className="flex flex-wrap gap-[1vw] mb-[1.5vw]">
-          <span className="border border-[#001489] text-[#001489] rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium">
+          <span className="border border-gray-900 text-black rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium">
             Strategic Planning
           </span>
-          <span className="border border-[#001489] text-[#001489] rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium">
+          <span className="border border-gray-900 text-black rounded-full px-[1.2vw] py-[0.4vw] text-[0.8vw] font-medium">
             Brand Activation
           </span>
         </div>

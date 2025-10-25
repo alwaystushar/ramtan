@@ -71,19 +71,19 @@ useEffect(() => {
       {/* === Heading === */}
       <div className="flex justify-between flex-wrap items-start mb-[4vw] relative">
         <div className="absolute top-[4vw]">
-          <h2 className="text-[3vw] font-semibold leading-[1.1]">
+          <h2 className="text-[3vw] text-[#204fd5] font-semibold leading-[1.1]">
             Maximize Your <br /> Business Performance
           </h2>
         </div>
 
-        <p className="max-w-[18vw] text-[1.1vw] leading-[1.6] text-gray-600 absolute right-0 top-0">
+        <p className="max-w-[18vw] text-[1.1vw] leading-[1.6] text-[#0021a9] absolute right-[26vw] top-0">
           Optimize your business journey and foster strong customer relationships
           with each transaction.
         </p>
       </div>
 
       {/* === Bar Chart === */}
-      <div className="relative w-full h-[24vw] mt-[6vw]">
+      <div className="relative w-full h-[24vw] mt-[12vw]">
                 {/* ==== BAR 4 ==== */}
         <div className="absolute left-[48%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end">
 
