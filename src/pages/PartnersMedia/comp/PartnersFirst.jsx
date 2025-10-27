@@ -13,7 +13,7 @@ export default function PartnersFirst() {
     >
 
 
-        <div className="absolute bottom-[3vw] right-[26vw] text-[7vw] font-semibold leading-[90%]">
+        <div className="absolute lg:bottom-[3vw] bottom-[94vw] lg:right-[26vw] right-[6vw] lg:text-[6vw] text-[17vw] font-semibold leading-[90%]">
             <h1>
                 Partners
  <br />Success

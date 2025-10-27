@@ -5,6 +5,9 @@
   --blue: #06178b;
 }
 
+/* *{
+  font-family: 'Graphik Arabic';
+} */
 
 
 html,
@@ -58,4 +61,8 @@ body {
 
 .container-box {
   @apply px-[2vw] py-[2vw]
+}
+
+.iconBtn{
+  @apply lg:w-[1.2vw] lg:h-[1.2vw] w-[7.5vw] h-[4vw];
 }

@@ -6,7 +6,7 @@ const ContactLast = () => {
     <div className="w-full overflow-hidden header-dark">
       {/* SECTION 1 */}
       <section
-        className="relative flex items-end justify-center text-white h-[100vh]"
+        className="relative flex items-end justify-center text-white lg:h-[100vh] h-[25vh]"
         style={{
           backgroundColor: "#002D9C",
           backgroundImage:
@@ -24,7 +24,7 @@ const ContactLast = () => {
       {/* SECTION 2 - FOOTER */}
       <footer className="bg-white text-[#002D9C] px-[6vw] py-[5vw] flex flex-col md:flex-row justify-between gap-[6vw]">
         {/* Left Column - Navigation */}
-        <div className="flex flex-col gap-[1vw] text-[1.6vw] font-medium">
+        <div className="flex flex-col gap-[1vw] lg:text-[1.6vw] text-[3.6vw] font-medium">
           <a href="#" className="hover:text-[#0055ff]">Home</a>
           <a href="#" className="hover:text-[#0055ff]">About Us</a>
           <a href="#" className="hover:text-[#0055ff]">Events & Exhibitions</a>
@@ -34,18 +34,18 @@ const ContactLast = () => {
         </div>
 
         {/* Right Column - Contact Info */}
-        <div className="flex flex-col gap-[.2vw] text-[1.2vw] text-end items-end">
-          <div className="flex items-center gap-[0.8vw]">
+        <div className="flex flex-col lg:gap-[.2vw] gap-[1.2vw] lg:text-[1.2vw] text-[2.2vw] lg:text-end lg:items-end">
+          <div className="flex items-center lg:gap-[0.8vw] gap-[3.8vw]">
             
             <span>+966 11 217 1717</span>
           </div>
 
-          <div className="flex items-center gap-[0.8vw]">
+          <div className="flex items-center lg:gap-[0.8vw] gap-[3.8vw]">
             
             <span>Event@ramtan-expo.com</span>
           </div>
 
-          <div className="flex items-center gap-[0.8vw] max-w-[25vw] leading-tight">
+          <div className="flex items-center lg:gap-[0.8vw] gap-[3.8vw] max-w-[25vw] leading-tight">
             
             <span>
               Al Olaya • King Fahad Road, Riyadh<br />
@@ -53,7 +53,7 @@ const ContactLast = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-[.2vw] pt-[1vw]">
+          <div className="flex items-center lg:gap-[.2vw] gap-[1.2vw] pt-[1vw]">
             <a href="#"><Facebook size={22} /></a>
             <a href="#"><Instagram size={22} /></a>
             Ramtan
@@ -65,12 +65,12 @@ const ContactLast = () => {
 
       </footer>
 
-              <div className="flex justify-between w-full text-[#002D9C] px-[6vw] pb-[4vw]">
-                      <a href="mailto:join@ramtan-expo.com" className="mt-[1vw] text-[1vw]">
+              <div className="flex lg:flex-row flex-col gap-[1vw] justify-between w-full text-[#002D9C] px-[6vw] pb-[4vw]">
+                      <a href="mailto:join@ramtan-expo.com" className="mt-[1vw] lg:text-[1vw] text-[3vw]">
             join@ramtan-expo.com (Join Us)
           </a>
 
-                    <p className="text-[1vw]">
+                    <p className="lg:text-[1vw] text-[3vw]">
             © 2025 Ramtan for Exhibitions and Conferences
           </p>
         </div>

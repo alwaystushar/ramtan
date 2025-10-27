@@ -16,10 +16,14 @@ export default function FoundationLeft() {
 
 
       {/* === Bottom Left Text + Ripple Button === */}
-      <BottomLeftBtn
+   
+   <div className="hidden lg:block">
+   <BottomLeftBtn
         borderColor="border-[#061685]" 
   rippleColor="#061685" 
    />
+   </div>
+
     </section>
   );
 }

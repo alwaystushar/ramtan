@@ -7,7 +7,7 @@ const BottomLeftBtn = ({
   rippleColor = "rgba(0,31,77,0.5)",
 }) => {
   return (
-    <div className="absolute bottom-[2vw] left-[3vw] flex flex-row gap-[1.2vw] z-30 text-[1vw]">
+    <div className="absolute lg:bottom-[2vw] bottom-[10vw] left-[2vw] flex flex-row lg:gap-[1.2vw] gap-[5vw] z-30 lg:text-[1vw] text-[3.5vw]">
       <p className="opacity-90">
         Discover how we can <br />
         elevate your business
@@ -21,7 +21,7 @@ const BottomLeftBtn = ({
         borderColor={borderColor}
         rippleColor={rippleColor}
       >
-        <ArrowDown className="w-[1.2vw] h-[1.2vw]" />
+        <ArrowDown className="iconBtn" />
       </RippleButton>
     </div>
   );

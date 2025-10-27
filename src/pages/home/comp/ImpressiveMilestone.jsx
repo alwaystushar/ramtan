@@ -11,7 +11,7 @@ const ImpressiveMilestone = () => {
         {/* Shapes top */}
 
           <div
-            className="absolute top-[0vw] left-[0vw] w-[48vw] h-[30vw] bg-[#F4F6FB10]"
+            className="absolute lg:top-[0vw] top-[30.6vw] left-[0vw] w-[48vw] h-[30vw] bg-[#F4F6FB10]"
             style={{
               clipPath: "polygon(50% 0%, 100% 100%, 0 100%, 0 0)",
             }}
@@ -20,7 +20,7 @@ const ImpressiveMilestone = () => {
         {/* Shapes bottom */}
 
           <div
-            className="absolute bottom-[0vw] right-0 w-[52vw] h-[28.2vw] bg-[#F4F6FB10]"
+            className="absolute lg:bottom-[0vw] right-0 w-[52vw] h-[28.2vw] bg-[#F4F6FB10]"
             style={{
               clipPath: "polygon(81% 0px, 100% 35%, 100% 100%, 48% 100%, 0px 0px)",
             }}
@@ -28,14 +28,14 @@ const ImpressiveMilestone = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-center h-full px-[2vw] pt-[10.1vw] pb-[0vw]">
-        <div className="flex flex-row justify-between gap-[4vw] items-center">
+        <div className="flex lg:flex-row flex-col lg:justify-between lg:gap-[4vw] gap-[28vw] lg:items-center">
           {/* Left Text Section */}
           <MotionFadeUp delay={0.3}>
             <div className="flex flex-col gap-4">
-              <h2 className="text-[2.5vw] font-semibold leading-tight">
+              <h2 className="lg:text-[2.5vw] text-[6vw] font-semibold leading-tight">
                 Impressive Milestone
               </h2>
-              <p className="text-[0.98vw] leading-relaxed text-gray-200 max-w-[25vw]">
+              <p className="lg:text-[0.98vw] font-light text-[3.5vw] leading-relaxed text-gray-200 lg:w-[25vw] w-[65vw]">
                 We are excited to share that we have crossed the milestone of
                 2.2 million visitors. This achievement reflects our growing
                 popularity and the trust.
@@ -47,7 +47,7 @@ const ImpressiveMilestone = () => {
           <div className="relative flex flex-col items-end justify-center">
             {/* Number */}
             <MotionFadeUp delay={0.5}>
-              <h3 className="text-[14vw]  leading-none">2.2m</h3>
+              <h3 className="lg:text-[14vw] text-[24vw] leading-none">2.2m</h3>
             </MotionFadeUp>
 
 
@@ -57,7 +57,7 @@ const ImpressiveMilestone = () => {
         </div>
 
         <div className="flex justify-center w-full">
-                           <div className="w-[28vw] h-[29vw] mt-[4vw] relative overflow-hidden border-t-[0.3vw] border-[#89b7ff] bg-[#1132b4]">
+                           <div className="lg:w-[28vw] lg:h-[29vw] w-[68vw] h-[49vw] mt-[4vw] relative overflow-hidden border-t-[0.3vw] border-[#89b7ff] bg-[#1132b4]">
                 {/* Inner Pattern */}
                 <div
                   className="absolute inset-0 opacity-30"

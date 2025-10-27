@@ -69,144 +69,130 @@ useEffect(() => {
       className="w-full bg-white text-[#001489] py-[8vw] pb-[1vw] px-[6vw] overflow-hidden relative"
     >
       {/* === Heading === */}
-      <div className="flex justify-between flex-wrap items-start mb-[4vw] relative">
-        <div className="absolute top-[4vw]">
-          <h2 className="text-[3vw] text-[#204fd5] font-semibold leading-[1.1]">
+      <div className="flex lg:flex-row flex-col justify-between items-start mb-[4vw] lg:relative lg:gap-0 gap-[3vw]">
+        <div className="lg:absolute top-[4vw]">
+          <h2 className="lg:text-[3vw] text-[6vw] text-[#204fd5] font-semibold leading-[1.1]">
             Maximize Your <br /> Business Performance
           </h2>
         </div>
 
-        <p className="max-w-[18vw] text-[1.1vw] leading-[1.6] text-[#0021a9] absolute right-[26vw] top-0">
+        <p className="lg:max-w-[18vw] max-w-[58vw] lg:text-[1.1vw] text-[3.6vw] leading-[1.6] text-[#0021a9] lg:absolute right-[26vw] top-0">
           Optimize your business journey and foster strong customer relationships
           with each transaction.
         </p>
       </div>
 
-      {/* === Bar Chart === */}
-      <div className="relative w-full h-[24vw] mt-[12vw]">
-                {/* ==== BAR 4 ==== */}
-        <div className="absolute left-[48%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end">
+{/* === Bar Chart === */}
+<div className="relative w-full h-[24vw] mt-[12vw] max-sm:h-[60vw]">
+  {/* ==== BAR 1 ==== */}
+  <div className="absolute left-[35%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
+    <div className="relative w-full h-full overflow-hidden rounded-t-md">
+      <div
+        ref={(el) => (fillsRef.current[3] = el)}
+        data-height="100"
+        data-number="200"
+        className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
+      />
+    </div>
+    <span
+      ref={(el) => (numbersRef.current[3] = el)}
+      className="absolute text-[3vw] font-semibold text-[#001489] max-sm:text-[6vw]"
+      style={{ bottom: "0%" }}
+    >
+      0%
+    </span>
+    <p
+      ref={(el) => (descRef.current[3] = el)}
+      className="absolute text-[0.8vw] text-gray-600 text-center leading-snug max-sm:text-[2.5vw]"
+      style={{ bottom: "0%" }}
+    >
+      Program success rate
+    </p>
+  </div>
+
+  {/* ==== BAR 2 ==== */}
+  <div className="absolute left-[15%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
+    <div className="relative w-full h-full overflow-hidden rounded-t-md">
+      <div
+        ref={(el) => (fillsRef.current[1] = el)}
+        data-height="65"
+        data-number="13"
+        data-suffix="%"
+        className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
+      />
+    </div>
+    <span
+      ref={(el) => (numbersRef.current[1] = el)}
+      className="absolute text-[3vw] font-semibold text-[#001489] max-sm:text-[6vw]"
+      style={{ bottom: "0%" }}
+    >
+      0%
+    </span>
+    <p
+      ref={(el) => (descRef.current[1] = el)}
+      className="absolute text-[0.8vw] text-gray-600 text-center leading-snug max-sm:text-[2.5vw]"
+      style={{ bottom: "0%" }}
+    >
+      Rise in average deal value
+    </p>
+  </div>
+
+  {/* ==== BAR 3 ==== */}
+  <div className="absolute left-[0%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
+    <div className="relative w-full h-full overflow-hidden rounded-t-md">
+      <div
+        ref={(el) => (fillsRef.current[0] = el)}
+        data-height="40"
+        data-number="13"
+        data-suffix="%"
+        className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
+      />
+    </div>
+    <span
+      ref={(el) => (numbersRef.current[0] = el)}
+      className="absolute text-[3vw] font-semibold text-[#001489] max-sm:text-[6vw]"
+      style={{ bottom: "0%" }}
+    >
+      0%
+    </span>
+    <p
+      ref={(el) => (descRef.current[0] = el)}
+      className="absolute text-[0.8vw] text-gray-600 text-center leading-snug max-sm:text-[2.5vw]"
+      style={{ bottom: "0%" }}
+    >
+      Customer satisfaction boost
+    </p>
+  </div>
+
+  {/* ==== BAR 4 ==== */}
+  <div className="absolute left-[60%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
+    <div className="relative w-full h-full overflow-hidden rounded-t-md">
+      <div
+        ref={(el) => (fillsRef.current[2] = el)}
+        data-height="75"
+        data-number="95"
+        data-suffix="%"
+        className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
+      />
+    </div>
+    <span
+      ref={(el) => (numbersRef.current[2] = el)}
+      className="absolute text-[3vw] font-semibold text-[#001489] max-sm:text-[6vw]"
+      style={{ bottom: "0%" }}
+    >
+      0%
+    </span>
+    <p
+      ref={(el) => (descRef.current[2] = el)}
+      className="absolute text-[0.8vw] text-gray-600 text-center leading-snug max-sm:text-[2.5vw]"
+      style={{ bottom: "0%" }}
+    >
+      Additional sales secured
+    </p>
+  </div>
+</div>
 
 
-          <div className="relative w-full h-full overflow-hidden rounded-t-md">
-            <div
-              ref={(el) => (fillsRef.current[3] = el)}
-              data-height="100" data-number="200" 
-              className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
-            />
-          </div>
-
-                    <span
-            ref={(el) => (numbersRef.current[3] = el)}
-            className="absolute text-[3vw] font-semibold text-[#001489]"
-            style={{ bottom: "0%" }}
-          >
-            0%
-          </span>
-
-          <p
-            ref={(el) => (descRef.current[3] = el)}
-            className="absolute text-[0.8vw] text-gray-600 text-center leading-snug"
-            style={{ bottom: "0%" }}
-          >
-            Program success rate
-          </p>
-        </div>
-
-
-        {/* ==== BAR 2 ==== */}
-        <div className="absolute left-[30%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end">
-
-
-          <div className="relative w-full h-full overflow-hidden rounded-t-md">
-            <div
-              ref={(el) => (fillsRef.current[1] = el)}
-              data-height="65"  data-number="13" data-suffix="%"
-              className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
-            />
-          </div>
-
-                    <span
-            ref={(el) => (numbersRef.current[1] = el)}
-            className="absolute text-[3vw] font-semibold text-[#001489]"
-            style={{ bottom: "0%" }}
-          >
-            0%
-          </span>
-
-          <p
-            ref={(el) => (descRef.current[1] = el)}
-            className="absolute text-[0.8vw] text-gray-600 text-center leading-snug"
-            style={{ bottom: "0%" }}
-          >
-            Rise in average deal value
-          </p>
-        </div>
-
-        {/* ==== BAR 1 ==== */}
-        <div className="absolute left-[15%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end">
-
-
-          {/* Bar */}
-          <div className="relative w-full h-full overflow-hidden rounded-t-md">
-            <div
-              ref={(el) => (fillsRef.current[0] = el)}
-              data-height="40" data-number="13" data-suffix="%"
-              className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
-            />
-          </div>
-
-          {/* Number */}
-          <span
-            ref={(el) => (numbersRef.current[0] = el)}
-            className="absolute text-[3vw] font-semibold text-[#001489]"
-            style={{ bottom: "0%" }}
-          >
-            0%
-          </span>
-
-          {/* Description */}
-          <p
-            ref={(el) => (descRef.current[0] = el)}
-            className="absolute text-[0.8vw] text-gray-600 text-center leading-snug"
-            style={{ bottom: "0%" }}
-          >
-            Customer satisfaction boost
-          </p>
-          
-        </div>
-        {/* ==== BAR 3 ==== */}
-        <div className="absolute left-[67%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end">
-
-
-          <div className="relative w-full h-full overflow-hidden rounded-t-md">
-            <div
-              ref={(el) => (fillsRef.current[2] = el)}
-              data-height="75" data-number="95" data-suffix="%"
-              className="absolute bottom-0 left-0 w-full border border-[#001489] border-b-0 border-t-[0.3vw] bg-white"
-            />
-          </div>
-
-          <span
-            ref={(el) => (numbersRef.current[2] = el)}
-            className="absolute text-[3vw] font-semibold text-[#001489]"
-            style={{ bottom: "0%" }}
-          >
-            0%
-          </span>
-
-          <p
-            ref={(el) => (descRef.current[2] = el)}
-            className="absolute text-[0.8vw] text-gray-600 text-center leading-snug"
-            style={{ bottom: "0%" }}
-          >
-            Additional sales secured
-          </p>
-          
-        </div>
-
-
-      </div>
     </section>
   );
 }

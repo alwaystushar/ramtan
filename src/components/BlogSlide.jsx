@@ -64,7 +64,7 @@ export default function BlogSlide() {
   return (
     <section
     id="about"
-    className="relative w-full h-[35vw] overflow-hidden">
+    className="relative w-full lg:h-[35vw] h-[80vw] overflow-hidden">
       {/* === Background Image === */}
       <div className="absolute inset-0 -z-[10]">
         <img
@@ -84,19 +84,19 @@ export default function BlogSlide() {
         <div className="flex flex-col gap-[4vw] w-fit">
           {/* === Tag + Title === */}
           <div className="flex flex-col gap-[1.5vw]">
-            <span className="text-[0.9vw] border border-white/70 px-[0.9vw] py-[0.1vw] rounded-full inline-block w-fit whitespace-nowrap">
+            <span className="lg:text-[0.9vw] text-[2vw] border border-white/70 lg:px-[0.9vw] px-[2vw] lg:py-[0.1vw] py-[0.5vw] rounded-full inline-block w-fit whitespace-nowrap">
               {tag}
             </span>
 
-            <h2 className="text-[3.6vw] font-semibold leading-[4vw] max-w-[50vw]">
+            <h2 className="lg:text-[3.6vw] text-[8vw] font-semibold leading-[120%] lg:max-w-[50vw]">
               {title}
             </h2>
           </div>
 
           {/* === Date === */}
           <div className="flex items-center gap-[2vw] mt-[1.2vw]">
-            <p className="text-[1vw] opacity-90">{date}</p>
-            <Clock className="w-[2vw] h-[2vw] opacity-80" />
+            <p className="lg:text-[1vw] text-[3vw] opacity-90">{date}</p>
+            <Clock className="lg:w-[2vw] lg:h-[2vw] w-[4vw] h-[4vw] opacity-80" />
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ export default function BlogSlide() {
       <div
         className="
           absolute bottom-[9vw] right-[6vw] flex items-center gap-[1vw]
-          z-[50] pointer-events-auto
+          z-[50] pointer-events-auto max-sm:hidden
         "
       >
         <RippleButton

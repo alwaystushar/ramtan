@@ -11,16 +11,18 @@ export default function ContactFirst() {
           relative
           grid grid-cols-12
           w-full
-          min-h-screen
+          h-[50vh]
+          lg:min-h-screen
           overflow-hidden
-          pt-[6vw]
+          lg:pt-[6vw]
+          pt-[18vw]
           bg-white
         "
       >
 
               {/* Left Polygon background */}
       <div
-        className="absolute bottom-0 left-0 w-[78vw] h-[46vh] bg-[#f2f2f2] z-0"
+        className="absolute bottom-0 left-0 lg:w-[78vw] lg:h-[46vh] w-[78vw] h-[16vh] bg-[#f2f2f2] z-0"
         style={{
           clipPath: "polygon(15% 0%, 100% 0%, 75% 100%, 0% 100%, 0% 55%)",
         }}
@@ -28,7 +30,7 @@ export default function ContactFirst() {
 
       {/* Right Polygon background */}
       <div
-        className="absolute top-0 right-0 w-[22vw] h-[54vh] bg-[#f2f2f2] z-0"
+        className="absolute lg:top-0 top-[43.4vw] right-0 lg:w-[22vw] lg:h-[54vh] w-[22vw] h-[14vh] bg-[#f2f2f2] z-0"
         style={{
           clipPath: "polygon(100% 0%, 0% 100%, 100% 100%)",
         }}
@@ -37,10 +39,10 @@ export default function ContactFirst() {
       <img
         src="/img/Saudi_man.png"
         alt="Saudi man"
-        className="absolute  pointer-events-none bottom-0 left-[5vw] w-[40vw] h-auto object-contain"
+        className="absolute  pointer-events-none bottom-0 left-[5vw] lg:w-[40vw] w-[64vw] h-auto object-contain"
       />
         {/* === Left Side === */}
-        <div className="relative z-10 col-span-12 lg:col-span-6">
+        <div className="relative z-10 col-span-12 lg:col-span-6 max-sm:hidden">
           <FoundationLeft />
         </div>
 

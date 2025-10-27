@@ -128,7 +128,7 @@ export default function GsapCarousel({
           <div
             key={i}
             ref={(el) => (slidesRef.current[i] = el)}
-            className="absolute inset-0 bg-cover bg-center flex flex-col justify-end px-[2vw] py-[8vw]"
+            className="absolute inset-0 bg-cover bg-center flex flex-col lg:justify-end justify-center px-[2vw] py-[8vw]"
             style={{
               backgroundImage: `url(${slide.image})`,
               backgroundSize: "cover",
@@ -138,8 +138,8 @@ export default function GsapCarousel({
             
 
             {/* ==== Title (Bottom Right) ==== */}
-            <div className="relative z-10 text-start ml-auto max-w-[40vw]">
-              <h1 className="slide-title text-[3.8vw] font-semibold leading-[110%] mb-[1vw] drop-shadow-lg">
+            <div className="relative z-10 text-start ml-auto lg:max-w-[40vw] max-w-[75vw]">
+              <h1 className="slide-title lg:text-[3.8vw] text-[10vw] font-semibold leading-[110%] mb-[1vw] drop-shadow-lg">
                 {slide.title}
               </h1>
             </div>
@@ -150,7 +150,7 @@ export default function GsapCarousel({
       {/* ==== Navigation Buttons ==== */}
 
 
-            <div className="absolute bottom-[2vw] right-[3vw] flex items-center gap-[1vw] z-30">
+            <div className="absolute bottom-[2vw] right-[3vw] lg:flex items-center gap-[1vw] z-30  hidden">
         <RippleButton
           bg="rgba(0,0,0,0.4)"
           hoverBg="rgba(255,255,255,0.8)"
@@ -158,7 +158,7 @@ export default function GsapCarousel({
           hoverColor="#000"
           onClick={prevSlide}
         >
-          <ChevronLeft className="w-[1.5vw] h-[1.5vw]" />
+          <ChevronLeft className="lg:w-[1.2vw] lg:h-[1.2vw] w-[7.5vw] h-[7.5vw]" />
         </RippleButton>
 
         <RippleButton
@@ -168,7 +168,7 @@ export default function GsapCarousel({
           hoverColor="#000"
           onClick={nextSlide}
         >
-          <ChevronRight className="w-[1.5vw] h-[1.5vw]" />
+          <ChevronRight className="lg:w-[1.2vw] lg:h-[1.2vw] w-[7.5vw] h-[7.5vw]" />
         </RippleButton>
       </div>
 
@@ -179,25 +179,6 @@ export default function GsapCarousel({
   rippleColor="#ffffff80" 
    />
 
-      {/* ==== Bottom Text (Left Side) ==== */}
-
-      <div className="absolute bottom-[2vw] left-[3vw] flex flex-row gap-[1.2vw] z-30 text-[1vw] f">
-        <p className="opacity-90">
-          Discover how we can <br />
-          elevate your business
-        </p>
-        <RippleButton
-          bg="rgba(0,0,0,0.4)"
-          hoverBg="rgba(255,255,255,0.8)"
-          color="#fff"
-          hoverColor="#000"
-          onClick={nextSlide}
-        >
-          <div className="">
-            <ArrowDown className="w-[1.2vw] h-[1.2vw] " />
-          </div>
-        </RippleButton>
-      </div>
     </section>
   );
 }

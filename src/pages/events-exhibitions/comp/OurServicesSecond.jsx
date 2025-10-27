@@ -4,11 +4,11 @@ import MarqueeText from "../../../components/Marquee";
 
 export default function OurServicesSecond() {
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative overflow-hidden lg:h-screen h-[60vh]">
 
                       {/* Bottom Right Polygon */}
           <div
-            className="absolute bottom-[-1vw] right-[-3vw] w-[65vw] h-[55vh] bg-[#F4F6FB]"
+            className="absolute bottom-[-1vw] right-[-3vw] lg:w-[65vw] w-[103%] h-[30vh] bg-[#F4F6FB]"
             style={{
               clipPath: "polygon(0 0, 100% 0, 100% 100%, 48% 100%)",
             }}
@@ -20,13 +20,13 @@ export default function OurServicesSecond() {
         <MarqueeText
           text="We are committed to delivering exceptional event experiences that are both unique and innovative"
           className="text-[7vw] text-blue-900 tracking-tight"
-          speed={40}
+          speed={60}
           direction="left"
         />
       </div>
 
       {/* Right-side text block */}
-      <div className="absolute bottom-[30%] text-blue-900 right-[20vw] max-w-[21vw] text-[1.4vw] font-semibold leading-[110%]">
+      <div className="absolute lg:bottom-[30%] bottom-[35%] text-blue-900 lg:right-[20vw] right-[7vw] lg:w-[21vw] w-[44vw] lg:text-[1.4vw] text-[4vw] leading-[110%]">
         <h1>
           Paying close attention to every detail to ensure an unforgettable event marked by creativity.
         </h1>

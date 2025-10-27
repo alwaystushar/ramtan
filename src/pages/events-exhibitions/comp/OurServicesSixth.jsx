@@ -13,20 +13,17 @@ export default function OurServicesSixth() {
     >
 
               {/*left Polygon background */}
-      <div
-        className="absolute bottom-0 left-0 w-[40vw] h-[45vw] bg-[#01023360] z-0"
-        style={{
-          clipPath: "polygon(0px 0px, 100% 80%, 100% 100%, 0% 100%)",
-        }}
-      ></div>
+<div className="absolute bottom-0 left-0 w-[100vw] h-[100vh] bg-[#081C8590] z-0 
+lg:[clip-path:polygon(0px_0px,_100%_80%,_100%_100%,_0%_100%)]
+[clip-path:polygon(0px_0px,_100%_50%,_100%_100%,_0%_100%)]"></div>
 
 
-        <div className="absolute bottom-[10vw] left-[3vw]  ">
+        <div className="absolute lg:bottom-[10vw] bottom-[90vw] left-[2vw]  ">
             <div className="flex flex-col gap-[1vw]">
-                <h3 className="text-[3.5vw]">
+                <h3 className="lg:text-[3.5vw] text-[12vw]">
                     Energy
                 </h3>
-                <p className="text-[1vw] max-w-[35vw]">
+                <p className="lg:text-[1vw]  lg:max-w-[35vw] max-w-[80vw] text-[3vw] font-light leading-[150%]">
                     International Energy Symposium & Riyadh International Petroleum, Gas, and
 Petrochemical Industries Exhibition (Riyadh): Held at the Riyadh
 InterContinental Hotel. Commemoration of the Kingdom's 50th Anniversary

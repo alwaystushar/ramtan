@@ -18,7 +18,7 @@ export default function AboutUsSection() {
         <div className="absolute inset-0">
           {/* Top Left Polygon */}
           <div
-            className="absolute top-[12vw] left-0 w-[30vw]  h-[22vw] bg-[#F4F6FB]"
+            className="absolute top-[12vw] left-0 lg:w-[30vw] w-[70vw] lg:h-[22vw] h-[24vw] bg-[#F4F6FB] "
             style={{
               clipPath: "(0 0, 100% 0%, 100% 100%, 0% 100%)",
             }}
@@ -26,13 +26,13 @@ export default function AboutUsSection() {
 
           {/* Bottom Right Polygon */}
           <div
-            className="absolute bottom-[-1vw] right-[-3vw] w-[65vw] h-[20vw] bg-[#F4F6FB]"
+            className="absolute bottom-[-1vw] lg:right-[-3vw] left-0 lg:w-[65vw] lg:h-[20vw] w-[90vw] h-[50vw] bg-[#F4F6FB]"
             style={{
               clipPath: "polygon(0 0, 80% 0, 45% 100%, 0% 100%)",
             }}
           ></div>
           <div
-            className="absolute top-[24vw] right-[-5vw] w-[15vw] h-[10vw] bg-[#F4F6FB]"
+            className="absolute lg:top-[24vw] bottom-[49vw] right-[-5vw] lg:w-[15vw] lg:h-[10vw] h-[48vw] w-[33vw]  bg-[#F4F6FB]"
             style={{
               clipPath: "polygon(100% 0, 0% 100%, 100% 100%)",
             }}
@@ -42,10 +42,13 @@ export default function AboutUsSection() {
         {/* === Left: Image with Polygon Mask === */}
         <GsapFadeUp y={60}>
           <div
-            className="relative w-[30vw] h-[35vw] overflow-hidden bg-gray-200"
-            style={{
-              clipPath: "polygon(50% 0%, 100% 0, 100% 63%, 0 63%, 0 28%)",
-            }}
+  className="
+    relative 
+    lg:w-[30vw] lg:h-[35vw] 
+    h-[60vw] w-[70vw] overflow-hidden bg-gray-200 
+    lg:[clip-path:polygon(50%_0%,100%_0,100%_63%,0_63%,0_28%)]
+    [clip-path:polygon(50%_0%,100%_0,100%_100%,0_100%,0_40%)]
+  "
           >
             <img
               src="/img/Al-Faraj.png" // ✅ replace with your image path
@@ -57,14 +60,14 @@ export default function AboutUsSection() {
 
         {/* === Right: Text === */}
 
-        <div className="max-w-[37.5vw] text-left">
-          <h2 className="text-[3.5vw] font-semibold mb-[1vw]  leading-none">
+        <div className="lg:max-w-[40.5vw]  text-left z-50 lg:mb-0 mb-[45vw]">
+          <h2 className="lg:text-[3.5vw] text-[8vw] font-semibold mb-[1vw]  leading-none">
             About us
           </h2>
 
           <ScrollReveal
             baseOpacity={0.25}
-            fontSize="2vw"
+
             fontWeight="300"
             lineHeight="130%"
             color="#05178B"

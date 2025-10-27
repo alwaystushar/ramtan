@@ -34,9 +34,9 @@ export default function BusinessGrowth() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full text-white overflow-hidden py-[8vw] px-[6vw] header-dark h-screen"
+      className="relative w-full text-white overflow-hidden lg:py-[8vw] py-[28vw] lg:px-[6vw] header-dark lg:h-screen"
       style={{
-        backgroundImage: "url('./img/home-hero1.jpg')", // replace with your image path
+        backgroundImage: "url('./img/home-hero1.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -48,26 +48,34 @@ export default function BusinessGrowth() {
       <div className="relative z-10 max-w-[90%] mx-auto">
         {/* Heading */}
         <div className="mb-[4vw]">
-          <h4 className="text-[1.1vw] font-medium text-[#5FA0FF] mb-[0.8vw] tracking-wide">
+          <h4 className="text-[1.1vw] max-sm:text-[4vw] font-medium text-[#5FA0FF] mb-[0.8vw] tracking-wide">
             Business Growth
           </h4>
-          <h2 className="text-[2.8vw] leading-[1.2] font-semibold">
+          <h2 className="text-[2.8vw] max-sm:text-[7vw] leading-[1.2] font-semibold">
             Transforming Visions into <br /> Exceptional Events
           </h2>
         </div>
 
-        {/* Cards */}
-        <div className="flex justify-between gap-[2vw] mt-[6vw] flex-wrap">
+        {/* Cards Section */}
+        <div
+          className="
+            flex justify-between gap-[2vw] lg:mt-[6vw] mt-[16vw] flex-wrap
+            max-sm:flex-nowrap max-sm:overflow-x-auto max-sm:overflow-y-hidden
+            max-sm:scroll-smooth max-sm:pb-[4vw] max-sm:gap-[6vw]
+          "
+        >
           {/* Card 1 */}
           <div
             ref={(el) => (cardsRef.current[0] = el)}
-            className="relative w-[22%] text-white"
+            className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] font-semibold mb-[0.5vw]">20%</h3>
-            <p className="text-[0.95vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
+            <h3 className="text-[2vw] max-sm:text-[8vw] font-semibold mb-[0.5vw]">
+              20%
+            </h3>
+            <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
               Increase in brand awareness after a Ramtan-designed exhibition.
             </p>
-            <p className="text-[0.75vw] text-gray-400">
+            <p className="text-[0.75vw] max-sm:text-[3.5vw] text-gray-400">
               Source: <br />
               Ramtan Client Case Studies
             </p>
@@ -78,13 +86,15 @@ export default function BusinessGrowth() {
           {/* Card 2 */}
           <div
             ref={(el) => (cardsRef.current[1] = el)}
-            className="relative w-[22%] text-white"
+            className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] font-semibold mb-[0.5vw]">35–50%</h3>
-            <p className="text-[0.95vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
+            <h3 className="text-[2vw] max-sm:text-[8vw] font-semibold mb-[0.5vw]">
+              35–50%
+            </h3>
+            <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
               Higher engagement rates at events managed by Ramtan.
             </p>
-            <p className="text-[0.75vw] text-gray-400">
+            <p className="text-[0.75vw] max-sm:text-[3.5vw] text-gray-400">
               Source: <br />
               Event Industry Benchmarks
             </p>
@@ -95,14 +105,16 @@ export default function BusinessGrowth() {
           {/* Card 3 */}
           <div
             ref={(el) => (cardsRef.current[2] = el)}
-            className="relative w-[22%] text-white"
+            className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] font-semibold mb-[0.5vw]">15–25%</h3>
-            <p className="text-[0.95vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
+            <h3 className="text-[2vw] max-sm:text-[8vw] font-semibold mb-[0.5vw]">
+              15–25%
+            </h3>
+            <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
               Growth in new business leads through Ramtan’s strategic event
               planning.
             </p>
-            <p className="text-[0.75vw] text-gray-400">
+            <p className="text-[0.75vw] max-sm:text-[3.5vw] text-gray-400">
               Source: <br />
               Ramtan Client Data
             </p>
@@ -113,14 +125,16 @@ export default function BusinessGrowth() {
           {/* Card 4 */}
           <div
             ref={(el) => (cardsRef.current[3] = el)}
-            className="relative w-[22%] text-white"
+            className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] font-semibold mb-[0.5vw]">80%</h3>
-            <p className="text-[0.95vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
+            <h3 className="text-[2vw] max-sm:text-[8vw] font-semibold mb-[0.5vw]">
+              80%
+            </h3>
+            <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
               Client satisfaction with Ramtan’s ability to deliver memorable,
               unique, and impactful experiences.
             </p>
-            <p className="text-[0.75vw] text-gray-400">
+            <p className="text-[0.75vw] max-sm:text-[3.5vw] text-gray-400">
               Source: <br />
               Client Satisfaction Surveys
             </p>

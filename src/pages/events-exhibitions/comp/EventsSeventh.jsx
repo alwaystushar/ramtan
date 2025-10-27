@@ -13,18 +13,18 @@ export default function OurServices() {
     >
 
 
-        <div className=" left-[2vw] text-[6vw] font-semibold leading-[90%] px-[2vw]">
+        <div className=" left-[2vw] lg:text-[6vw] text-[16vw] font-semibold lg:leading-[90%] leading-[110%] px-[2vw]">
             <h1>
                 Empower
-                <br /> Your Business
+                <br /> Your <br className="lg:hidder" /> Business
                 <br /> Growth
             </h1>
         </div>
-        <div className="absolute bottom-[5vw] left-[2vw] text-[0.8vw] leading-[100%]">
-            <h2 className="mt-[0.5vw]">Contact Us</h2>
-            <p className="mt-[0.5vw]">m: +966 11 217 1717</p>
-            <p className="mt-[0.5vw]">e: hello@ramtan-expo.com</p>
-            <p className="mt-[0.5vw]">King Fahad Road, Riyadh, KSA</p>
+        <div className="absolute bottom-[5vw] left-[2vw] lg:text-[0.8vw] text-[3.8vw] leading-[100%]">
+            <h2 className="lg:mt-[0.5vw] mt-[2.5vw]">Contact Us</h2>
+            <p className="lg:mt-[0.5vw] mt-[2.5vw]">m: +966 11 217 1717</p>
+            <p className="lg:mt-[0.5vw] mt-[2.5vw]">e: hello@ramtan-expo.com</p>
+            <p className="lg:mt-[0.5vw] mt-[2.5vw]">King Fahad Road, Riyadh, KSA</p>
         </div>
     </div>
   );

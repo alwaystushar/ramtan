@@ -9,7 +9,6 @@ const ScrollReveal = ({
   textClassName = "",
 
   // Typography (responsive)
-  fontSize = "2vw",
   fontWeight = "300",
   lineHeight = "130%",
   color = "#05178B",
@@ -117,9 +116,8 @@ const ScrollReveal = ({
   return (
     <div ref={containerRef} className={`my-[2vw] ${containerClassName}`}>
       <p
-        className={`font-light ${textClassName}`}
+        className={`font-light lg:text-[2vw] text-[5.5vw] ${textClassName}`}
         style={{
-          fontSize,
           fontWeight,
           lineHeight,
           color,

@@ -33,7 +33,7 @@ export function CardHoverEffect() {
       <div className="absolute inset-0 z-0">
         {/* ✅ Top Left Polygon */}
         <div
-          className="absolute top-[0vw] left-0 w-[50vw] h-[50vw] bg-[#fafbff]"
+          className="absolute top-[0vw] left-0 w-[50vw]  h-[50vw] bg-[#fafbff]"
           style={{
             clipPath: "polygon(0 0, 15% 0, 100% 63%, 0 62%)",
           }}
@@ -47,19 +47,13 @@ export function CardHoverEffect() {
           }}
         ></div>
 
-        {/* ✅ Top Right Small Polygon */}
-        {/* <div
-          className="absolute top-[24vw] right-[-5vw] w-[15vw] h-[10vw] bg-[#F4F6FB]"
-          style={{
-            clipPath: "polygon(0 0, 15% 0, 100% 63%, 0 62%)",
-          }}
-        ></div> */}
+
       </div>
 
       {/* === Content === */}
-      <div className="relative z-10 w-full flex flex-col lg:flex-row items-start justify-between px-[8vw] py-[6vw] gap-[6vw]">
+      <div className="relative z-10 w-full flex flex-col lg:flex-row items-start justify-between px-[8vw]  py-[6vw] gap-[6vw] max-sm:pb-[20vw]">
         <div
-          className="mx-auto px-[3vw] max-w-[80vw] py-[5vw] flex flex-col justify-center items-center gap-[2vw]"
+          className="mx-auto lg:px-[3vw] lg:w-[80vw] w-full py-[5vw] flex flex-col justify-center items-center gap-[2vw]"
         >
 <BlogSlide />
 

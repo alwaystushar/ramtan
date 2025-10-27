@@ -52,11 +52,7 @@ export default function AboutVideoSection() {
             }}
           >
             <h1
-              className="flex items-center col-span-6 col-start-7 font-bold text-white pt-[15vw] pb-[5vw]"
-              style={{
-                fontSize: "6vw", // responsive text size
-                letterSpacing: "0.05vw",
-              }}
+              className="flex items-center col-span-6 lg:col-start-7 col-start-6 font-medium text-white pt-[8vw] pb-[5vw] lg:text-[6vw] text-[10vw] pl-[5vw]"
             >
               About Us
             </h1>
