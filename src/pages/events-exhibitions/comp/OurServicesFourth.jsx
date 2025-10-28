@@ -1,5 +1,6 @@
 import React from "react";
 import { Clock } from "lucide-react"; 
+import MotionFadeUp from "../../../components/MotionFadeUp";
 
 export default function OurServicesFourth() {
   return (
@@ -9,7 +10,9 @@ export default function OurServicesFourth() {
         backgroundImage: "url('./img/ourservicesfourth.jpg')",
       }}
     >
-      {/* Main Content */}
+
+      <MotionFadeUp>
+              {/* Main Content */}
       <div className="relative z-10 flex flex-col items-end justify-end lg:py-[8vw] py-[26vw]  lg:px-[4vw] h-[100vh]">
         <div className="bg-white text-gray-900 lg:max-w-[30vw] max-w-[90vw] lg:pt-[2.5vw] pt-[6vw] lg:pb-[1.5vw] pb-[4vw] lg:mr-[15vw]">
 
@@ -47,6 +50,8 @@ export default function OurServicesFourth() {
 
         </div>
       </div>
+      </MotionFadeUp>
+
     </div>
   );
 }

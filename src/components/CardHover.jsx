@@ -145,7 +145,7 @@ export const CardDescription = ({ className, children, isMobile }) => (
     className={cn(
       "font-medium tracking-wide leading-[120%] transition-colors duration-300 mt-[1.8vw]",
       isMobile
-        ? "text-[4vw] text-blue-900"
+        ? "text-[4vw] font-medium text-blue-900"
         : "lg:text-[1.6vw] text-blue-900 group-hover:text-white",
       className
     )}

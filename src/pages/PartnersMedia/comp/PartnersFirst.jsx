@@ -1,5 +1,6 @@
 import React from "react";
 import BottomLeftBtn from "../../../components/BottomLeftBtn";
+import MotionFadeUp from "../../../components/MotionFadeUp";
 
 export default function PartnersFirst() {
   return (
@@ -14,10 +15,13 @@ export default function PartnersFirst() {
 
 
         <div className="absolute lg:bottom-[3vw] bottom-[94vw] lg:right-[26vw] right-[6vw] lg:text-[6vw] text-[17vw] font-semibold leading-[90%]">
-            <h1>
+           
+           <MotionFadeUp>
+             <h1>
                 Partners
  <br />Success
             </h1>
+            </MotionFadeUp>
         </div>
       <BottomLeftBtn 
         borderColor="border-white"

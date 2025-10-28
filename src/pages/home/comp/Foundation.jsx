@@ -1,5 +1,6 @@
 import LeftSection from "./utils/FoundationLeft";
 import RightSection from "./utils/FoundationRight";
+import FadeUp from "../../../components/FadeUp.jsx";
 
 export default function Foundation() {
   return (
@@ -12,8 +13,11 @@ export default function Foundation() {
         header-dark
       "
     >
+
+      
       {/* Left Side (5/12) */}
-      <div className="col-span-12 lg:col-span-5">
+      <div className="col-span-12 lg:col-span-5 ">
+        
         <LeftSection />
       </div>
 

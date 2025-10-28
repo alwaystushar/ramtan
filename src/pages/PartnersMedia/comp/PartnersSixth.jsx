@@ -25,8 +25,8 @@ export default function PartnersSixth() {
       {/* === Heading === */}
       <div className="flex justify-between items-start lg:mb-[3vw] mb-[6vw]">
         <div>
-          <h2 className="text-[6vw] sm:text-[4vw] font-semibold leading-[1]">
-            Event <br /> Insights
+          <h2 className="lg:text-[6vw] text-[10vw] font-semibold leading-[1]">
+            Event <br className="max-sm:hidden" /> Insights
           </h2>
         </div>
 

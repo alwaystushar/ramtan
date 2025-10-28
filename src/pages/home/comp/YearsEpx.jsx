@@ -1,6 +1,7 @@
 import React from "react";
 import MotionFadeUp from "../../../components/MotionFadeUp"; // adjust path if needed
 import BottomLeftBtn from "../../../components/BottomLeftBtn";
+import Counter from "../../../components/Counter";
 
 
 
@@ -48,7 +49,7 @@ const YearsExp = () => {
           {/* Left Side */}
           <div className="flex flex-col gap-3">
             <MotionFadeUp delay={0.4}>
-              <h2 className="lg:text-[14vw] text-[28vw] leading-none">+40</h2>
+              <h2 className="lg:text-[14vw] text-[28vw] leading-none"><Counter value={4} suffix="+" /></h2>
             </MotionFadeUp>
 
       {/* === Bottom Left Text + Ripple Button === */}

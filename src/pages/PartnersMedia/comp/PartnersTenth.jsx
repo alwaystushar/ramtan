@@ -81,7 +81,7 @@ export default function PartnersTenth() {
       {/* ====== MOBILE VIEW ====== */}
       <div className="flex flex-col w-full gap-6 sm:hidden">
         {/* Scrollable Cards */}
-        <div className="flex gap-4 px-2 pb-2 overflow-x-auto">
+        <div className="flex gap-2 overflow-x-auto">
           {cards.map((card, i) => (
             <div
               key={i}

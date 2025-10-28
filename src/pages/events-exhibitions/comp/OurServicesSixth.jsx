@@ -1,5 +1,7 @@
 import React from "react";
 import BottomLeftBtn from "../../../components/BottomLeftBtn";
+import MotionFadeUp from "../../../components/MotionFadeUp";
+
 
 export default function OurServicesSixth() {
   return (
@@ -18,11 +20,16 @@ lg:[clip-path:polygon(0px_0px,_100%_80%,_100%_100%,_0%_100%)]
 [clip-path:polygon(0px_0px,_100%_50%,_100%_100%,_0%_100%)]"></div>
 
 
-        <div className="absolute lg:bottom-[10vw] bottom-[90vw] left-[2vw]  ">
+
+          <div className="absolute lg:bottom-[10vw] bottom-[90vw] left-[2vw]  ">
             <div className="flex flex-col gap-[1vw]">
-                <h3 className="lg:text-[3.5vw] text-[12vw]">
+              <MotionFadeUp>
+                <h3 className="lg:text-[3.5vw] text-[9vw]">
                     Energy
                 </h3>
+                </MotionFadeUp>
+
+                <MotionFadeUp>
                 <p className="lg:text-[1vw]  lg:max-w-[35vw] max-w-[80vw] text-[3vw] font-light leading-[150%]">
                     International Energy Symposium & Riyadh International Petroleum, Gas, and
 Petrochemical Industries Exhibition (Riyadh): Held at the Riyadh
@@ -30,8 +37,13 @@ InterContinental Hotel. Commemoration of the Kingdom's 50th Anniversary
 of OPEC Membership: Under the supervision of the Ministry of Petroleum
 and Mineral Resources.
                 </p>
+                </MotionFadeUp>
+
+
             </div>
         </div>
+
+
       <BottomLeftBtn 
         borderColor="border-white"
         rippleColor="rgba(255,255,255,0.5)"

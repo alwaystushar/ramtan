@@ -1,6 +1,7 @@
 import React from "react";
 import MotionFadeUp from "../../../components/MotionFadeUp"; // adjust path if needed
 import BottomLeftBtn from "../../../components/BottomLeftBtn";
+import Counter from "../../../components/Counter";
 
 
 
@@ -23,7 +24,7 @@ const PartnersSeventh = () => {
         {/* Shapes bottom */}
 
           <div
-            className="absolute lg:bottom-[0vw] bottom-[35.4vw] lg:right-0 right-[-37vw] lg:w-[52vw] w-[100vw] h-[25.2vw] bg-[#F4F6FB10]"
+            className="absolute lg:bottom-[0vw] bottom-[35.4vw] lg:right-0 right-[-37vw] lg:w-[52vw] w-[100vw] h-[28.2vw] bg-[#F4F6FB10]"
             style={{
               clipPath: "polygon(81% 0px, 100% 35%, 100% 100%, 48% 100%, 0px 0px)",
             }}
@@ -44,7 +45,7 @@ Be not afraid of growing slowly                        </p>
                     </div>
                 </div>
                <h1 className=" lg:text-[12vw] lg:text-start text-end text-[28vw] leading-[1.1]  lg:mt-[6vw] mt-[26vw]">
-            +52%
+            <Counter value={52} suffix="%" prefix="+" decimals={0} />
           </h1> 
             </div>
              

@@ -2,6 +2,7 @@ import React from "react";
 import { HoverEffect } from "../../../../components/CardHover";
 import BlogSlide from "../../../../components/BlogSlide.jsx";
 import BottomLeftBtn from "../../../../components/BottomLeftBtn.jsx";
+import FadeUp from "../../../../components/FadeUp.jsx";
 
 // ✅ Example project data (replace with your real data)
 const projects = [
@@ -55,6 +56,8 @@ export function CardHoverEffect() {
         <div
           className="mx-auto lg:px-[3vw] lg:w-[80vw] w-full py-[5vw] flex flex-col justify-center items-center gap-[2vw]"
         >
+
+          
 <BlogSlide />
 
           <HoverEffect items={projects} />

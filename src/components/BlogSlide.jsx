@@ -64,7 +64,7 @@ export default function BlogSlide() {
   return (
     <section
     id="about"
-    className="relative w-full lg:h-[35vw] h-[80vw] overflow-hidden">
+    className="relative w-full lg:h-[45vw] h-[100vw] overflow-hidden">
       {/* === Background Image === */}
       <div className="absolute inset-0 -z-[10]">
         <img

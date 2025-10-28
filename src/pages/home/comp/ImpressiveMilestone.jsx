@@ -1,5 +1,6 @@
 import React from "react";
 import MotionFadeUp from "../../../components/MotionFadeUp";
+import Counter from "../../../components/Counter";
 
 const ImpressiveMilestone = () => {
   return (
@@ -20,14 +21,14 @@ const ImpressiveMilestone = () => {
         {/* Shapes bottom */}
 
           <div
-            className="absolute lg:bottom-[0vw] right-0 w-[52vw] h-[28.2vw] bg-[#F4F6FB10]"
+            className="absolute lg:bottom-[0vw] top-[60.6vw] right-0 w-[52vw] h-[28.2vw] bg-[#F4F6FB10]"
             style={{
               clipPath: "polygon(81% 0px, 100% 35%, 100% 100%, 48% 100%, 0px 0px)",
             }}
           ></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center h-full px-[2vw] pt-[10.1vw] pb-[0vw]">
+      <div className="relative z-10 flex flex-col justify-center h-full px-[2vw] max-sm:mt-[20vw] pt-[10.1vw] pb-[0vw]">
         <div className="flex lg:flex-row flex-col lg:justify-between lg:gap-[4vw] gap-[28vw] lg:items-center">
           {/* Left Text Section */}
           <MotionFadeUp delay={0.3}>
@@ -47,7 +48,7 @@ const ImpressiveMilestone = () => {
           <div className="relative flex flex-col items-end justify-center">
             {/* Number */}
             <MotionFadeUp delay={0.5}>
-              <h3 className="lg:text-[14vw] text-[24vw] leading-none">2.2m</h3>
+              <h3 className="lg:text-[14vw] text-[24vw] leading-none"><Counter value={2.2} suffix="m" /></h3>
             </MotionFadeUp>
 
 

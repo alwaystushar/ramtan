@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ArrowRight, ArrowLeft } from "lucide-react";
+import MotionFadeUp from "../../../components/MotionFadeUp";
 
 const partnersData = [
   {
@@ -52,9 +53,10 @@ export default function PartnersSecond() {
   const next = partnersData[(index + 1) % partnersData.length];
 
   return (
-    <div className="w-full bg-white text-[#001489] flex flex-col pt-[5vw] overflow-hidden">
+    <div className="w-full bg-white text-[#001489] flex flex-col pt-[15vw] overflow-hidden">
 
       {/* ---------- DESKTOP VERSION ---------- */}
+      <MotionFadeUp>
       <div className="max-sm:hidden">
         {/* Header */}
         <div className="flex justify-between items-end border-b border-gray-300 pb-[1vw] px-[2vw]">
@@ -130,6 +132,8 @@ export default function PartnersSecond() {
           </div>
         </div>
       </div>
+        
+      </MotionFadeUp>
 
       {/* ---------- MOBILE VERSION ---------- */}
       <div className="hidden max-sm:flex flex-col px-2 pb-16 text-[#001489]">

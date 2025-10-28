@@ -1,5 +1,6 @@
 import React from "react";
 import BottomLeftBtn from "../../../components/BottomLeftBtn";
+import MotionFadeUp from "../../../components/MotionFadeUp";
 
 export default function EventsSixth() {
   return (
@@ -36,11 +37,17 @@ export default function EventsSixth() {
 
         <div className="absolute lg:bottom-[10vw] bottom-[40vw] right-[10vw]  ">
             <div className="flex flex-col gap-[1vw]">
+              <MotionFadeUp>
                 <h3 className="lg:text-[3.5vw] text-[12vw]">
                     Healthcare
-                </h3>
+                </h3>                
+              </MotionFadeUp>
+
+              <MotionFadeUp>
                 <p className="lg:text-[1vw] text-[3vw] lg:w-[40vw] w-[60vw] font-light leading-[150%]">
-First Riyadh International Meeting for Dentistry and Healthcare: and the accompanying exhibition in collaboration with Riyadh Colleges of Dentistry and Pharmacy - Under the patronage of his Excellency the Minister of Higher Education.                </p>
+First Riyadh International Meeting for Dentistry and Healthcare: and the accompanying exhibition in collaboration with Riyadh Colleges of Dentistry and Pharmacy - Under the patronage of his Excellency the Minister of Higher Education.                </p>                
+                </MotionFadeUp>
+
             </div>
         </div>
       <BottomLeftBtn 

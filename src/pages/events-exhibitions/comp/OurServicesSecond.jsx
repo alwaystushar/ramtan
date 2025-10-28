@@ -1,6 +1,7 @@
 import React from "react";
 import BottomLeftBtn from "../../../components/BottomLeftBtn";
 import MarqueeText from "../../../components/Marquee";
+import MotionFadeUp from "../../../components/MotionFadeUp";
 
 export default function OurServicesSecond() {
   return (
@@ -19,7 +20,7 @@ export default function OurServicesSecond() {
       <div className="absolute top-[35%] w-full">
         <MarqueeText
           text="We are committed to delivering exceptional event experiences that are both unique and innovative"
-          className="text-[7vw] text-blue-900 tracking-tight"
+          className="lg:text-[7vw] text-[12vw] text-blue-900 tracking-tight"
           speed={60}
           direction="left"
         />
@@ -27,9 +28,13 @@ export default function OurServicesSecond() {
 
       {/* Right-side text block */}
       <div className="absolute lg:bottom-[30%] bottom-[35%] text-blue-900 lg:right-[20vw] right-[7vw] lg:w-[21vw] w-[44vw] lg:text-[1.4vw] text-[4vw] leading-[110%]">
+       
+       
+       <MotionFadeUp>
         <h1>
           Paying close attention to every detail to ensure an unforgettable event marked by creativity.
         </h1>
+        </MotionFadeUp> 
       </div>
 
 

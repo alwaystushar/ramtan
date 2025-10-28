@@ -1,5 +1,7 @@
 import React from "react";
 import BottomLeftBtn from "../../../components/BottomLeftBtn";
+import MotionFadeUp from "../../../components/MotionFadeUp";
+
 
 export default function EventsFourth() {
   return (
@@ -23,12 +25,17 @@ export default function EventsFourth() {
 
         <div className="absolute lg:bottom-[10vw] bottom-[40vw] left-[2vw]  ">
             <div className="flex flex-col gap-[1vw]">
-                <h3 className="lg:text-[3.5vw] text-[12vw] leading-[110%]">
+              <MotionFadeUp>
+                                <h3 className="lg:text-[3.5vw] text-[9vw] lg:leading-[110%]">
                     Technology & Science
                 </h3>
-                <p className="lg:text-[1vw]  lg:max-w-[35vw] max-w-[80vw] text-[3vw] font-light leading-[150%]">
+              </MotionFadeUp>
+              <MotionFadeUp>
+                                <p className="lg:text-[1vw]  lg:max-w-[35vw] max-w-[80vw] text-[3vw] font-light leading-[150%]">
                     Third Symposium on Prospects of Scientific Research in the Arab World (Riyadh): In collaboration with King Abdulaziz City for Science and Technology and under the patronage of The Custodian of the Two Holy Mosques, King Abdullah bin Abdulaziz.
                 </p>
+                </MotionFadeUp>
+
             </div>
         </div>
       <BottomLeftBtn 

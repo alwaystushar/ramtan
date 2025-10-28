@@ -13,6 +13,7 @@ import EventsFifth from './comp/EventsFifth';
 import EventsSixth from './comp/EventsSixth';
 import EvetsSeventh from './comp/EventsSeventh';
 
+
 const EventsExhibitions = () => {
   return (
     <>

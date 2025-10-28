@@ -39,7 +39,7 @@ export default function ContactFirst() {
       <img
         src="/img/Saudi_man.png"
         alt="Saudi man"
-        className="absolute  pointer-events-none bottom-0 left-[5vw] lg:w-[40vw] w-[64vw] h-auto object-contain"
+        className="absolute  pointer-events-none bottom-0 left-[5vw] lg:w-[40vw] w-[55vw] h-auto object-contain"
       />
         {/* === Left Side === */}
         <div className="relative z-10 col-span-12 lg:col-span-6 max-sm:hidden">

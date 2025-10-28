@@ -1,5 +1,7 @@
 import React from "react";
 import BottomLeftBtn from "../../../components/BottomLeftBtn";
+import MotionFadeUp from "../../../components/MotionFadeUp";
+
 
 export default function EventsSecond() {
   return (
@@ -36,12 +38,19 @@ export default function EventsSecond() {
 
         <div className="absolute lg:bottom-[10vw] bottom-[40vw] right-[10vw]  ">
             <div className="flex flex-col gap-[1vw]">
-                <h3 className="lg:text-[3.5vw] text-[12vw]">
+              <MotionFadeUp>
+                <h3 className="lg:text-[3.5vw] text-[9vw]">
                     Water
                 </h3>
+              </MotionFadeUp>
+
+              <MotionFadeUp>
                 <p className="lg:text-[1vw] text-[3vw] lg:w-[40vw] w-[60vw] font-light leading-[150%]">
                    Under the patronage of The Custodian of the Two Holy Mosques, King Abdullah bin Abdulaziz. ARWATEX International Water Conference in Arab Countries: In Beirut, Lebanon, under the patronage of the Lebanese President.
                 </p>
+              </MotionFadeUp>
+                
+                
             </div>
         </div>
       <BottomLeftBtn 

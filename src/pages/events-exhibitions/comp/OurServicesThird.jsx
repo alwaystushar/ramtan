@@ -1,5 +1,6 @@
 import React from "react";
 import BottomLeftBtn from "../../../components/BottomLeftBtn";
+import MotionFadeUp from "../../../components/MotionFadeUp";
 
 export default function OurServicesThird() {
   return (
@@ -15,10 +16,13 @@ export default function OurServicesThird() {
 
       {/* Text */}
       <div className="  text-center lg:text-[4vw] text-[8vw] font-semibold leading-[120%] z-20">
+       <MotionFadeUp>
         <h1>
           Crafting <br className="lg:hidden" /> Unforgettable
  <br /> Event <br className="lg:hidden" /> Experiences
         </h1>
+       </MotionFadeUp>
+        
       </div>
 
       {/* Button */}

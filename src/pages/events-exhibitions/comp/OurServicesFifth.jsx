@@ -1,4 +1,6 @@
 import React from "react";
+import MotionFadeUp from "../../../components/MotionFadeUp";
+
 
 export default function OurServicesFifth() {
   return (
@@ -22,7 +24,8 @@ export default function OurServicesFifth() {
       {/* Main Content */}
       <div className="relative z-10 flex flex-col justify-between h-full px-[2vw] py-[4vw] pt-[8vw]">
         {/* Subheading */}
-        <div className="lg:mb-[1vw] mb-[26vw]">
+        <MotionFadeUp>
+                  <div className="lg:mb-[1vw] mb-[26vw]">
           <p className="lg:text-[0.9vw] text-[2.9vw] text-gray-500 mb-[0.3vw] tracking-wide">
             Success Story
           </p>
@@ -30,9 +33,13 @@ export default function OurServicesFifth() {
             Leading Energy Company
           </h4>
         </div>
+        </MotionFadeUp>
+
 
         <div>
-                  {/* Tags */}
+
+          <MotionFadeUp>
+          {/* Tags */}
         <div className="flex flex-wrap lg:gap-[1vw] gap-[3vw] lg:mb-[1.5vw] mb-[4.5vw]">
           <span className="border border-gray-900 text-black rounded-full px-[1.2vw] py-[0.4vw] lg:text-[0.8vw] text-[2.5vw] font-medium">
             Strategic Planning
@@ -41,11 +48,17 @@ export default function OurServicesFifth() {
             Brand Activation
           </span>
         </div>
+          </MotionFadeUp>
+
+
 
         {/* Heading */}
-        <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[9.2vw] font-semibold leading-[110%] max-sm:mb-[52vw]">
+        <MotionFadeUp>
+                  <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[9.2vw] font-semibold leading-[110%] max-sm:mb-[52vw]">
           Global Energy <br className="lg:hidden" /> Leader Hosts <br className="lg:hidden" /> Groundbreaking <br className="lg:hidden" /> Energy <br className="lg:hidden" /> Exhibition
         </h1>
+        </MotionFadeUp>
+
         </div>
 
       </div>
