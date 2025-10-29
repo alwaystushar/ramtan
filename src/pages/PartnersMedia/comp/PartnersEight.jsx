@@ -4,7 +4,7 @@ import BottomLeftBtn from "../../../components/BottomLeftBtn";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function PartnersEight() {
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(3);
 
   const sections = [
     {
@@ -91,7 +91,7 @@ export default function PartnersEight() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.6 }}
-                className="text-[3.5vw] leading-[1.7] text-[#E2E7FA]"
+                className="text-[3.5vw] h-[30vh] leading-[1.7] text-[#E2E7FA]"
               >
                 {sections[active].text}
               </motion.p>

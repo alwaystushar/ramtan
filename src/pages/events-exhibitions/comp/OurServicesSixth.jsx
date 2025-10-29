@@ -21,7 +21,7 @@ lg:[clip-path:polygon(0px_0px,_100%_80%,_100%_100%,_0%_100%)]
 
 
 
-          <div className="absolute lg:bottom-[10vw] bottom-[90vw] left-[2vw]  ">
+          <div className="absolute lg:bottom-[10vw] bottom-[90vw] lg:left-[2vw] left-[6vw]  ">
             <div className="flex flex-col gap-[1vw]">
               <MotionFadeUp>
                 <h3 className="lg:text-[3.5vw] text-[9vw]">

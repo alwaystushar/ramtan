@@ -18,7 +18,7 @@ export default function FoundationRight() {
       {/* Container for text (auto height) */}
       <div className="relative w-full flex justify-center py-[1vw]">
         {/* Background Text */}
-        <div className="relative z-[1] text-[#8d8d95]  lg:text-[4.5vw] text-[6.5vw] leading-[110%] text-start pointer-events-none">
+        <div className="relative z-[1] text-[#8d8d95]  lg:text-[4.5vw] text-[8.5vw] leading-[110%] text-start pointer-events-none">
           <p>
             Ready to elevate your
 next event? Contact
@@ -32,7 +32,7 @@ experience.
 
         {/* Foreground Mask Layer */}
         <motion.div
-          className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-start lg:text-[4.5vw] text-[6.5vw] leading-[110%] text-[#061685] z-[2] pointer-events-none"
+          className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-start lg:text-[4.5vw] text-[8.5vw] leading-[110%] text-[#061685] z-[2] pointer-events-none"
           style={{
             WebkitMaskImage: 'url("/svg/mask.svg")',
             maskImage: 'url("/svg/mask.svg")',

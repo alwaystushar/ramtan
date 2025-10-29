@@ -23,7 +23,7 @@ export default function EventsFourth() {
       ></div>
 
 
-        <div className="absolute lg:bottom-[10vw] bottom-[40vw] left-[2vw]  ">
+        <div className="absolute lg:bottom-[10vw] bottom-[40vw] lg:left-[2vw] left-[6vw]  ">
             <div className="flex flex-col gap-[1vw]">
               <MotionFadeUp>
                                 <h3 className="lg:text-[3.5vw] text-[9vw] lg:leading-[110%]">

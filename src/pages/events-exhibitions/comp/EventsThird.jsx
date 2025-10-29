@@ -23,7 +23,7 @@ export default function EventsThird() {
 
 
         {/* Main Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full px-[2vw] py-[4vw] pt-[8vw]">
+      <div className="relative z-10 flex flex-col justify-between h-full lg:px-[2vw] px-[6vw] py-[4vw] pt-[8vw]">
         {/* Subheading */}
         <MotionFadeUp>
         <div className="lg:mb-[1vw] mb-[26vw]">
@@ -52,7 +52,7 @@ export default function EventsThird() {
 
           <MotionFadeUp>
                    {/* Heading */}
-        <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[9.2vw] font-semibold leading-[110%] max-sm:mb-[52vw]">
+        <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[8.5vw] font-semibold leading-[110%] max-sm:mb-[52vw]">
           Leading Tech Firm Hosts Groundbreaking Innovation Summit
         </h1> 
             </MotionFadeUp>

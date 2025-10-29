@@ -60,7 +60,7 @@ const YearsExp = () => {
   />
 </div>
       {/* === Bottom Right Learn More Button === */}
-      <div className="absolute bottom-[2vw] right-[3vw] z-30">
+      <div className="absolute bottom-[2vw] right-[3vw] z-30 max-sm:hidden">
         <button className="group lg:px-[2vw] px-[4vw] lg:py-[0.8vw] py-[1.8vw] bg-transparent border border-white/40 rounded-full flex items-center lg:gap-[0.5vw] gap-[2vw] lg:text-[0.9vw] text-[4vw] hover:bg-white hover:text-[#001F4D] transition-all duration-300">
           <span className="lg:w-[0.5vw] lg:h-[0.5vw] w-[1.5vw] h-[1.5vw] bg-white rounded-full animate-pulse transition-colors duration-300 group-hover:bg-[#001F4D]"></span>
           Learn more

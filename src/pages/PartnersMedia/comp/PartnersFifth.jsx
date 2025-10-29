@@ -69,7 +69,7 @@ export default function BusinessGrowth() {
             ref={(el) => (cardsRef.current[0] = el)}
             className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] max-sm:text-[8vw] font-semibold mb-[0.5vw]">
+            <h3 className="text-[2vw] max-sm:text-[14vw] font-semibold mb-[0.5vw]">
               20%
             </h3>
             <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
@@ -88,7 +88,7 @@ export default function BusinessGrowth() {
             ref={(el) => (cardsRef.current[1] = el)}
             className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] max-sm:text-[8vw] font-semibold mb-[0.5vw]">
+            <h3 className="text-[2vw] max-sm:text-[14vw] font-semibold mb-[0.5vw]">
               35–50%
             </h3>
             <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
@@ -107,7 +107,7 @@ export default function BusinessGrowth() {
             ref={(el) => (cardsRef.current[2] = el)}
             className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] max-sm:text-[8vw] font-semibold mb-[0.5vw]">
+            <h3 className="text-[2vw] max-sm:text-[14vw] font-semibold mb-[0.5vw]">
               15–25%
             </h3>
             <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
@@ -127,7 +127,7 @@ export default function BusinessGrowth() {
             ref={(el) => (cardsRef.current[3] = el)}
             className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] max-sm:text-[8vw] font-semibold mb-[0.5vw]">
+            <h3 className="text-[2vw] max-sm:text-[14vw] font-semibold mb-[0.5vw]">
               80%
             </h3>
             <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">

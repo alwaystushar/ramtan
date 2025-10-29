@@ -60,7 +60,7 @@ body {
 
 
 .container-box {
-  @apply px-[2vw] py-[2vw]
+  @apply lg:px-[2vw] py-[2vw] px-[6vw] 
 }
 
 .iconBtn{

@@ -1,6 +1,7 @@
 import React from "react";
 import MotionFadeUp from "../../../components/MotionFadeUp";
 import Counter from "../../../components/Counter";
+import AnimatedShape from "./utils/AnimatedShape";
 
 const ImpressiveMilestone = () => {
   return (
@@ -28,7 +29,7 @@ const ImpressiveMilestone = () => {
           ></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center h-full px-[2vw] max-sm:mt-[20vw] pt-[10.1vw] pb-[0vw]">
+      <div className="relative z-10 flex flex-col justify-center h-full lg:px-[2vw] px-[6vw] max-sm:mt-[20vw] pt-[10.1vw] pb-[0vw]">
         <div className="flex lg:flex-row flex-col lg:justify-between lg:gap-[4vw] gap-[28vw] lg:items-center">
           {/* Left Text Section */}
           <MotionFadeUp delay={0.3}>

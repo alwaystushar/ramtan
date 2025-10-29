@@ -14,7 +14,7 @@ export default function PartnersNinth() {
       ></div>
 
       {/* === Text Content === */}
-      <div className="absolute max-sm:top-[10vw] lg:right-[12vw] left-[2vw] z-10 lg:max-w-[40vw] text-[#001489] ml-auto">
+      <div className="absolute max-sm:top-[10vw] lg:right-[12vw] lg:left-[2vw] left-[6vw] z-10 lg:max-w-[40vw] text-[#001489] ml-auto">
         <h2 className="lg:text-[4.5vw] text-[8.5vw] font-semibold leading-[110%] mb-[3vw]">
           We're here to <br />
           collaborate.{" "}

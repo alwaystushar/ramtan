@@ -14,7 +14,7 @@
 }
 
 .logo {
-    @apply lg:w-[5vw] lg:h-[5vw] w-[12vw] h-[12vw] transition-all duration-300
+    @apply lg:w-[5vw] lg:h-[5vw] w-[16vw] h-[16vw] transition-all duration-300
 }
 
 .nav {

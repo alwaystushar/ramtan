@@ -38,7 +38,7 @@ export default function EventsSixth() {
         <div className="absolute lg:bottom-[10vw] bottom-[40vw] right-[10vw]  ">
             <div className="flex flex-col gap-[1vw]">
               <MotionFadeUp>
-                <h3 className="lg:text-[3.5vw] text-[12vw]">
+                <h3 className="lg:text-[3.5vw] text-[9vw]">
                     Healthcare
                 </h3>                
               </MotionFadeUp>

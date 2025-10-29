@@ -136,7 +136,7 @@ export default function PartnersSecond() {
       </MotionFadeUp>
 
       {/* ---------- MOBILE VERSION ---------- */}
-      <div className="hidden max-sm:flex flex-col px-2 pb-16 text-[#001489]">
+      <div className="hidden max-sm:flex flex-col lg:px-[2vw] px-[6vw] pb-16 text-[#001489]">
         {/* Heading */}
         <div className="mb-10">
           <h1 className="text-[11vw] font-semibold leading-[95%] text-[#204FD5]">Partner</h1>
@@ -170,8 +170,8 @@ export default function PartnersSecond() {
 
         {/* Slide Content */}
         <div ref={contentRef} className="flex flex-col">
-          <p className="text-[4vw] text-gray-600 mb-2">{current.subtitle}</p>
-          <h2 className="text-[6vw] font-semibold leading-[120%] text-[#204FD5] mb-5">
+          <p className="text-[4vw] text-gray-600 mb-[7vw]">{current.subtitle}</p>
+          <h2 className="text-[7vw] font-semibold leading-[120%] text-[#204FD5] mb-[10vw]">
             {current.title}
           </h2>
 
@@ -179,7 +179,7 @@ export default function PartnersSecond() {
             {current.tags.map((tag, i) => (
               <span
                 key={i}
-                className="border border-gray-900 rounded-full px-4 py-1 text-[2.4vw] font-medium text-black"
+                className="border border-gray-900 rounded-full px-4 py-1 text-[3.4vw] font-medium text-black"
               >
                 {tag}
               </span>

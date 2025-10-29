@@ -16,7 +16,7 @@ export default function OurServices() {
 
 
 <MotionFadeUp>
-        <div className=" left-[2vw] lg:text-[6vw] text-[16vw] font-semibold lg:leading-[90%] leading-[110%] px-[2vw]">
+        <div className=" left-[2vw] lg:text-[6vw] text-[16vw] font-semibold lg:leading-[90%] leading-[110%] lg:px-[2vw] px-[6vw]">
             <h1>
                 Empower
                 <br /> Your <br className="lg:hidder" /> Business
@@ -26,7 +26,7 @@ export default function OurServices() {
         </MotionFadeUp>
 
         <MotionFadeUp>
-        <div className="absolute bottom-[5vw] left-[2vw] lg:text-[0.8vw] text-[3.8vw] leading-[100%]">
+        <div className="absolute bottom-[5vw] lg:left-[2vw] left-[6vw] lg:text-[0.8vw] text-[3.8vw] leading-[100%]">
             <h2 className="lg:mt-[0.5vw] mt-[2.5vw]">Contact Us</h2>
             <p className="lg:mt-[0.5vw] mt-[2.5vw]">m: +966 11 217 1717</p>
             <p className="lg:mt-[0.5vw] mt-[2.5vw]">e: hello@ramtan-expo.com</p>

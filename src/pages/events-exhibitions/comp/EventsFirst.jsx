@@ -23,7 +23,7 @@ export default function EventsFirst() {
 
 
               {/* Main Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full px-[2vw] py-[4vw] pt-[8vw]">
+      <div className="relative z-10 flex flex-col justify-between h-full lg:px-[2vw] px-[6vw] py-[4vw] pt-[8vw]">
         {/* Subheading */}
         <MotionFadeUp>
                   <div className="lg:mb-[1vw] mb-[26vw]">
