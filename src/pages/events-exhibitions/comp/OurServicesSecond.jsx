@@ -20,14 +20,14 @@ export default function OurServicesSecond() {
       <div className="absolute top-[35%] w-full">
         <MarqueeText
           text="We are committed to delivering exceptional event experiences that are both unique and innovative"
-          className="lg:text-[7vw] text-[14vw] text-blue-900 tracking-tight"
+          className="lg:text-[7vw] text-[14vw] uppercase text-blue-900 tracking-tight"
           speed={60}
           direction="left"
         />
       </div>
 
       {/* Right-side text block */}
-      <div className="absolute lg:bottom-[30%] bottom-[30%] text-blue-900 lg:right-[20vw] right-[7vw] lg:w-[21vw] w-[44vw] lg:text-[1.4vw] text-[4vw] leading-[110%]">
+      <div className="absolute lg:bottom-[30%] bottom-[30%] text-blue-900 lg:right-[20vw] right-[7vw] lg:w-[21vw] w-[44vw] lg:text-[1.4vw] text-[4vw] leading-[110%] ">
        
        
        <MotionFadeUp>
