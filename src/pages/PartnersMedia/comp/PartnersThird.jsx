@@ -14,7 +14,7 @@ const PartnersThird = () => {
         {/* Shapes top */}
 
           <div
-            className="absolute lg:top-[0vw] top-[40vw] lg:left-[0vw] left-[-40vw] lg:w-[48vw] w-[78vw] h-[26vw] bg-[#F4F6FB10]"
+            className="absolute lg:top-[0vw] top-[40vw] lg:left-[0vw] left-[-40vw] lg:w-[48vw] w-[78vw] lg:h-[28.7vw] h-[26vw] bg-[#2b52cd18]"
             style={{
               clipPath: "polygon(50% 0%, 100% 100%, 0 100%, 0 0)",
             }}
@@ -23,23 +23,23 @@ const PartnersThird = () => {
         {/* Shapes bottom */}
 
           <div
-            className="absolute lg:bottom-[0vw] bottom-[35.4vw] lg:right-0 right-[-37vw] lg:w-[52vw] w-[100vw] h-[25.2vw] bg-[#F4F6FB10]"
+            className="absolute lg:bottom-[0vw] bottom-[35.4vw] lg:right-0 right-[-37vw] lg:w-[52vw] w-[100vw] h-[25.2vw] bg-[#2b52cd18]"
             style={{
               clipPath: "polygon(81% 0px, 100% 35%, 100% 100%, 48% 100%, 0px 0px)",
             }}
           ></div>
 
       {/* Hero Content */}
-      <div className="flex flex-col justify-between h-full px-[6vw]  lg:pt-[6vw] pt-[16vw] relative z-10 gap-[6vw]">
+      <div className="flex flex-col justify-between h-full lg:px-[2vw] px-[6vw]  lg:pt-[6vw] pt-[16vw] relative z-10 gap-[6vw]">
         {/* Heading */}
         <MotionFadeUp delay={0.3}>
             <div className="flex lg:flex-row flex-col justify-between lg:items-end w-full mb-[14vw]">
                 <div>
                     <div>
-                        <h3 className="lg:text-[3vw] text-[6vw] font-semibold leading-[110%]">Increased Event <br />Engagement</h3>
+                        <h3 className="lg:text-[3vw] text-[6vw] font-medium leading-[110%]">Increased Event <br />Engagement</h3>
                     </div>
                     <div>
-                        <p className="lg:text-[1vw] text-[3vw] text-white/80 lg:mt-[0.5vw] mt-[3.5vw] lg:max-w-[30vw] max-w-[50vw] opacity-40">
+                        <p className="lg:text-[1vw] text-[3vw] text-[#2054a5] lg:mt-[0.5vw] mt-[3.5vw] lg:max-w-[30vw] max-w-[50vw] ">
 Boost Attendance & Impact at Your Next Event                        </p>
                     </div>
                 </div>

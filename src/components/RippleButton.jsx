@@ -95,7 +95,7 @@ export default function RippleButton({
       ref={btnRef}
       onClick={onClick}
       style={{ fontSize: size }}
-      className={`relative overflow-hidden border ${borderColor} px-[1vw] py-[1vw] rounded-full flex items-center justify-center transition-all duration-300 ${className}`}
+      className={`relative overflow-hidden border-[0.11vw]  ${borderColor} px-[1vw] py-[1vw] rounded-full flex items-center justify-center transition-all duration-300 ${className}`}
     >
       {/* Ripple Element */}
       <span

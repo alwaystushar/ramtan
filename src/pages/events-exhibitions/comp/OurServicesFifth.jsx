@@ -7,7 +7,7 @@ export default function OurServicesFifth() {
     <div className="relative overflow-hidden bg-white text-[#001489] lg:h-[48vw]">
       {/* Left Polygon background */}
       <div
-        className="absolute lg:bottom-0 bottom-[20.4vw] left-0 w-[78vw] h-[25vw] bg-[#E9ECF7] z-0"
+        className="absolute lg:bottom-0 bottom-[20.4vw] left-0 w-[78vw] h-[25vw] bg-[#f0f1f8] z-0"
         style={{
           clipPath: "polygon(15% 0%, 100% 0%, 75% 100%, 0% 100%, 0% 55%)",
         }}
@@ -15,7 +15,7 @@ export default function OurServicesFifth() {
 
       {/* Right Polygon background */}
       <div
-        className="absolute lg:top-0 top-[94vw] right-0 w-[22vw] h-[23vw] bg-[#E9ECF7] z-0"
+        className="absolute lg:top-0 top-[94vw] right-0 w-[22vw] h-[23vw] bg-[#f0f1f8] z-0"
         style={{
           clipPath: "polygon(100% 0%, 0% 100%, 100% 100%)",
         }}
@@ -29,7 +29,7 @@ export default function OurServicesFifth() {
           <p className="lg:text-[0.9vw] text-[2.9vw] text-gray-500 mb-[0.3vw] tracking-wide">
             Success Story
           </p>
-          <h4 className="lg:text-[1.2vw] text-[5.2vw] font-medium">
+          <h4 className="lg:text-[1.4vw] text-[5.2vw] font-medium">
             Leading Energy Company
           </h4>
         </div>
@@ -54,7 +54,7 @@ export default function OurServicesFifth() {
 
         {/* Heading */}
         <MotionFadeUp>
-                  <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[9.2vw] font-semibold leading-[110%] max-sm:mb-[52vw]">
+                  <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[9.2vw] font-medium leading-[110%] max-sm:mb-[52vw]">
           Global Energy <br className="lg:hidden" /> Leader Hosts <br className="lg:hidden" /> Groundbreaking <br className="lg:hidden" /> Energy <br className="lg:hidden" /> Exhibition
         </h1>
         </MotionFadeUp>

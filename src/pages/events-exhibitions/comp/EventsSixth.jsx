@@ -13,10 +13,13 @@ export default function EventsSixth() {
       }}
     >
 
+
+      
+
               {/*back Polygon background */}
       <div
         className="absolute bottom-0 right-0
-         lg:w-[80vw] lg:h-[100vh] 
+         lg:w-[75vw] lg:h-[100vh] 
          w-[150vw] h-[77vh]
           bg-[#081c93] z-0
           [clip-path:polygon(100%_0px,_100%_100%,_0%_100%)]
@@ -27,7 +30,7 @@ export default function EventsSixth() {
                     {/*front Polygon background */}
       <div
         className="absolute bottom-0 right-0 
-        lg:w-[60vw] lg:h-[100vh]
+        lg:w-[55vw] lg:h-[100vh]
         w-[120vw] h-[60vh]
          bg-[#06178b] z-0
          [clip-path:polygon(100%_0px,_100%_100%,_0px_125%,_43%_80%,_43%_64%)]"
@@ -38,13 +41,13 @@ export default function EventsSixth() {
         <div className="absolute lg:bottom-[10vw] bottom-[40vw] right-[10vw]  ">
             <div className="flex flex-col gap-[1vw]">
               <MotionFadeUp>
-                <h3 className="lg:text-[3.5vw] text-[9vw]">
+                <h3 className="lg:text-[2.5vw] text-[9vw]">
                     Healthcare
                 </h3>                
               </MotionFadeUp>
 
               <MotionFadeUp>
-                <p className="lg:text-[1vw] text-[3vw] lg:w-[40vw] w-[60vw] font-light leading-[150%]">
+                <p className="lg:text-[0.75vw] text-[3vw] lg:w-[34vw] w-[60vw] font-light leading-[150%]">
 First Riyadh International Meeting for Dentistry and Healthcare: and the accompanying exhibition in collaboration with Riyadh Colleges of Dentistry and Pharmacy - Under the patronage of his Excellency the Minister of Higher Education.                </p>                
                 </MotionFadeUp>
 

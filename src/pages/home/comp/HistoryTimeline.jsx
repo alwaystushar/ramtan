@@ -131,7 +131,7 @@ export default function HistoryTimeline() {
                   animate={{
                     width: "0.5vw",
                     height: "0.5vw",
-                    backgroundColor:"#0053af",
+                    backgroundColor: isActive ? "#ffffff" : "#125fa7",
                   }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
                   className="rounded-full absolute bottom-[0vw]"
@@ -143,7 +143,7 @@ export default function HistoryTimeline() {
       </div>
 
       {/* === Description Text === */}
-      <div className="max-w-[60vw] mt-[2vw] min-h-[6vw] flex items-start px-[8vw]">
+      <div className="max-w-[60vw] mt-[0vw] min-h-[6vw] flex items-start px-[12vw]">
         <AnimatePresence mode="wait">
           <motion.p
             key={index}

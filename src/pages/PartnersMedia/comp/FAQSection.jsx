@@ -34,10 +34,10 @@ export default function FAQSection() {
   return (
     <>
       {/* ===================== DESKTOP VIEW ===================== */}
-      <section className="w-full relative bg-white py-[6vw] px-[2vw] pb-0 flex flex-wrap items-center justify-between max-sm:hidden">
+      <section className="w-full relative bg-white  py-[6vw] px-[2vw] pb-0 flex flex-wrap items-center justify-between max-sm:hidden">
         {/* === Left Side (Image + Text) === */}
         <div className="w-full lg:w-[50%] lg:flex-row flex-col flex items-start justify-center">
-          <h2 className="text-[2.8vw] w-[46vw] font-semibold text-[#0021a9] leading-tight mb-[2vw] whitespace-nowrap">
+          <h2 className="text-[2.8vw] w-[46vw] font-medium text-[#0021a9] leading-tight mb-[2vw] whitespace-nowrap">
             A few things you <br /> may want to ask us
           </h2>
 
@@ -46,7 +46,7 @@ export default function FAQSection() {
             <img
               src="/img/Saudi_women.png"
               alt="Ramtan Representative"
-              className="w-[55vw] object-cover"
+              className="w-[65vw] object-cover"
             />
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function FAQSection() {
             >
               <div className="flex items-center justify-between">
                 <h3
-                  className={`text-[1.1vw] font-medium transition-colors ${
+                  className={`text-[1.2vw] transition-colors ${
                     openIndex === index
                       ? "text-[#001489]"
                       : "text-[#001489]/80 hover:text-[#001489]"

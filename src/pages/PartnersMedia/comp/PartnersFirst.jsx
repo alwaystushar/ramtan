@@ -14,7 +14,7 @@ export default function PartnersFirst() {
     >
 
 
-        <div className="absolute lg:bottom-[3vw] bottom-[94vw] lg:right-[26vw] right-[6vw] lg:text-[6vw] text-[14vw] font-semibold leading-[90%]">
+        <div className="absolute lg:bottom-[3vw] bottom-[94vw] lg:right-[20vw] right-[6vw] lg:text-[6vw] text-[14vw] font-semibold leading-[90%]">
            
            <MotionFadeUp>
              <h1>

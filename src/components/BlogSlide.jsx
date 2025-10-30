@@ -64,7 +64,7 @@ export default function BlogSlide() {
   return (
     <section
     id="about"
-    className="relative w-full lg:h-[45vw] h-[100vw] overflow-hidden">
+    className="relative w-full lg:h-[35vw] h-[100vw] overflow-hidden">
       {/* === Background Image === */}
       <div className="absolute inset-0 -z-[10]">
         <img
@@ -79,7 +79,7 @@ export default function BlogSlide() {
       {/* === Overlay Text Content === */}
       <div
         ref={textRef}
-        className="absolute lg:bottom-[2vw] lg:left-[2vw] bottom-[8vw] left-[8vw] text-white z-[10]"
+        className="absolute lg:bottom-[3vw] lg:left-[3.3vw] bottom-[8vw] left-[8vw] text-white z-[10]"
       >
         <div className="flex flex-col gap-[4vw] w-fit">
           {/* === Tag + Title === */}
@@ -108,6 +108,15 @@ export default function BlogSlide() {
           z-[50] pointer-events-auto max-sm:hidden
         "
       >
+
+                <RippleButton
+            onClick={nextSlide}
+            className="text-white"
+          >
+            <ArrowRight className="w-[1.2vw] h-[1.2vw]" />
+          
+        </RippleButton>
+        
         <RippleButton
             onClick={prevSlide}
             className="text-white"
@@ -116,13 +125,7 @@ export default function BlogSlide() {
           
         </RippleButton>
 
-        <RippleButton
-            onClick={nextSlide}
-            className="text-white"
-          >
-            <ArrowRight className="w-[1.2vw] h-[1.2vw]" />
-          
-        </RippleButton>
+
       </div>
     </section>
   );

@@ -138,7 +138,7 @@ export default function GsapCarousel({
             
 
             {/* ==== Title (Bottom Right) ==== */}
-            <div className="relative z-10 text-start ml-auto lg:max-w-[40vw] max-w-[75vw]">
+            <div className="relative z-10 text-start ml-auto lg:max-w-[42vw] max-w-[75vw]">
               <h1 className="slide-title lg:text-[3.8vw] text-[10vw] font-semibold leading-[110%] mb-[1vw] drop-shadow-lg">
                 {slide.title}
               </h1>

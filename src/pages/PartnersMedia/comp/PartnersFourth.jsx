@@ -66,17 +66,17 @@ useEffect(() => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white text-[#001489] py-[8vw] pb-[1vw] px-[6vw] overflow-hidden relative"
+      className="w-full bg-white text-[#001489] py-[8vw] pb-[1vw] lg:px-[2vw] px-[6vw] overflow-hidden relative"
     >
       {/* === Heading === */}
       <div className="flex lg:flex-row flex-col justify-between items-start mb-[4vw] lg:relative lg:gap-0 gap-[3vw]">
         <div className="lg:absolute top-[4vw]">
-          <h2 className="lg:text-[3vw] text-[6vw] text-[#204fd5] font-semibold leading-[1.1]">
+          <h2 className="lg:text-[4vw] text-[6vw] text-[#204fd5] font-medium leading-[1.1]">
             Maximize Your <br /> Business Performance
           </h2>
         </div>
 
-        <p className="lg:max-w-[18vw] max-w-[58vw] lg:text-[1.1vw] text-[3.6vw] leading-[1.6] text-[#0021a9] lg:absolute right-[26vw] top-0">
+        <p className="lg:max-w-[19vw] max-w-[58vw] lg:text-[1.1vw] text-[3.6vw] leading-[1.6] text-[#0021a9] lg:absolute right-[23.4vw] top-0">
           Optimize your business journey and foster strong customer relationships
           with each transaction.
         </p>
@@ -85,8 +85,8 @@ useEffect(() => {
 {/* === Bar Chart === */}
 <div className="relative w-full h-[24vw] mt-[12vw] max-sm:h-[60vw]">
   {/* ==== BAR 1 ==== */}
-  <div className="absolute left-[35%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
-    <div className="relative w-full h-full overflow-hidden rounded-t-md">
+  <div className="absolute lg:left-[55%] left-[35%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
+    <div className="relative w-full h-full overflow-hidden ">
       <div
         ref={(el) => (fillsRef.current[3] = el)}
         data-height="100"
@@ -111,7 +111,7 @@ useEffect(() => {
   </div>
 
   {/* ==== BAR 2 ==== */}
-  <div className="absolute left-[15%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
+  <div className="absolute lg:left-[37%] left-[15%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
     <div className="relative w-full h-full overflow-hidden rounded-t-md">
       <div
         ref={(el) => (fillsRef.current[1] = el)}
@@ -138,7 +138,7 @@ useEffect(() => {
   </div>
 
   {/* ==== BAR 3 ==== */}
-  <div className="absolute left-[0%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
+  <div className="absolute lg:left-[20%] left-[0%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
     <div className="relative w-full h-full overflow-hidden rounded-t-md">
       <div
         ref={(el) => (fillsRef.current[0] = el)}
@@ -165,7 +165,7 @@ useEffect(() => {
   </div>
 
   {/* ==== BAR 4 ==== */}
-  <div className="absolute left-[60%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
+  <div className="absolute left-[72%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
     <div className="relative w-full h-full overflow-hidden rounded-t-md">
       <div
         ref={(el) => (fillsRef.current[2] = el)}

@@ -35,13 +35,13 @@ export default function PartnersTenth() {
         {cards.map((card, i) => (
           <div
             key={i}
-            className="border border-gray-300 p-[1.5vw] pt-[2.5vw] bg-white flex flex-col justify-between h-[50vh]"
+            className="border border-gray-300 p-[3vw] pt-[2.5vw] bg-white flex flex-col justify-between h-[23vw]"
           >
             <div>
-              <p className="inline-block text-[0.8vw] text-gray-700 border border-gray-400 rounded-full px-[0.7vw] py-[0.2vw] mb-[0.7vw]">
+              <p className="inline-block text-[0.8vw] text-gray-700 border border-gray-400 rounded-full px-[0.7vw] py-[0.2vw] mb-[1.5vw]">
                 {card.tag}
               </p>
-              <h3 className="text-[1.1vw] font-semibold text-[#001489] leading-tight mb-[1vw]">
+              <h3 className="text-[1.3vw] font-semibold text-[#001489] leading-tight mb-[1vw]">
                 {card.title}
               </h3>
             </div>
@@ -50,13 +50,13 @@ export default function PartnersTenth() {
         ))}
 
         <div className="col-span-2 bg-[#001489] text-white p-[2.5vw] flex flex-col justify-between mt-[1vw]">
-          <h3 className="text-[1.5vw] font-semibold mb-[1vw]">
-            What are you looking for ?
+          <h3 className="lg:text-[2vw] leading-[125%] text-[1.5vw] font-semibold mb-[1vw]">
+            What are you <br className="max-sm:hidden" /> looking for?
           </h3>
           <input
             type="text"
             placeholder="Enter your request"
-            className="mt-[1vw] p-[1vw] w-full bg-transparent border-b border-b-[#2A4DFF30] text-white placeholder:text-white/60 focus:outline-none"
+            className="mt-[1vw] py-[1vw] w-full bg-transparent border-b border-b-[#2A4DFF30] text-white placeholder:text-white/60 focus:outline-none"
           />
         </div>
 

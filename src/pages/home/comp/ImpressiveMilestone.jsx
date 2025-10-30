@@ -34,7 +34,7 @@ const ImpressiveMilestone = () => {
           {/* Left Text Section */}
           <MotionFadeUp delay={0.3}>
             <div className="flex flex-col gap-4">
-              <h2 className="lg:text-[2.5vw] text-[6vw] font-semibold leading-tight">
+              <h2 className="lg:text-[2.5vw] text-[6vw] font-medium leading-tight">
                 Impressive Milestone
               </h2>
               <p className="lg:text-[0.98vw] font-light text-[3.5vw] leading-relaxed text-gray-200 lg:w-[25vw] w-[65vw]">

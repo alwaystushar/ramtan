@@ -25,8 +25,9 @@ export default function PartnersSixth() {
       {/* === Heading === */}
       <div className="flex justify-between items-start lg:mb-[3vw] mb-[6vw]">
         <div>
-          <h2 className="lg:text-[6vw] text-[10vw] font-semibold leading-[1.2]">
-            Event <br /> Insights
+          <h2 className="lg:text-[6vw] text-[10vw] font-semibold leading-[90%]">
+          <span className="text-[#2b52cd]">Event</span>   <br />
+          <span>Insights</span>
           </h2>
         </div>
 
@@ -56,7 +57,7 @@ export default function PartnersSixth() {
             key={item.id}
             className="
               relative flex-shrink-0 sm:flex-shrink sm:static
-              w-[80vw] sm:w-auto h-[60vw] sm:h-[26vw]
+              w-[80vw] sm:w-auto lg:h-[29vw] h-[80vw] p-[1vw]
                border border-[#001489]/30 bg-white text-[#001489]
               flex flex-col justify-between transition-all duration-300 ease-out
               hover:bg-[#001489] hover:text-white hover:border-[#001489]

@@ -13,18 +13,18 @@ export default function OurServicesFourth() {
 
       <MotionFadeUp>
               {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-end justify-end lg:py-[8vw] py-[26vw]  lg:px-[4vw] h-[100vh]">
-        <div className="bg-white text-gray-900 lg:max-w-[30vw] max-w-[90vw] lg:pt-[2.5vw] pt-[6vw] lg:pb-[1.5vw] pb-[4vw] lg:mr-[15vw]">
+      <div className="relative z-10 flex flex-col items-end justify-end lg:py-[8vw] py-[26vw]  lg:px-[2vw] h-[100vh]">
+        <div className="bg-white text-gray-900 lg:max-w-[38.5vw] max-w-[90vw] lg:pt-[2.5vw] pt-[6vw] lg:pb-[1.5vw] pb-[4vw] lg:mr-[0vw]">
 
           <div className="lg:px-[1vw] px-[6vw]">
           {/* Small heading */}
-          <p className="lg:mb-[0.6vw] mb-[6.6vw] lg:text-[0.6vw] text-[2.6vw] border border-gray-300 rounded-full px-[1vw] py-[0.3vw] font-semibold tracking-[0.15vw] uppercase text-gray-500 inline-block">
-            Experiences
+          <p className="lg:mb-[2vw] mb-[6.6vw] lg:text-[0.8vw] text-[2.6vw] border border-gray-300 rounded-full px-[1vw] py-[0.3vw]  text-gray-500 inline-block">
+            Our Services
           </p>
 
           {/* Title */}
-          <h2 className="lg:mb-[1vw] mb-[6vw] lg:text-[2.4vw] text-[6vw] text-blue-900 font-medium leading-[120%]">
-            Creating unique and memorable event experiences for our clients and attendees
+          <h2 className="lg:mb-[2vw] mb-[6vw] lg:text-[2.4vw] text-[6vw] text-blue-900 font-semibold leading-[120%]">
+            Seminar & Workshop Organization
           </h2>
 
           {/* Date */}

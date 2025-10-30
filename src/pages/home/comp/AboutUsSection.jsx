@@ -26,13 +26,13 @@ export default function AboutUsSection() {
 
           {/* Bottom Right Polygon */}
           <div
-            className="absolute bottom-[-1vw] lg:right-[-3vw] left-0 lg:w-[65vw] lg:h-[20vw] w-[90vw] h-[50vw] bg-[#F4F6FB]"
+            className="absolute bottom-[-1vw] lg:left-[38vw] left-0 lg:w-[65vw] lg:h-[20vw] w-[90vw] h-[50vw] bg-[#F4F6FB]"
             style={{
               clipPath: "polygon(0 0, 80% 0, 45% 100%, 0% 100%)",
             }}
           ></div>
           <div
-            className="absolute lg:top-[24vw] bottom-[49vw] right-[-5vw] lg:w-[15vw] lg:h-[10vw] h-[48vw] w-[33vw]  bg-[#F4F6FB]"
+            className="absolute lg:top-[24vw] bottom-[49vw]  right-[-5vw] lg:w-[15vw] lg:h-[10vw] h-[48vw] w-[33vw]  bg-[#F4F6FB]"
             style={{
               clipPath: "polygon(100% 0, 0% 100%, 100% 100%)",
             }}
@@ -60,7 +60,7 @@ export default function AboutUsSection() {
 
         {/* === Right: Text === */}
 
-        <div className="lg:max-w-[40.5vw]  text-left z-50 lg:mb-0 mb-[45vw]">
+        <div className="lg:max-w-[36.5vw]  text-left z-50 lg:mb-0 mb-[45vw]">
           <h2 className="lg:text-[3.5vw] text-[8vw] font-semibold mb-[1vw]  leading-none">
             About us
           </h2>
@@ -79,7 +79,11 @@ export default function AboutUsSection() {
       </div>
 
       {/* === Bottom Left: Call to Action === */}
-      <BottomLeftBtn />
+
+      <div className="text-[#081c83]">
+             <BottomLeftBtn />
+      </div>
+ 
     </section>
   );
 }

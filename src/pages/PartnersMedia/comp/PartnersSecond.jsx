@@ -8,7 +8,7 @@ const partnersData = [
     id: 1,
     title: "Leading Tech Firm Hosts Groundbreaking Innovation Summit",
     subtitle: "Presents",
-    tags: ["Experiences", "Experiences"],
+    tags: ["Exhibition Design", "Event Management"],
   },
   {
     id: 2,
@@ -61,12 +61,12 @@ export default function PartnersSecond() {
         {/* Header */}
         <div className="flex justify-between items-end border-b border-gray-300 pb-[1vw] px-[2vw]">
           <div>
-            <h1 className="text-[5vw] font-semibold leading-none text-[#204FD5]">Partners</h1>
-            <h1 className="text-[5vw] font-semibold leading-none">Success</h1>
+            <h1 className="lg:text-[6vw] font-semibold leading-none text-[#204FD5]">Partners</h1>
+            <h1 className="lg:text-[6vw] font-semibold leading-none">Success</h1>
           </div>
 
           <div className="flex items-end justify-between gap-[1.5vw] w-[48vw]">
-            <h1 ref={numRef} className="text-[5vw] font-semibold">
+            <h1 ref={numRef} className="text-[5vw] font-medium lg:ml-[4.5vw]">
               {String(current.id).padStart(2, "0")}
             </h1>
 

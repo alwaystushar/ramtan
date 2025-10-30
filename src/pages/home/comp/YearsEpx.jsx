@@ -5,8 +5,6 @@ import Counter from "../../../components/Counter";
 
 
 
-import { ArrowDown } from "lucide-react";
-
 const YearsExp = () => {
   return (
     <section
@@ -37,7 +35,7 @@ const YearsExp = () => {
         {/* Heading */}
         <MotionFadeUp delay={0.3}>
             <div className="flex justify-end w-full ">
-               <h1 className=" lg:text-[6vw] text-[16vw] leading-[1.1] font-semibold mt-[6vw] lg:mr-[0.4vw] mr-[2vw]">
+               <h1 className=" lg:text-[6vw] text-[16vw] leading-[1.1] font-medium mt-[6vw] lg:mr-[2.5vw] mr-[2vw]">
             Years of <br className="lg:hidden" /> Event <br /> Excellence
           </h1> 
             </div>
@@ -49,7 +47,7 @@ const YearsExp = () => {
           {/* Left Side */}
           <div className="flex flex-col gap-3">
             <MotionFadeUp delay={0.4}>
-              <h2 className="lg:text-[14vw] text-[28vw] leading-none"><Counter value={4} suffix="+" /></h2>
+              <h2 className="lg:text-[14vw] text-[28vw] font-normal leading-none"><Counter value={40} prefix="+" /></h2>
             </MotionFadeUp>
 
       {/* === Bottom Left Text + Ripple Button === */}

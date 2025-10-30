@@ -10,7 +10,7 @@ export default function FoundationLeft() {
         relative 
         flex flex-col justify-between
         bg-[var(--blue)] text-white
-        px-[8vw] py-[6vw]
+        lg:px-[12vw] px-[8vw] py-[6vw]
         h-full   
       "
     >
@@ -29,12 +29,12 @@ export default function FoundationLeft() {
           
         </div>
 
-        <div className="lg:space-y-[.75vw] space-y-[3vw] lg:text-[0.95vw] text-[4vw] leading-[120%]">
+        <div className="lg:space-y-[1.25vw] space-y-[3vw] lg:text-[0.95vw] text-[4vw] leading-[120%]">
           <div>
 
              <FadeUp>
-               <h4 className="text-white">Deep Expertise:</h4>
-               <p className="font-light text-white/70 max-sm:mt-[2vw]">
+               <h4 className="font-normal text-white">Deep Expertise:</h4>
+               <p className="font-light text-white/90 max-sm:mt-[2vw]">
                  Extensive industry knowledge and a proven track record of success.
                </p>
              </FadeUp>
@@ -46,7 +46,7 @@ export default function FoundationLeft() {
                <h4 className="text-white">
                  Operational Excellence:
                </h4>
-               <p className="font-light text-white/70 max-sm:mt-[2vw]">
+               <p className="font-light text-white/90 max-sm:mt-[2vw]">
                  Efficient project management and seamless execution.
                </p>
              </FadeUp>
@@ -56,7 +56,7 @@ export default function FoundationLeft() {
           <div>
              <FadeUp>
             <h4 className="text-white">Global Reach:</h4>
-            <p className="font-light text-white/70 max-sm:mt-[2vw]">
+            <p className="font-light text-white/90 max-sm:mt-[2vw]">
               A strong network and a diverse portfolio of events across the
               Middle East and beyond.
             </p>

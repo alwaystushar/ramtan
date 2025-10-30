@@ -48,10 +48,10 @@ export default function BusinessGrowth() {
       <div className="relative z-10 max-w-[90%] mx-auto">
         {/* Heading */}
         <div className="mb-[4vw]">
-          <h4 className="text-[1.1vw] max-sm:text-[4vw] font-medium text-[#5FA0FF] mb-[0.8vw] tracking-wide">
+          <h4 className="text-[1.1vw] max-sm:text-[4vw] font-medium text-[#194ddc] mb-[0.8vw] tracking-wide">
             Business Growth
           </h4>
-          <h2 className="text-[2.8vw] max-sm:text-[7vw] leading-[1.2] font-semibold">
+          <h2 className="text-[2.8vw] max-sm:text-[7vw] leading-[1.2] font-medium">
             Transforming Visions into <br /> Exceptional Events
           </h2>
         </div>
@@ -69,7 +69,7 @@ export default function BusinessGrowth() {
             ref={(el) => (cardsRef.current[0] = el)}
             className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] max-sm:text-[14vw] font-semibold mb-[0.5vw]">
+            <h3 className="text-[4vw] max-sm:text-[14vw] font-medium mb-[0.5vw]">
               20%
             </h3>
             <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
@@ -79,8 +79,8 @@ export default function BusinessGrowth() {
               Source: <br />
               Ramtan Client Case Studies
             </p>
-            <div className="absolute left-[-1vw] top-[0vw] w-[0.1vw] h-[12vw] bg-white/60"></div>
-            <div className="absolute left-[-1.1vw] bottom-[2vw] w-[0.3vw] h-[6vw] bg-white"></div>
+            <div className="absolute left-[-2vw] top-[0vw] w-[0.1vw] h-[14vw] bg-[#194ddc]"></div>
+             <div className="absolute lg:left-[-2.1vw] left-[-3.1vw] lg:bottom-[4vw] bottom-[20vw] w-[0.3vw] lg:h-[4vw] h-[12vw] bg-white"></div>
           </div>
 
           {/* Card 2 */}
@@ -88,7 +88,7 @@ export default function BusinessGrowth() {
             ref={(el) => (cardsRef.current[1] = el)}
             className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] max-sm:text-[14vw] font-semibold mb-[0.5vw]">
+            <h3 className="text-[4vw] max-sm:text-[14vw] font-medium mb-[0.5vw]">
               35–50%
             </h3>
             <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
@@ -98,8 +98,8 @@ export default function BusinessGrowth() {
               Source: <br />
               Event Industry Benchmarks
             </p>
-            <div className="absolute lg:left-[-1vw] left-[-3vw] top-[0vw] w-[0.1vw] lg:h-[12vw] h-[42vw] bg-white/60"></div>
-            <div className="absolute lg:left-[-1.1vw] left-[-3.1vw] lg:bottom-[2vw] bottom-[20vw] w-[0.3vw] lg:h-[6vw] h-[12vw] bg-white"></div>
+            <div className="absolute left-[-2vw] top-[0vw] w-[0.1vw] h-[14vw] bg-[#194ddc]"></div>
+             <div className="absolute lg:left-[-2.1vw] left-[-3.1vw] lg:bottom-[4vw] bottom-[20vw] w-[0.3vw] lg:h-[4vw] h-[12vw] bg-white"></div>
           </div>
 
           {/* Card 3 */}
@@ -107,7 +107,7 @@ export default function BusinessGrowth() {
             ref={(el) => (cardsRef.current[2] = el)}
             className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] max-sm:text-[14vw] font-semibold mb-[0.5vw]">
+            <h3 className="text-[4vw] max-sm:text-[14vw] font-medium mb-[0.5vw]">
               15–25%
             </h3>
             <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
@@ -118,8 +118,8 @@ export default function BusinessGrowth() {
               Source: <br />
               Ramtan Client Data
             </p>
-            <div className="absolute lg:left-[-1vw] left-[-3vw] top-[0vw] w-[0.1vw] lg:h-[12vw] h-[42vw] bg-white/60"></div>
-            <div className="absolute lg:left-[-1.1vw] left-[-3.1vw] lg:bottom-[2vw] bottom-[20vw] w-[0.3vw] lg:h-[6vw] h-[12vw] bg-white"></div>
+            <div className="absolute left-[-2vw] top-[0vw] w-[0.1vw] h-[14vw] bg-[#194ddc]"></div>
+             <div className="absolute lg:left-[-2.1vw] left-[-3.1vw] lg:bottom-[4vw] bottom-[20vw] w-[0.3vw] lg:h-[4vw] h-[12vw] bg-white"></div>
           </div>
 
           {/* Card 4 */}
@@ -127,7 +127,7 @@ export default function BusinessGrowth() {
             ref={(el) => (cardsRef.current[3] = el)}
             className="relative w-[22%] max-sm:w-[75vw] flex-shrink-0 text-white"
           >
-            <h3 className="text-[2vw] max-sm:text-[14vw] font-semibold mb-[0.5vw]">
+            <h3 className="text-[4vw] max-sm:text-[14vw] font-medium mb-[0.5vw]">
               80%
             </h3>
             <p className="text-[0.95vw] max-sm:text-[4vw] leading-[1.5] text-gray-200 mb-[0.8vw]">
@@ -138,8 +138,8 @@ export default function BusinessGrowth() {
               Source: <br />
               Client Satisfaction Surveys
             </p>
-            <div className="absolute lg:left-[-1vw] left-[-3vw] top-[0vw] w-[0.1vw] lg:h-[12vw] h-[42vw] bg-white/60"></div>
-            <div className="absolute lg:left-[-1.1vw] left-[-3.1vw] lg:bottom-[2vw] bottom-[20vw] w-[0.3vw] lg:h-[6vw] h-[12vw] bg-white"></div>
+            <div className="absolute left-[-2vw] top-[0vw] w-[0.1vw] h-[14vw] bg-[#194ddc]"></div>
+             <div className="absolute lg:left-[-2.1vw] left-[-3.1vw] lg:bottom-[4vw] bottom-[20vw] w-[0.3vw] lg:h-[4vw] h-[12vw] bg-white"></div>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ export default function ContactFirst() {
           h-[80vh]
           lg:min-h-screen
           overflow-hidden
-          lg:pt-[6vw]
+          lg:pt-[10vw]
           pt-[18vw]
           bg-white
         "

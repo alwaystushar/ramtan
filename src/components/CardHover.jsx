@@ -73,7 +73,7 @@ export const HoverEffect = ({ items, className }) => {
                 {hoveredIndex === idx && (
                   <motion.span
                     key={`hover-bg-${item.title}-${idx}`}
-                    className="absolute inset-0 block w-full h-full bg-blue-900"
+                    className="absolute inset-0 block w-full h-full bg-[#081c85]"
                     initial={{ opacity: 0, scaleY: 0, originY: 1 }}
                     animate={{
                       opacity: 1,
@@ -90,7 +90,7 @@ export const HoverEffect = ({ items, className }) => {
               </AnimatePresence>
 
               <Card>
-                <div className="flex flex-col justify-between lg:h-[22vw]">
+                <div className="flex flex-col justify-between lg:h-[18vw]">
                   <div>
                     <CardTitle>{item.title}</CardTitle>
                     <CardDescription>{item.description}</CardDescription>
@@ -119,7 +119,7 @@ export const Card = ({ className, children, isMobile }) => (
     )}
   >
     <div className="relative z-50">
-      <div className={cn(" transition-colors duration-300", isMobile ? "text-black p-[2vw]" : "group-hover:text-white p-[1vw]")}>
+      <div className={cn(" transition-colors duration-300", isMobile ? "text-black p-[2vw]" : "group-hover:text-white p-[2vw]")}>
         {children}
       </div>
     </div>
@@ -143,10 +143,10 @@ export const CardTitle = ({ className, children, isMobile }) => (
 export const CardDescription = ({ className, children, isMobile }) => (
   <p
     className={cn(
-      "font-medium tracking-wide leading-[120%] transition-colors duration-300 mt-[1.8vw]",
+      "font-semibold tracking-wide text-[#081b82] leading-[120%] transition-colors duration-300 mt-[1.8vw]",
       isMobile
-        ? "text-[4vw] font-medium text-blue-900"
-        : "lg:text-[1.6vw] text-blue-900 group-hover:text-white",
+        ? "text-[4vw]  "
+        : "lg:text-[1.3vw]  group-hover:text-white",
       className
     )}
   >

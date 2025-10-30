@@ -14,7 +14,7 @@ export default function OurServices() {
     >
 
 
-        <div className="absolute lg:bottom-[3vw] max-sm:top-[50%] lg:right-[23vw] right-[8vw] lg:text-[7vw] text-[14vw] font-semibold leading-[90%]">
+        <div className="absolute lg:bottom-[3vw] max-sm:top-[50%] lg:right-[17vw] right-[8vw] lg:text-[7vw] text-[14vw] font-semibold leading-[90%]">
            
            <MotionFadeUp>
             <h1>
