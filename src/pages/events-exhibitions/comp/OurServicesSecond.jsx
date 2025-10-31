@@ -39,7 +39,7 @@ export default function OurServicesSecond() {
 
 
       {/* Bottom Left Button */}
-      <div className="text-[#081c83]">
+      <div className="text-[#081c83]  max-sm:hidden">
        <BottomLeftBtn /> 
       </div>
       

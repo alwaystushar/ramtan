@@ -25,14 +25,21 @@ export default function AboutUsSection() {
           ></div>
 
           {/* Bottom Right Polygon */}
-          <div
-            className="absolute bottom-[-1vw] lg:left-[38vw] left-0 lg:w-[65vw] lg:h-[20vw] w-[90vw] h-[50vw] bg-[#F4F6FB]"
+
+                    <div
+            className="absolute bottom-[-10vw] lg:left-[38vw] left-[vw] lg:w-[65vw] lg:h-[20vw] w-[90vw] h-[50vw] bg-[#F4F6FB] lg:hidden"
             style={{
               clipPath: "polygon(0 0, 80% 0, 45% 100%, 0% 100%)",
             }}
           ></div>
           <div
-            className="absolute lg:top-[24vw] bottom-[49vw]  right-[-5vw] lg:w-[15vw] lg:h-[10vw] h-[48vw] w-[33vw]  bg-[#F4F6FB]"
+            className="absolute bottom-[-10vw] lg:left-[38vw] left-[7vw] lg:w-[65vw] lg:h-[20vw] w-[90vw] h-[50vw] bg-[#F4F6FB]"
+            style={{
+              clipPath: "polygon(0 0, 80% 0, 45% 100%, 0% 100%)",
+            }}
+          ></div>
+          <div
+            className="absolute lg:top-[24vw] bottom-[40vw]  lg:right-[-5vw] right-[-12vw] lg:w-[15vw] lg:h-[10vw] h-[48vw] w-[33vw]  bg-[#F4F6FB]"
             style={{
               clipPath: "polygon(100% 0, 0% 100%, 100% 100%)",
             }}
@@ -45,7 +52,7 @@ export default function AboutUsSection() {
   className="
     relative 
     lg:w-[30vw] lg:h-[35vw] 
-    h-[60vw] w-[70vw] overflow-hidden bg-gray-200 
+    h-[60vw] w-[70vw] overflow-hidden bg-gray-200  max-sm:mb-[8vw]
     lg:[clip-path:polygon(50%_0%,100%_0,100%_63%,0_63%,0_28%)]
     [clip-path:polygon(50%_0%,100%_0,100%_100%,0_100%,0_40%)]
   "
@@ -61,7 +68,7 @@ export default function AboutUsSection() {
         {/* === Right: Text === */}
 
         <div className="lg:max-w-[36.5vw]  text-left z-50 lg:mb-0 mb-[45vw]">
-          <h2 className="lg:text-[3.5vw] text-[8vw] font-semibold mb-[1vw]  leading-none">
+          <h2 className="lg:text-[3.5vw] text-[12vw] font-semibold lg:mb-[1vw]  mb-[5vw] leading-none">
             About us
           </h2>
 
@@ -80,7 +87,7 @@ export default function AboutUsSection() {
 
       {/* === Bottom Left: Call to Action === */}
 
-      <div className="text-[#081c83]">
+      <div className="text-[#081c83]  max-sm:hidden">
              <BottomLeftBtn />
       </div>
  

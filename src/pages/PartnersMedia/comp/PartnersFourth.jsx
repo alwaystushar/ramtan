@@ -71,12 +71,12 @@ useEffect(() => {
       {/* === Heading === */}
       <div className="flex lg:flex-row flex-col justify-between items-start mb-[4vw] lg:relative lg:gap-0 gap-[3vw]">
         <div className="lg:absolute top-[4vw]">
-          <h2 className="lg:text-[4vw] text-[6vw] text-[#204fd5] font-medium leading-[1.1]">
+          <h2 className="lg:text-[4vw] text-[8vw] text-[#204fd5] font-medium leading-[1.1]">
             Maximize Your <br /> Business Performance
           </h2>
         </div>
 
-        <p className="lg:max-w-[19vw] max-w-[58vw] lg:text-[1.1vw] text-[3.6vw] leading-[1.6] text-[#0021a9] lg:absolute right-[23.4vw] top-0">
+        <p className="lg:max-w-[19vw] max-w-[68vw] lg:text-[1.1vw] text-[3.6vw] leading-[1.6] text-[#0021a9] lg:absolute right-[23.4vw] top-0">
           Optimize your business journey and foster strong customer relationships
           with each transaction.
         </p>
@@ -106,7 +106,7 @@ useEffect(() => {
       className="absolute text-[0.8vw] text-gray-600 text-center leading-snug max-sm:text-[2.5vw]"
       style={{ bottom: "0%" }}
     >
-      Program success rate
+      Program success  rate
     </p>
   </div>
 
@@ -165,7 +165,7 @@ useEffect(() => {
   </div>
 
   {/* ==== BAR 4 ==== */}
-  <div className="absolute left-[72%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
+  <div className="absolute lg:left-[72%] left-[60%] bottom-0 w-[18vw] h-full flex flex-col items-center justify-end max-sm:w-[35vw]">
     <div className="relative w-full h-full overflow-hidden rounded-t-md">
       <div
         ref={(el) => (fillsRef.current[2] = el)}

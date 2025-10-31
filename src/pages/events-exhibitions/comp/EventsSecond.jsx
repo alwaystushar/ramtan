@@ -53,12 +53,13 @@ export default function EventsSecond() {
                 
             </div>
         </div>
+        <div className=" max-sm:hidden">
       <BottomLeftBtn 
         borderColor="border-white"
-        rippleColor="rgba(255,255,255,0.5)"
+        rippleColor="rgba(255,255,255,0.5)"  
+      />          
+        </div>
 
-        
-      />
                   {/* === Bottom Right Learn More Button === */}
       <div className="absolute bottom-[2vw] right-[3vw] z-30 max-sm:hidden">
         <button className="group px-[2vw] py-[0.8vw] bg-transparent border border-white/40 rounded-full flex items-center gap-[0.5vw] text-[0.9vw] hover:bg-white hover:text-[#001F4D] transition-all duration-300">

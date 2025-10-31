@@ -7,7 +7,7 @@ const BottomLeftBtn = ({
   rippleColor = "rgba(0,31,77,0.5)",
 }) => {
   return (
-    <div className="absolute lg:bottom-[2vw] bottom-[10vw] left-[2vw] flex flex-row lg:gap-[3.2vw] gap-[5vw] z-30 lg:text-[1vw] text-[3.5vw]">
+    <div className="absolute lg:bottom-[2vw] bottom-[10vw] lg:left-[2vw] left-[6vw] flex flex-row lg:gap-[3.2vw] gap-[5vw] z-30 lg:text-[1vw] text-[3.5vw]">
       <p className="font-medium ">
         Discover how we can <br />
         elevate your business

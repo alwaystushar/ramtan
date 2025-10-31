@@ -15,18 +15,18 @@ const PartnersSeventh = () => {
         {/* Shapes top */}
 
           <div
-            className="absolute lg:top-[0vw] top-[29vw] lg:left-[0vw] left-[-40vw] lg:w-[48vw] w-[78vw] h-[26vw] bg-[#2b52cd18]"
+            className="absolute lg:top-[0vw] top-[29vw] lg:right-[0vw] right-[-40vw] lg:w-[48vw] w-[78vw] h-[26vw] bg-[#2b52cd18]"
             style={{
-              clipPath: "polygon(50% 0%, 100% 100%, 0 100%, 0 0)",
+              clipPath: "polygon(50% 0%, 83% 0, 100% 20%, 100% 100%, 0 100%)",
             }}
           ></div>
 
         {/* Shapes bottom */}
 
           <div
-            className="absolute lg:bottom-[0vw] bottom-[35.4vw] lg:right-0 right-[-37vw] lg:w-[52vw] w-[100vw] h-[28.2vw] bg-[#2b52cd18]"
+            className="absolute lg:bottom-[0vw] bottom-[33vw] lg:left-0 left-[-37vw] lg:w-[52vw] w-[100vw] h-[27.6vw] bg-[#2b52cd18]"
             style={{
-              clipPath: "polygon(81% 0px, 100% 35%, 100% 100%, 48% 100%, 0px 0px)",
+              clipPath: "polygon(0 0, 100% 0%, 55% 100%, 0% 100%)",
             }}
           ></div>
 
@@ -40,7 +40,7 @@ const PartnersSeventh = () => {
                         <h3 className="lg:text-[4vw] text-[6vw] font-medium leading-[110%]">Growth</h3>
                     </div>
                     <div>
-                        <p className="lg:text-[1vw] text-[3vw] text-[#2054a5] lg:mt-[0.5vw] mt-[3.5vw] lg:max-w-[30vw] max-w-[50vw] opacity-40">
+                        <p className="lg:text-[1vw] text-[3vw] text-[#497ed3] lg:mt-[0.5vw] mt-[2.5vw] lg:max-w-[30vw] max-w-[50vw] opacity-40">
 Be not afraid of growing slowly                        </p>
                     </div>
                 </div>

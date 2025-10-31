@@ -15,7 +15,7 @@ export default function OurServicesSixth() {
     >
 
               {/*left Polygon background */}
-<div className="absolute bottom-0 left-0 lg:w-[30vw] w-[100vw] lg:h-[70vh] h-[100vh] bg-[#03092b90] z-0 
+<div className="absolute bottom-0 left-0 lg:w-[30vw] w-[90vw] lg:h-[70vh] h-[100vh] bg-[#03092b90] z-0 
 lg:[clip-path:polygon(0px_0px,_100%_90%,_100%_100%,_0%_100%)]
 [clip-path:polygon(0px_0px,_100%_50%,_100%_100%,_0%_100%)]"></div>
 
@@ -43,11 +43,13 @@ and Mineral Resources.
             </div>
         </div>
 
-
-      <BottomLeftBtn 
+<div className=" max-sm:hidden">
+        <BottomLeftBtn 
         borderColor="border-white"
         rippleColor="rgba(255,255,255,0.5)"
       />
     </div>
+</div>
+
   );
 }

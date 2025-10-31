@@ -15,7 +15,7 @@ const YearsExp = () => {
         {/* Shapes top */}
 
           <div
-            className="absolute lg:top-[0vw] top-[30vw] lg:left-[0vw] left-[-44vw] lg:w-[48vw] lg:h-[26vw] w-[94vw] h-[46vw] bg-[#F4F6FB10]"
+            className="absolute lg:top-[0vw] top-[30vw] lg:left-[0vw] left-[-44vw] lg:w-[48vw] lg:h-[25.5vw] w-[94vw] h-[46vw] bg-[#F4F6FB10]"
             style={{
               clipPath: "polygon(50% 0%, 100% 100%, 0 100%, 0 0)",
             }}
@@ -24,7 +24,7 @@ const YearsExp = () => {
         {/* Shapes bottom */}
 
           <div
-            className="absolute lg:bottom-[0vw] bottom-[10vw] lg:right-0 right-[-46vw] lg:w-[52vw] lg:h-[26.2vw] w-[95.5vw] h-[40vw] bg-[#F4F6FB10]"
+            className="absolute lg:bottom-[0vw] bottom-[7.5vw] lg:right-0 right-[-46vw] lg:w-[52vw] lg:h-[26.2vw] w-[96vw] h-[40vw] bg-[#F4F6FB10]"
             style={{
               clipPath: "polygon(81% 0px, 100% 35%, 100% 100%, 48% 100%, 0px 0px)",
             }}
@@ -35,7 +35,7 @@ const YearsExp = () => {
         {/* Heading */}
         <MotionFadeUp delay={0.3}>
             <div className="flex justify-end w-full ">
-               <h1 className=" lg:text-[6vw] text-[16vw] leading-[1.1] font-medium mt-[6vw] lg:mr-[2.5vw] mr-[2vw]">
+               <h1 className=" lg:text-[6vw] text-[15vw] leading-[1.1] font-medium mt-[6vw] lg:mr-[2.5vw] mr-[2vw]">
             Years of <br className="lg:hidden" /> Event <br /> Excellence
           </h1> 
             </div>

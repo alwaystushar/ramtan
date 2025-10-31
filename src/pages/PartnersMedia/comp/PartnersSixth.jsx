@@ -21,12 +21,12 @@ const insights = [
 
 export default function PartnersSixth() {
   return (
-    <section className="w-full bg-[#F8F9FB] text-[#001489] py-[6vw] px-[6vw] relative overflow-hidden">
+    <section className="w-full bg-[#F8F9FB] text-[#001489] lg:py-[6vw] py-[12vw] px-[6vw] relative overflow-hidden">
       {/* === Heading === */}
       <div className="flex justify-between items-start lg:mb-[3vw] mb-[6vw]">
         <div>
           <h2 className="lg:text-[6vw] text-[10vw] font-semibold leading-[90%]">
-          <span className="text-[#2b52cd]">Event</span>   <br />
+          <span className="text-[#2b52cd]">Event</span>   <br className="max-sm:hidden"/>
           <span>Insights</span>
           </h2>
         </div>

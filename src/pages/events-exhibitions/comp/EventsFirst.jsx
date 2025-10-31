@@ -7,7 +7,7 @@ export default function EventsFirst() {
     <div className="relative overflow-hidden bg-white text-[#001489] lg:h-[48vw]">
       {/* Left Polygon background */}
       <div
-        className="absolute lg:bottom-0 bottom-[20.4vw] left-0 w-[78vw] h-[20vw] bg-[#f0f1f8] z-0"
+        className="absolute lg:bottom-0 bottom-[10.4vw] lg:left-0 left-[-20vw] lg:w-[78vw] w-[98vw] lg:h-[20vw] h-[30vw] bg-[#E9ECF7] z-0"
         style={{
           clipPath: "polygon(15% 0%, 100% 0%, 75% 100%, 0% 100%, 0% 55%)",
         }}
@@ -15,7 +15,7 @@ export default function EventsFirst() {
 
       {/* Right Polygon background */}
       <div
-        className="absolute lg:top-0 top-[74vw] right-0 w-[22vw] h-[28vw] bg-[#f0f1f8] z-0"
+        className="absolute lg:top-0 top-[74vw] right-0 lg:w-[22vw] w-[22vw] lg:h-[28vw] h-[30.5vw] bg-[#E9ECF7] z-0"
         style={{
           clipPath: "polygon(100% 20%, 0% 100%, 100% 100%)",
         }}
@@ -30,7 +30,7 @@ export default function EventsFirst() {
           <p className="lg:text-[0.9vw] text-[2.9vw] text-gray-500 mb-[0.3vw] tracking-wide">
             Success Story
           </p>
-          <h4 className="lg:text-[1.4vw] text-[5.2vw] font-medium">
+          <h4 className="lg:text-[1.2vw] text-[5.2vw] font-medium">
             Leading Water Company
           </h4>
         </div>
@@ -53,7 +53,7 @@ export default function EventsFirst() {
 
                     <MotionFadeUp>
         {/* Heading */}
-        <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[9.2vw] font-medium leading-[110%] max-sm:mb-[52vw]">
+        <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[10vw] font-medium leading-[110%] max-sm:mb-[52vw]">
           Sixth Gulf Water Conference & Exhibition
         </h1>                      
                     </MotionFadeUp>

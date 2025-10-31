@@ -25,10 +25,10 @@ export default function EventsFourth() {
 
 
         <div className="absolute lg:bottom-[10vw] bottom-[40vw] lg:left-[2vw] left-[6vw]  ">
-            <div className="flex flex-col gap-[1vw]">
+            <div className="flex flex-col lg:gap-[1vw] gap-[4vw]">
               <MotionFadeUp>
-                                <h3 className="lg:text-[2.5vw] text-[9vw] lg:leading-[110%]">
-                    Technology & Science
+                                <h3 className="lg:text-[2.5vw] text-[9vw] lg:leading-[110%]  leading-[110%] ">
+                    Technology & <br className="lg:hidden" /> Science
                 </h3>
               </MotionFadeUp>
               <MotionFadeUp>
@@ -39,10 +39,13 @@ export default function EventsFourth() {
 
             </div>
         </div>
+        <div className=" max-sm:hidden">
       <BottomLeftBtn 
         borderColor="border-white"
         rippleColor="rgba(255,255,255,0.5)"
       />
-    </div>
+    </div>          
+        </div>
+
   );
 }

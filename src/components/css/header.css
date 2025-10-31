@@ -6,7 +6,7 @@
 }
 
 .header-inner {
-    @apply flex items-start justify-between 
+    @apply flex lg:items-start items-center justify-between 
 }
 
 .logo-block {

@@ -116,7 +116,7 @@ const ScrollReveal = ({
   return (
     <div ref={containerRef} className={`my-[2vw] ${containerClassName}`}>
       <p
-        className={`font-light lg:text-[1.7vw] text-[5.5vw] ${textClassName}`}
+        className={`font-light lg:text-[1.7vw] text-[4.5vw] ${textClassName}`}
         style={{
           fontWeight,
           lineHeight,

@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
-import { ArrowDown } from "lucide-react";
 import BottomLeftBtn from "../../../components/BottomLeftBtn";
 
 export default function AboutVideoSection() {
@@ -52,7 +51,7 @@ export default function AboutVideoSection() {
             }}
           >
             <h1
-              className="flex items-center col-span-6 lg:col-start-7 col-start-6 font-medium text-white pt-[8vw] pb-[5vw] lg:text-[6vw] text-[10vw] pl-[5vw]"
+              className="flex items-center col-span-6 lg:col-start-7 col-start-4 font-medium text-white pt-[8vw] pb-[5vw] lg:text-[6vw] text-[15vw] pl-[5vw] whitespace-nowrap"
             >
               About Us
             </h1>
@@ -92,10 +91,13 @@ export default function AboutVideoSection() {
           )}
 
           {/* === Bottom Left Text + Ripple Button === */}
-          <BottomLeftBtn borderColor="border-white" rippleColor="#ffffff50" />
+          <div className=" max-sm:hidden">
+         <BottomLeftBtn borderColor="border-white" rippleColor="#ffffff50" />
+
+          </div>
 
           {/* === Bottom Right Learn More Button === */}
-          <div className="absolute bottom-[2vw] right-[3vw] z-30">
+          <div className="absolute bottom-[2vw] right-[3vw] z-30 max-sm:hidden">
             <button className="group px-[2vw] py-[0.8vw] bg-transparent border border-white/40 rounded-full flex items-center gap-[0.5vw] text-[0.9vw] hover:bg-white hover:text-[#001F4D] transition-all duration-300">
               <span className="w-[0.5vw] h-[0.5vw] bg-white rounded-full animate-pulse transition-colors duration-300 group-hover:bg-[#001F4D]"></span>
               Learn more

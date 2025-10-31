@@ -307,6 +307,7 @@ import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import "./css/header.css";
 
 export default function Header() {
@@ -571,7 +572,7 @@ export default function Header() {
           {menuOpen ? (
             <X className={`w-[8vw] h-[8vw] ${isDarkBg ? "text-white" : "text-blue-900/0"}`} />
           ) : (
-            <Menu className={`w-[8vw] h-[8vw] ${isDarkBg ? "text-white" : "text-blue-900"}`} />
+            <HiOutlineMenuAlt4  className={`w-[8vw] h-[8vw] ${isDarkBg ? "text-white" : "text-blue-900"}`} />
           )}
         </button>
       </div>

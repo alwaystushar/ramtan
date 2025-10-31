@@ -10,6 +10,7 @@ export default function Foundation() {
         grid grid-cols-12 
         w-[100vw] 
         overflow-hidden 
+        bg-[#081b82]
         header-dark
       "
     >

@@ -49,7 +49,27 @@ export default function PartnersTenth() {
           </div>
         ))}
 
-        <div className="col-span-2 bg-[#001489] text-white p-[2.5vw] flex flex-col justify-between mt-[1vw]">
+        <div className="col-span-2 bg-[#001489] text-white p-[2.5vw] flex flex-col justify-between mt-[1vw] relative">
+
+                  {/* Shapes top */}
+
+          <div
+            className="absolute lg:bottom-[2vw] bottom-[29vw] lg:right-[0vw] right-[-40vw] lg:w-[24vw] w-[78vw] h-[11vw] bg-[#2b52cd18]"
+            style={{
+              clipPath: "polygon(100% 0, 0 0, 100% 97%)",
+            }}
+          ></div>
+
+        {/* Shapes bottom */}
+
+          <div
+            className="absolute lg:top-[0vw] top-[35.4vw] lg:left-0 left-[-37vw] lg:w-[25.7vw] w-[100vw] h-[10vw] bg-[#2b52cd18]"
+            style={{
+              clipPath: "polygon(35% 0, 100% 100%, 17% 100%, 0 75%, 0 0)",
+            }}
+          ></div>
+
+          
           <h3 className="lg:text-[2vw] leading-[125%] text-[1.5vw] font-semibold mb-[1vw]">
             What are you <br className="max-sm:hidden" /> looking for?
           </h3>
@@ -85,25 +105,27 @@ export default function PartnersTenth() {
           {cards.map((card, i) => (
             <div
               key={i}
-              className="max-w-[86vw] flex-shrink-0 border border-gray-300 p-4 bg-white flex flex-col justify-between h-[45vh]"
+              className="max-w-[86vw] flex-shrink-0 border border-gray-300 p-[6vw] bg-white flex flex-col justify-between h-[45vh]"
             >
               <div>
                 <p className="inline-block text-[2vw] text-gray-700 border border-gray-400 rounded-full px-2 py-[2px] mb-2">
                   {card.tag}
                 </p>
-                <h3 className="text-[8vw] font-semibold text-[#001489] leading-snug mb-2">
+                <h3 className="text-[6vw] font-semibold text-[#001489] leading-snug mb-[4vw]">
                   {card.title}
                 </h3>
               </div>
-              <p className="text-sm text-gray-500">{card.date}</p>
+              <p className="text-[5vw] text-gray-500">{card.date}</p>
             </div>
           ))}
         </div>
 
+        
+
         {/* Blue Input Box */}
-        <div className="bg-[#001489] text-white p-6 flex flex-col justify-between h-[80vw]">
-          <h3 className="mb-3 text-lg font-semibold">
-            What are you looking for ?
+        <div className="bg-[#001489] text-white p-6 flex flex-col justify-between h-[100vw]">
+          <h3 className="mb-3 text-[8vw] leading-[120%] font-semibold">
+            What are you looking for?
           </h3>
           <input
             type="text"

@@ -7,7 +7,7 @@ export default function OurServicesFifth() {
     <div className="relative overflow-hidden bg-white text-[#001489] lg:h-[48vw]">
       {/* Left Polygon background */}
       <div
-        className="absolute lg:bottom-0 bottom-[20.4vw] left-0 w-[78vw] h-[25vw] bg-[#f0f1f8] z-0"
+        className="absolute lg:bottom-0 bottom-[10.4vw] lg:left-0 left-[-20vw] lg:w-[78vw] w-[98vw] lg:h-[25vw] h-[35vw] bg-[#f0f1f8] z-0"
         style={{
           clipPath: "polygon(15% 0%, 100% 0%, 75% 100%, 0% 100%, 0% 55%)",
         }}
@@ -15,14 +15,14 @@ export default function OurServicesFifth() {
 
       {/* Right Polygon background */}
       <div
-        className="absolute lg:top-0 top-[94vw] right-0 w-[22vw] h-[23vw] bg-[#f0f1f8] z-0"
+        className="absolute lg:top-0 top-[105vw] right-0 w-[22vw] h-[23vw] bg-[#f0f1f8] z-0"
         style={{
           clipPath: "polygon(100% 0%, 0% 100%, 100% 100%)",
         }}
       ></div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full lg:px-[2vw] px-[6vw] py-[4vw] pt-[8vw]">
+      <div className="relative z-10 flex flex-col justify-between h-full lg:px-[2vw] px-[6vw] py-[4vw] lg:pt-[8vw] pt-[14vw]">
         {/* Subheading */}
         <MotionFadeUp>
                   <div className="lg:mb-[1vw] mb-[26vw]">
@@ -54,7 +54,7 @@ export default function OurServicesFifth() {
 
         {/* Heading */}
         <MotionFadeUp>
-                  <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[9.2vw] font-medium leading-[110%] max-sm:mb-[52vw]">
+                  <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[10vw] font-medium leading-[110%] max-sm:mb-[52vw]">
           Global Energy <br className="lg:hidden" /> Leader Hosts <br className="lg:hidden" /> Groundbreaking <br className="lg:hidden" /> Energy <br className="lg:hidden" /> Exhibition
         </h1>
         </MotionFadeUp>

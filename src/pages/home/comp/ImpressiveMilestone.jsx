@@ -13,7 +13,7 @@ const ImpressiveMilestone = () => {
         {/* Shapes top */}
 
           <div
-            className="absolute lg:top-[0vw] top-[30.6vw] left-[0vw] w-[48vw] h-[30vw] bg-[#F4F6FB10]"
+            className="absolute lg:top-[0vw] top-[30vw] lg:left-[0vw] left-[-44vw] lg:w-[48vw] lg:h-[25.5vw] w-[94vw] h-[46vw] bg-[#F4F6FB10]"
             style={{
               clipPath: "polygon(50% 0%, 100% 100%, 0 100%, 0 0)",
             }}
@@ -22,7 +22,7 @@ const ImpressiveMilestone = () => {
         {/* Shapes bottom */}
 
           <div
-            className="absolute lg:bottom-[0vw] top-[60.6vw] right-0 w-[52vw] h-[28.2vw] bg-[#F4F6FB10]"
+            className="absolute lg:bottom-[0vw] bottom-[87.1vw] lg:right-0 right-[-46vw] lg:w-[52vw] lg:h-[26.2vw] w-[96vw] h-[40vw] bg-[#F4F6FB10]"
             style={{
               clipPath: "polygon(81% 0px, 100% 35%, 100% 100%, 48% 100%, 0px 0px)",
             }}
@@ -59,7 +59,7 @@ const ImpressiveMilestone = () => {
         </div>
 
         <div className="flex justify-center w-full">
-                           <div className="lg:w-[28vw] lg:h-[29vw] w-[68vw] h-[49vw] mt-[4vw] relative overflow-hidden border-t-[0.3vw] border-[#89b7ff] bg-[#1132b4]">
+                           <div className="lg:w-[28vw] lg:h-[29vw] w-[68vw] h-[49vw] relative overflow-hidden border-t-[0.3vw] border-[#89b7ff] bg-[#1132b4] mt-[38vw]">
                 {/* Inner Pattern */}
                 <div
                   className="absolute inset-0 opacity-30"

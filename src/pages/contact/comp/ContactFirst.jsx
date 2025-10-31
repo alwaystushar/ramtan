@@ -11,11 +11,11 @@ export default function ContactFirst() {
           relative
           grid grid-cols-12
           w-full
-          h-[80vh]
+          h-[100vh]
           lg:min-h-screen
           overflow-hidden
           lg:pt-[10vw]
-          pt-[18vw]
+          pt-[28vw]
           bg-white
         "
       >
@@ -39,7 +39,7 @@ export default function ContactFirst() {
       <img
         src="/img/Saudi_man.png"
         alt="Saudi man"
-        className="absolute  pointer-events-none bottom-0 left-[5vw] lg:w-[40vw] w-[75vw] h-auto object-contain"
+        className="absolute  pointer-events-none bottom-0 left-[5vw] lg:w-[40vw] w-[155vw] h-auto object-contain"
       />
         {/* === Left Side === */}
         <div className="relative z-10 col-span-12 lg:col-span-6 max-sm:hidden">

@@ -7,7 +7,7 @@ export default function EventsFifth() {
     <div className="relative overflow-hidden bg-white text-[#001489] lg:h-[48vw]">
       {/* Left Polygon background */}
       <div
-        className="absolute lg:bottom-0 bottom-[20.4vw] left-0 w-[78vw] h-[20vw] bg-[#f0f1f8] z-0"
+        className="absolute lg:bottom-0 bottom-[16.4vw] lg:left-0 left-[-20vw] lg:w-[78vw] w-[98vw] lg:h-[20vw] h-[30vw] bg-[#f0f1f8] z-0"
         style={{
           clipPath: "polygon(15% 0%, 100% 0%, 75% 100%, 0% 100%, 0% 55%)",
         }}
@@ -15,14 +15,14 @@ export default function EventsFifth() {
 
       {/* Right Polygon background */}
       <div
-        className="absolute lg:top-0 top-[74vw] right-0 w-[22vw] h-[28vw] bg-[#f0f1f8] z-0"
+        className="absolute lg:top-0 top-[76.5vw] right-0 w-[22vw] h-[28vw] bg-[#f0f1f8] z-0"
         style={{
           clipPath: "polygon(100% 30%, 0% 100%, 100% 100%)",
         }}
       ></div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full lg:px-[2vw] px-[6vw] py-[4vw] pt-[8vw]">
+      <div className="relative z-10 flex flex-col justify-between h-full lg:px-[2vw] px-[6vw] py-[4vw] lg:pt-[8vw] pt-[14vw]">
         {/* Subheading */}
 
         <MotionFadeUp>
@@ -54,7 +54,7 @@ export default function EventsFifth() {
 
 <MotionFadeUp>
          {/* Heading */}
-        <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[9.2vw] font-medium leading-[110%] max-sm:mb-[52vw]">
+        <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[10vw] font-medium leading-[110%] max-sm:mb-[52vw]">
           Innovations in Dentistry and Healthcare
         </h1> 
 </MotionFadeUp>

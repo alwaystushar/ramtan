@@ -61,6 +61,9 @@ export default function PartnersEight() {
               const xOffset = (i - active) * 130;
 
               return (
+
+
+                
                 <motion.div
                   key={i}
                   animate={{ scale, opacity, x: xOffset }}
@@ -82,6 +85,8 @@ export default function PartnersEight() {
             })}
           </div>
 
+
+
           {/* Text Content */}
           <div className="max-w-[80vw] text-center mt-[20vw] px-4">
             <AnimatePresence mode="wait">
@@ -99,11 +104,28 @@ export default function PartnersEight() {
           </div>
         </div>
 
-        <BottomLeftBtn borderColor="border-white" rippleColor="#ffffff80" />
       </section>
 
       {/* === Large Screen Version (Left Menu) === */}
       <section className="hidden lg:flex relative min-h-screen bg-[#0021a9] text-white justify-between overflow-hidden px-[8vw] py-[6vw] header-dark">
+
+                          {/* Shapes top */}
+
+          <div
+            className="absolute lg:top-[4vw] top-[29vw] lg:left-[0vw] left-[-40vw] lg:w-[48vw] w-[78vw] h-[35vw] bg-[#021ea1]"
+            style={{
+              clipPath: "polygon(0 0, 0% 100%, 100% 70%)",
+            }}
+          ></div>
+
+        {/* Shapes bottom */}
+
+          <div
+            className="absolute lg:bottom-[0vw] bottom-[35.4vw] lg:right-0 right-[-37vw] lg:w-[52vw] w-[100vw] h-[40.7vw] bg-[#021ea1]"
+            style={{
+              clipPath: "polygon(89% 0, 100% 10%, 100% 100%, 90% 100%, 0% 38%)",
+            }}
+          ></div>
         {/* Left Menu */}
         <div className="flex flex-col justify-start space-y-[1vw] absolute left-[8vw] top-[4vw]">
           {sections.map((item, i) => (
@@ -140,6 +162,10 @@ export default function PartnersEight() {
             </motion.div>
           </AnimatePresence>
         </div>
+
+
+        
+
 
         <BottomLeftBtn borderColor="border-white" rippleColor="#ffffff80" />
       </section>

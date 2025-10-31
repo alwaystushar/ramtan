@@ -93,7 +93,7 @@ export default function FAQSection() {
       {/* ===================== MOBILE VIEW ===================== */}
       <section className="w-full bg-white px-[6vw] py-[10vw] max-sm:pb-[0vw] flex flex-col gap-[6vw] sm:hidden">
         {/* Heading */}
-        <h2 className="text-[7vw] font-semibold text-[#0021a9] leading-tight ">
+        <h2 className="text-[9vw] font-semibold text-[#0021a9] leading-[110%] mb-[5vw]">
           A few things you <br /> may want to ask us
         </h2>
 

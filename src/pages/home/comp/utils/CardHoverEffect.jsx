@@ -52,7 +52,7 @@ export function CardHoverEffect() {
       </div>
 
       {/* === Content === */}
-      <div className="relative z-10 w-full flex flex-col lg:flex-row items-start justify-between px-[8vw]  py-[6vw] gap-[6vw] max-sm:pb-[20vw]">
+      <div className="relative z-10 w-full flex flex-col lg:flex-row items-start justify-between px-[5.4vw]  py-[6vw] gap-[6vw] max-sm:pb-[2vw]">
         <div
           className="mx-auto lg:px-[3vw] lg:w-[80vw] w-full py-[5vw] flex flex-col justify-center items-center gap-[1vw]"
         >
@@ -65,7 +65,7 @@ export function CardHoverEffect() {
       </div>
 
       {/* === Bottom Left: Call to Action === */}
-      <div className="text-[#081c83]">
+      <div className="text-[#081c83]  max-sm:hidden">
         <BottomLeftBtn />
       </div>
      

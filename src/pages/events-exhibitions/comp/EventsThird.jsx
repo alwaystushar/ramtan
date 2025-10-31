@@ -7,7 +7,7 @@ export default function EventsThird() {
    <div className="relative overflow-hidden bg-white text-[#001489] lg:h-[48vw]">
       {/* Left Polygon background */}
       <div
-        className="absolute lg:bottom-0 bottom-[20.4vw] left-0 w-[78vw] h-[25vw] bg-[#f0f1f8] z-0"
+        className="absolute lg:bottom-0 bottom-[10.4vw] lg:left-0 left-[-25vw] lg:w-[78vw] w-[103vw] lg:h-[25vw] h-[35vw] bg-[#f0f1f8] z-0"
         style={{
           clipPath: "polygon(15% 0%, 100% 0%, 75% 100%, 0% 100%, 0% 55%)",
         }}
@@ -15,7 +15,7 @@ export default function EventsThird() {
 
       {/* Right Polygon background */}
       <div
-        className="absolute lg:top-0 top-[74vw] right-0 w-[22vw] h-[23vw] bg-[#f0f1f8] z-0"
+        className="absolute lg:top-0 top-[104vw] right-0 lg:w-[22vw] w-[22vw] h-[23vw] bg-[#f0f1f8] z-0"
         style={{
           clipPath: "polygon(100% 0%, 0% 100%, 100% 100%)",
         }}
@@ -23,7 +23,7 @@ export default function EventsThird() {
 
 
         {/* Main Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full lg:px-[2vw] px-[6vw] py-[4vw] pt-[8vw]">
+      <div className="relative z-10 flex flex-col justify-between h-full lg:px-[2vw] px-[6vw] py-[4vw] lg:pt-[8vw] pt-[14vw]">
         {/* Subheading */}
         <MotionFadeUp>
         <div className="lg:mb-[1vw] mb-[26vw]">
@@ -52,8 +52,8 @@ export default function EventsThird() {
 
           <MotionFadeUp>
                    {/* Heading */}
-        <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[8.5vw] font-medium leading-[110%] max-sm:mb-[52vw]">
-          Leading Tech Firm Hosts Groundbreaking Innovation Summit
+        <h1 className="lg:max-w-[70vw] lg:text-[5.2vw] text-[10vw] font-medium leading-[110%] max-sm:mb-[52vw]">
+          Leading Tech <br className="lg:hidden" /> Firm Hosts Groundbreaking Innovation Summit
         </h1> 
             </MotionFadeUp>
 

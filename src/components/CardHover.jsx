@@ -40,11 +40,12 @@ export const HoverEffect = ({ items, className }) => {
             {items.map((item, idx) => (
               <div
                 key={`${item.title}-${idx}`}
-                className="embla__slide flex-[0_0_80%] min-w-0 relative overflow-hidden"
+                className="embla__slide flex-[0_0_100%] min-w-0 relative overflow-hidden w-[29vw]"
+                
               >
                 <Card isMobile>
-                  <div className="flex flex-col justify-between h-[55vw]">
-                    <div>
+                  <div className="flex flex-col justify-between lg:h-[55vw] h-[75vw]">
+                    <div className="">
                       <CardTitle isMobile>{item.title}</CardTitle>
                       <CardDescription isMobile>
                         {item.description}
@@ -114,12 +115,12 @@ export const Card = ({ className, children, isMobile }) => (
   <div
     className={cn(
       "w-full  border border-black/75 relative z-20 transition-all duration-300",
-      isMobile ? "min-h-[55vw] border-black/50 p-[1.45vw]" : "lg:min-h-[22vw] group-hover:border-blue-900 p-[1vw]",
+      isMobile ? "min-h-[55vw] border-black/50 p-[9.45vw]" : "lg:min-h-[22vw] group-hover:border-blue-900 p-[1vw]",
       className
     )}
   >
     <div className="relative z-50">
-      <div className={cn(" transition-colors duration-300", isMobile ? "text-black p-[2vw]" : "group-hover:text-white p-[2vw]")}>
+      <div className={cn(" transition-colors duration-300", isMobile ? "text-black " : "group-hover:text-white p-[2vw]")}>
         {children}
       </div>
     </div>
@@ -131,7 +132,7 @@ export const CardTitle = ({ className, children, isMobile }) => (
     className={cn(
       "w-fit whitespace-nowrap rounded-full mt-[0.8vw] border border-black/75 text-black/85 transition-colors duration-300",
       isMobile
-        ? "text-[2vw] px-[2vw] py-[1vw] border-black/50"
+        ? "text-[2vw]  px-[2vw] py-[1vw] border-black/50"
         : "text-[0.8vw] px-[0.6vw] py-[0.1vw] group-hover:border-white group-hover:text-white",
       className
     )}
@@ -145,7 +146,7 @@ export const CardDescription = ({ className, children, isMobile }) => (
     className={cn(
       "font-semibold tracking-wide text-[#081b82] leading-[120%] transition-colors duration-300 mt-[1.8vw]",
       isMobile
-        ? "text-[4vw]  "
+        ? "text-[4vw] mt-[5vw] "
         : "lg:text-[1.3vw]  group-hover:text-white",
       className
     )}

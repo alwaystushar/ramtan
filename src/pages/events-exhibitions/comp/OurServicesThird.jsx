@@ -15,7 +15,7 @@ export default function OurServicesThird() {
       {/* ↑ adjust opacity (/40 to /80) or color as needed */}
 
       {/* Text */}
-      <div className="  text-center lg:text-[4vw] text-[12vw] font-medium leading-[120%] z-20">
+      <div className="  text-center lg:text-[4vw] text-[10vw] font-medium leading-[120%] z-20">
        <MotionFadeUp>
         <h1>
           Crafting <br className="lg:hidden" /> Unforgettable

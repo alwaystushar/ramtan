@@ -19,7 +19,7 @@ export default function EventsSixth() {
               {/*back Polygon background */}
       <div
         className="absolute bottom-0 right-0
-         lg:w-[75vw] lg:h-[100vh] 
+         lg:w-[65vw] lg:h-[100vh] 
          w-[150vw] h-[77vh]
           bg-[#081c93] z-0
           [clip-path:polygon(100%_0px,_100%_100%,_0%_100%)]
@@ -30,7 +30,7 @@ export default function EventsSixth() {
                     {/*front Polygon background */}
       <div
         className="absolute bottom-0 right-0 
-        lg:w-[55vw] lg:h-[100vh]
+        lg:w-[50vw] lg:h-[100vh]
         w-[120vw] h-[60vh]
          bg-[#06178b] z-0
          [clip-path:polygon(100%_0px,_100%_100%,_0px_125%,_43%_80%,_43%_64%)]"
@@ -53,12 +53,14 @@ First Riyadh International Meeting for Dentistry and Healthcare: and the accompa
 
             </div>
         </div>
-      <BottomLeftBtn 
+
+        <div className=" max-sm:hidden">
+               <BottomLeftBtn 
         borderColor="border-white"
         rippleColor="rgba(255,255,255,0.5)"
+      /> 
+        </div>
 
-        
-      />
                   {/* === Bottom Right Learn More Button === */}
       <div className="absolute bottom-[2vw] right-[3vw] z-30 max-sm:hidden">
         <button className="group px-[2vw] py-[0.8vw] bg-transparent border border-white/40 rounded-full flex items-center gap-[0.5vw] text-[0.9vw] hover:bg-white hover:text-[#001F4D] transition-all duration-300">

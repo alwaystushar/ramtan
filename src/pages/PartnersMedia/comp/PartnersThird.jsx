@@ -14,7 +14,7 @@ const PartnersThird = () => {
         {/* Shapes top */}
 
           <div
-            className="absolute lg:top-[0vw] top-[40vw] lg:left-[0vw] left-[-40vw] lg:w-[48vw] w-[78vw] lg:h-[28.7vw] h-[26vw] bg-[#2b52cd18]"
+            className="absolute lg:top-[0vw] top-[40vw] lg:left-[0vw] left-[-40vw] lg:w-[48vw] w-[78vw] lg:h-[28.5vw] h-[26vw] bg-[#2b52cd18]"
             style={{
               clipPath: "polygon(50% 0%, 100% 100%, 0 100%, 0 0)",
             }}
