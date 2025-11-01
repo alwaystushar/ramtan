@@ -53,7 +53,7 @@ export default function PartnersSecond() {
   const next = partnersData[(index + 1) % partnersData.length];
 
   return (
-    <div className="w-full bg-white text-[#001489] flex flex-col pt-[15vw] overflow-hidden">
+    <div className="w-full bg-white text-[#001489] flex flex-col pt-[8vw] overflow-hidden">
 
       {/* ---------- DESKTOP VERSION ---------- */}
       <MotionFadeUp>
@@ -90,7 +90,7 @@ export default function PartnersSecond() {
         {/* Content */}
         <div
           ref={contentRef}
-          className="relative flex justify-between items-start gap-[3vw] pt-[2vw] pb-[6vw] px-[2vw]"
+          className="relative flex justify-between items-start gap-[3vw] pt-[2vw] pb-[10vw] px-[2vw]"
         >
           {/* Left */}
           <div className="flex flex-col w-[45%]">

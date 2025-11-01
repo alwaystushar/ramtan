@@ -13,7 +13,7 @@ export default function OurServicesFourth() {
 
       <MotionFadeUp>
               {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-end lg:py-[8vw] py-[26vw]  lg:px-[2vw] h-[100vh]">
+      <div className="relative z-10 flex flex-col lg:items-end items-center justify-end lg:py-[8vw] py-[26vw]  lg:px-[2vw] h-[100vh]">
         <div className="bg-white text-gray-900 lg:max-w-[38.5vw] max-w-[90vw] lg:pt-[2.5vw] pt-[6vw] lg:pb-[1.5vw] pb-[4vw] lg:mr-[0vw]">
 
           <div className="lg:px-[1vw] px-[6vw]">

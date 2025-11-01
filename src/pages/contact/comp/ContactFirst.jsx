@@ -22,7 +22,7 @@ export default function ContactFirst() {
 
               {/* Left Polygon background */}
       <div
-        className="absolute bottom-0 left-0 lg:w-[78vw] lg:h-[46vh] w-[78vw] h-[36vh] bg-[#f2f2f2] z-0"
+        className="absolute bottom-0 lg:left-0 left-[-20vw] lg:w-[78vw] lg:h-[46vh] w-[98vw] h-[36vh] bg-[#f2f2f2] z-0"
         style={{
           clipPath: "polygon(15% 0%, 100% 0%, 75% 100%, 0% 100%, 0% 55%)",
         }}
@@ -30,17 +30,17 @@ export default function ContactFirst() {
 
       {/* Right Polygon background */}
       <div
-        className="absolute lg:top-0 top-[43.4vw] right-0 lg:w-[22vw] lg:h-[54vh] w-[22vw] h-[24vh] bg-[#f2f2f2] z-0"
+        className="absolute lg:top-0 top-[86.4vw] right-0 lg:w-[22vw] lg:h-[54vh] w-[22vw] h-[24vh] bg-[#f2f2f2] z-0"
         style={{
           clipPath: "polygon(100% 0%, 0% 100%, 100% 100%)",
         }}
       ></div>
                 {/* === Image with Absolute Position === */}
-      <img
-        src="/img/Saudi_man.png"
-        alt="Saudi man"
-        className="absolute  pointer-events-none bottom-0 left-[5vw] lg:w-[40vw] w-[155vw] h-auto object-contain"
-      />
+<img
+  src="/img/Saudi_man.png"
+  alt="Saudi man"
+  className="absolute pointer-events-none lg:bottom-[4vw] bottom-[20vw] lg:left-[7vw] left-[5vw] lg:w-[40vw] w-[80vw] h-auto object-contain lg:scale-[1.3] scale-[1.6]"
+/>
         {/* === Left Side === */}
         <div className="relative z-10 col-span-12 lg:col-span-6 max-sm:hidden">
           <FoundationLeft />

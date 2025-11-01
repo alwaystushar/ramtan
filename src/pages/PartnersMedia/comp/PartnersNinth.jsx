@@ -5,7 +5,7 @@ export default function PartnersNinth() {
     <section className="relative flex w-full items-start justify-end px-[6vw] py-[6vw] bg-white overflow-hidden h-screen">
             {/* top Polygon background */}
       <div
-        className="absolute lg:top-0 top-[20.4vw] left-0 w-[44.4vw] h-[46vw] bg-[#F9F9F9] z-0"
+        className="absolute lg:top-0 top-[20.4vw] left-0 w-[48.4vw] h-[46vw] bg-[#F9F9F9] z-0"
         style={{
           clipPath: "polygon(0px 0px, 1% 0px, 100% 100%, 26% 100%, 0% 57%)",
         }}

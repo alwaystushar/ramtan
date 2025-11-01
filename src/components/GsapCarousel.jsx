@@ -128,7 +128,7 @@ export default function GsapCarousel({
           <div
             key={i}
             ref={(el) => (slidesRef.current[i] = el)}
-            className="absolute inset-0 bg-cover bg-center flex flex-col lg:justify-end justify-center px-[2vw] py-[8vw]"
+            className="absolute inset-0 bg-cover bg-center flex flex-col lg:justify-end justify-center px-[2vw] py-[6vw]"
             style={{
               backgroundImage: `url(${slide.image})`,
               backgroundSize: "cover",

@@ -18,7 +18,7 @@ export default function FoundationLeft() {
         
       
       {/* === Top Content === */}
-      <div className="flex flex-col lg:gap-[1vw] gap-[8vw] lg:w-[16vw]  mt-[14vw] max-sm:mb-[15vw]">
+      <div className="flex flex-col lg:gap-[1vw] gap-[8vw] lg:w-[16vw]  lg:mt-[14vw] mt-[14vw] max-sm:mb-[15vw]">
         <div>
 
            <FadeUp>

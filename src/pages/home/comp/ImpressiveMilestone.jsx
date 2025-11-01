@@ -59,7 +59,7 @@ const ImpressiveMilestone = () => {
         </div>
 
         <div className="flex justify-center w-full">
-                           <div className="lg:w-[28vw] lg:h-[29vw] w-[68vw] h-[49vw] relative overflow-hidden border-t-[0.3vw] border-[#89b7ff] bg-[#1132b4] mt-[38vw]">
+                           <div className="lg:w-[28vw] lg:h-[29vw] w-[68vw] h-[49vw] relative overflow-hidden border-t-[0.3vw] border-[#89b7ff] bg-[#1132b4] lg:mt-[0vw] mt-[38vw]">
                 {/* Inner Pattern */}
                 <div
                   className="absolute inset-0 opacity-30"

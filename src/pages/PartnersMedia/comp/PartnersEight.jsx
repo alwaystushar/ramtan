@@ -112,7 +112,7 @@ export default function PartnersEight() {
                           {/* Shapes top */}
 
           <div
-            className="absolute lg:top-[4vw] top-[29vw] lg:left-[0vw] left-[-40vw] lg:w-[48vw] w-[78vw] h-[35vw] bg-[#021ea1]"
+            className="absolute lg:top-[4vw] top-[29vw] lg:left-[0vw] left-[-40vw] lg:w-[48vw] w-[78vw] h-[71vh] bg-[#021ea1]"
             style={{
               clipPath: "polygon(0 0, 0% 100%, 100% 70%)",
             }}
@@ -121,7 +121,7 @@ export default function PartnersEight() {
         {/* Shapes bottom */}
 
           <div
-            className="absolute lg:bottom-[0vw] bottom-[35.4vw] lg:right-0 right-[-37vw] lg:w-[52vw] w-[100vw] h-[40.7vw] bg-[#021ea1]"
+            className="absolute lg:bottom-[0vw] bottom-[35.4vw] lg:right-0 right-[-37vw] lg:w-[52vw] w-[100vw] h-[70vh] bg-[#021ea1]"
             style={{
               clipPath: "polygon(89% 0, 100% 10%, 100% 100%, 90% 100%, 0% 38%)",
             }}

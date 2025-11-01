@@ -16,7 +16,7 @@ const ContactLast = () => {
             backgroundSize: "cover",
         }}
       >
-        <h1 className="lg:text-[25vw] text-[49vw] font-bold lg:leading-[0.6] leading-[0.9] text-center mb-[-11vw] lg:whitespace-nowrap">
+        <h1 className="lg:text-[25vw] text-[49vw] font-bold lg:leading-[0.6] leading-[0.9] text-center max-sm:mb-[-11vw] lg:whitespace-nowrap">
           Let’s Talk
         </h1>
       </section>

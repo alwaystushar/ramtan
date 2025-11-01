@@ -31,7 +31,7 @@ export function CardHoverEffect() {
       className="relative w-full bg-white flex flex-col justify-center items-center overflow-hidden text-[#001F4D]"
     >
       {/* === Background Polygon Shapes === */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 max-sm:hidden">
         {/* ✅ Top Left Polygon */}
         <div
           className="absolute top-[0vw] left-0 w-[50vw]  h-[50vw] bg-[#fafbff]"

@@ -59,7 +59,7 @@ export default function BusinessGrowth() {
         {/* Cards Section */}
         <div
           className="
-            flex justify-between gap-[2vw] lg:mt-[6vw] mt-[16vw] flex-wrap
+            flex justify-between gap-[2vw] lg:mt-[10vw] mt-[16vw] flex-wrap
             max-sm:flex-nowrap max-sm:overflow-x-auto max-sm:overflow-y-hidden
             max-sm:scroll-smooth max-sm:pb-[4vw] max-sm:gap-[6vw]
           "

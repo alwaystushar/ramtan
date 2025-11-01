@@ -33,7 +33,7 @@ export default function AboutUsSection() {
             }}
           ></div>
           <div
-            className="absolute bottom-[-10vw] lg:left-[38vw] left-[7vw] lg:w-[65vw] lg:h-[20vw] w-[90vw] h-[50vw] bg-[#F4F6FB]"
+            className="absolute bottom-[-10vw] lg:left-[38vw] left-[7vw] lg:w-[65vw] lg:h-[29vw]  w-[90vw] h-[50vw] bg-[#F4F6FB]"
             style={{
               clipPath: "polygon(0 0, 80% 0, 45% 100%, 0% 100%)",
             }}
